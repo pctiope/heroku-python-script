@@ -1,1 +1,1 @@
-worker: python script.py
+worker: python ph_main.py
