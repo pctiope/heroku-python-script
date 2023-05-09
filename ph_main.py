@@ -36,7 +36,7 @@ while 1:
     isFile = os.path.isfile(path)
     print(isFile)
 
-    g = Github('pctiope@up.edu.ph', 'Pauljohn121000pj$')
+    g = Github('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')
 
     repo = g.get_user().get_repo("express-leaflet")
     file = repo.get_file_contents("./public/filtered.json")
