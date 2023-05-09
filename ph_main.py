@@ -1,7 +1,7 @@
 from time import sleep
 from datetime import datetime
 from random import randint
-
+import os
 from ph_aqi import init_sensors, get_sensor_data, df_to_csv, df_to_shp
 from ph_idw import get_idw
 from ph_polygonize import polygonize
@@ -28,5 +28,11 @@ while 1:
 
     #ph_filter functions
     filter(threshold, date_time)
+
+    # Path
+    path = "./temp/filtered.json"
+    # Check whether a path pointing to a file
+    isFile = os.path.isfile(path)
+    print(isFile)
 
     sleep(15)    # temporary
