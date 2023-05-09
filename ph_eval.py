@@ -1,7 +1,7 @@
 import json
 from shapely.geometry import Point, Polygon, shape, mapping
 from shapely.ops import unary_union
-import sys
+
 aqi = []
 temp = []
 total = 0
