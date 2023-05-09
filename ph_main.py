@@ -6,7 +6,7 @@ from ph_aqi import init_sensors, get_sensor_data, df_to_csv, df_to_shp
 from ph_idw import get_idw
 from ph_polygonize import polygonize
 from ph_filter import filter
-import github
+from github import Github
 
 while 1:
     format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
@@ -36,7 +36,7 @@ while 1:
     isFile = os.path.isfile(path)
     print(isFile)
 
-    g = github.Github('pctiope@up.edu.ph', 'Pauljohn121000pj$')
+    g = Github('pctiope@up.edu.ph', 'Pauljohn121000pj$')
 
     repo = g.get_user().get_repo("express-leaflet")
     file = repo.get_file_contents("./public/filtered.json")
