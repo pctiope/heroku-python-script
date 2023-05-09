@@ -3,7 +3,6 @@ import pandas as pd
 from geopandas import GeoDataFrame
 from shapely.geometry import Point
 
-from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from time import time
 
@@ -83,8 +82,6 @@ def get_sensor_data(WAQI_sensors, IQAir_locations, IQAir_sensors):
 
     # start = time()
     for sensor in IQAir_sensors:
-        # page = urlopen(IQAir_sensors[sensor])
-        # html = page.read().decode("utf-8")
         try:
             page = requests.get(IQAir_sensors[sensor], timeout=5)
         except Exception as err:
