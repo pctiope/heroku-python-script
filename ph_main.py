@@ -39,7 +39,7 @@ while 1:
     token = "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"
 
     g = Github(token)
-    repo = g.get_user().get_repo("pctiope/express-leaflet")
+    repo = g.get_repo("pctiope/express-leaflet")
     file = repo.get_file_contents("/public/filtered.json")
 
     # update
