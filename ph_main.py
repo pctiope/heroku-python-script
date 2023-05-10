@@ -8,6 +8,7 @@ from ph_polygonize import polygonize
 from ph_filter import filter
 from github import Github
 import base64
+import json
 
 while 1:
     format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
@@ -37,10 +38,13 @@ while 1:
     isFile = os.path.isfile(path)
     print(isFile)
 
+    filename = "./temp/filtered.json"
+    with open(filename) as f:
+        data = json.load(f)
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/express-leaflet")
     contents = repo.get_contents("/public/filtered.json", ref="main")
-    repo.update_file(contents.path, "updated filtered.json", "/temp/filtered.json", contents.sha, branch="main")
+    repo.update_file(contents.path, "updated filtered.json", data, contents.sha, branch="main")
 
     sleep(15)    # temporary
