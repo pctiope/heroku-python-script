@@ -19,5 +19,5 @@ def polygonize(threshold, date_time):
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/express-leaflet")
-    contents = repo.get_contents("/public/filtered.json", ref="main")
-    repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
+    contents = repo.get_contents("/public/polygonized.json", ref="main")
+    repo.update_file(contents.path, "updated polygonized.json", json_output, contents.sha, branch="main")
