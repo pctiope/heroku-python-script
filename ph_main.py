@@ -36,7 +36,7 @@ while 1:
     isFile = os.path.isfile(path)
     print(isFile)
 
-    token = "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"
+    token = "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"
     g = Github(token)
     repo = g.get_repo("pctiope/express-leaflet")
     contents = repo.get_contents("/public/filtered.json", ref="test")
