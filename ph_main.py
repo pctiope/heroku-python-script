@@ -37,12 +37,10 @@ while 1:
     print(isFile)
 
     token = "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"
-
     g = Github(token)
     repo = g.get_repo("pctiope/express-leaflet")
-    file = repo.get_file_contents("/public/filtered.json")
-
-    # update
-    repo.update_file("/public/filtered.json", "your_commit_message", "/temp/filtered.json", file.sha)
+    contents = repo.get_contents("/public/filtered.json", ref="test")
+    repo.update_file(contents.path, "more tests", "/temp/filtered.json", contents.sha, branch="main")
+    {'commit': Commit(sha="b06e05400afd6baee13fff74e38553d135dca7dc"), 'content': ContentFile(path="/public/filtered.json")}
 
     sleep(15)    # temporary
