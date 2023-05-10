@@ -41,10 +41,11 @@ while 1:
     filename = "./temp/filtered.json"
     with open(filename) as f:
         data = json.load(f)
+    json_output = json.dumps(data, indent=4)
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/express-leaflet")
     contents = repo.get_contents("/public/filtered.json", ref="main")
-    repo.update_file(contents.path, "updated filtered.json", data, contents.sha, branch="main")
+    repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
 
     sleep(15)    # temporary
