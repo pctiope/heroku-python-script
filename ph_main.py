@@ -6,9 +6,6 @@ from ph_aqi import init_sensors, get_sensor_data, df_to_csv, df_to_shp
 from ph_idw import get_idw
 from ph_polygonize import polygonize
 from ph_filter import filter
-from github import Github
-import base64
-import json
 
 while 1:
     format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
@@ -33,19 +30,9 @@ while 1:
     filter(threshold, date_time)
 
     # Path
-    path = "./temp/filtered.json"
+    '''path = "./temp/filtered.json"
     # Check whether a path pointing to a file
     isFile = os.path.isfile(path)
-    print(isFile)
-
-    filename = "./temp/filtered.json"
-    with open(filename) as f:
-        data = json.load(f)
-    json_output = json.dumps(data, indent=4)
-    coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
-    g = Github(base64.b64decode(coded_string).decode("utf-8"))
-    repo = g.get_repo("pctiope/express-leaflet")
-    contents = repo.get_contents("/public/filtered.json", ref="main")
-    repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
+    print(isFile)'''
 
     sleep(15)    # temporary
