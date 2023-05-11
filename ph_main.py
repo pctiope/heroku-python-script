@@ -35,4 +35,4 @@ while 1:
     isFile = os.path.isfile(path)
     print(isFile)'''
 
-    sleep(15)    # temporary
+    sleep(60)    # temporary
