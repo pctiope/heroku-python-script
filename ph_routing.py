@@ -22,6 +22,7 @@ def generate_route(coords, threshold):
     aqi = []
     temp = []
     total = 0
+    total_distance = 0
     with open("./temp/polygonized"+str(threshold)+".json") as f:
         data = json.load(f)
     data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
@@ -36,7 +37,8 @@ def generate_route(coords, threshold):
                 aqi.append([j,i])
                 break
     for i in range(len(aqi)-1):
-        distance = aqi[i][1].distance(aqi[i+1][1])
+        distance = int(110.574)*aqi[i][1].distance(aqi[i+1][1])
+        total_distance += distance
         level = aqi[i][0][1]
         total += distance*level
-    print(total, "for threshold", threshold)
+    print(total/total_distance, "for threshold", threshold)
