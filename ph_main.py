@@ -16,7 +16,11 @@ with open("./metro_manila.geojson") as f:
 while 1:
     format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
     date_time = datetime.now().strftime(format)
-    coords = random_waypoints(Polygon(shape(data)))
+    
+    first_point = random_waypoints(Polygon(data['features'][0]['geometry']['coordinates'][0][0]))
+    second_point = random_waypoints(Polygon(data['features'][0]['geometry']['coordinates'][0][0]))
+    coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
+    
     WAQI_sensors, IQAir_locations, IQAir_sensors = init_sensors()
     Sensor_Name, X_location, Y_location, US_AQI, df = get_sensor_data(WAQI_sensors, IQAir_locations, IQAir_sensors)
     df_to_csv(df, date_time)

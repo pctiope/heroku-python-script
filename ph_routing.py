@@ -1,12 +1,12 @@
 from routingpy import Valhalla
-from routingpy.utils import decoded_polyline6
+from routingpy.utils import decode_polyline6
 from shapely.geometry import Point, Polygon, shape, mapping
 import json
 
 def generate_route(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
 
-    with open("./temp/filtered"+threshold+".json","r") as f:
+    with open("./temp/filtered"+str(threshold)+".json","r") as f:
         data = json.load(f)
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
 
@@ -17,16 +17,17 @@ def generate_route(coords, threshold):
         f.write(json_output)'''
         
     polyline = route.raw["trip"]["legs"][0]["shape"]
-    print(polyline)
-    route = decoded_polyline6(polyline)
-    print(route)
+    decoded = decode_polyline6(polyline)
+    route = [list(element) for element in decoded]
+
     
     aqi = []
     temp = []
     total = 0
-    with open("./temp/polygonized"+threshold+".json") as f:
+    with open("./temp/polygonized"+str(threshold)+".json") as f:
         data = json.load(f)
-    data = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
+    data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
+    print(data)
     for i in route:
         i[0], i[1] = i[1], i[0]
     points = [Point(i[0], i[1]) for i in route]
@@ -43,4 +44,4 @@ def generate_route(coords, threshold):
         distance = aqi[i][1].distance(aqi[i+1][1])
         level = aqi[i][0][1]
         total += distance*level
-    print(total, "for threshold", threshold)
+    print(total, "for threshold", threshold)'''

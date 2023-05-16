@@ -1,11 +1,11 @@
 import json
 import base64
-from github import Github
+#from github import Github
 from shapely.geometry import Point, Polygon, shape, mapping
 from shapely.ops import unary_union
 
 def filter(threshold, date_time):
-    filename = "./temp/polygonized.json"
+    filename = "./temp/polygonized"+str(threshold)+".json"
     with open(filename) as f:
         data = json.load(f)
     sorted_data = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
@@ -29,7 +29,7 @@ def filter(threshold, date_time):
 
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
-    with open("./temp/filtered"+threshold+".json", "w") as outfile:
+    with open("./temp/filtered"+str(threshold)+".json", "w") as outfile:
         outfile.write(json_output)
     
     '''coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
