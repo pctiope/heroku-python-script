@@ -19,17 +19,12 @@ def generate_route(coords, threshold):
     polyline = route.raw["trip"]["legs"][0]["shape"]
     decoded = decode_polyline6(polyline)
     route = [list(element) for element in decoded]
-
-    
     aqi = []
     temp = []
     total = 0
     with open("./temp/polygonized"+str(threshold)+".json") as f:
         data = json.load(f)
     data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
-    print(data)
-    for i in route:
-        i[0], i[1] = i[1], i[0]
     points = [Point(i[0], i[1]) for i in route]
     for polygon in data['features']:
         if polygon["properties"]["AQI"] <= 500:
