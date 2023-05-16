@@ -44,4 +44,4 @@ def generate_route(coords, threshold):
         distance = aqi[i][1].distance(aqi[i+1][1])
         level = aqi[i][0][1]
         total += distance*level
-    print(total, "for threshold", threshold)'''
+    print(total, "for threshold", threshold)
