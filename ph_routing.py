@@ -2,6 +2,7 @@ from routingpy import Valhalla
 from routingpy.utils import decode_polyline6
 from shapely.geometry import Point, Polygon, shape, mapping
 import json
+import math
 
 def generate_route(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
@@ -23,6 +24,7 @@ def generate_route(coords, threshold):
     aqi = []
     temp = []
     total = 0
+
     total_distance = 0
     with open("./temp/polygonized"+str(threshold)+".json") as f:
         data = json.load(f)
@@ -37,10 +39,19 @@ def generate_route(coords, threshold):
             if j[0].contains(i):
                 aqi.append([j,i])
                 break
+    x_distance = 0
+    y_distance = 0
+    total_distest = 0
+    x_origin = aqi[0][1].x
+    y_origin = aqi[0][1].y
     for i in range(len(aqi)-1):
         print(aqi[i][1].x,aqi[i][1].y)
-        distance = int(110.574)*aqi[i][1].distance(aqi[i+1][1])
-        total_distance += distance
+        x_distance += int(110.574)*(aqi[i][1].x-aqi[i+1][1].x)
+        y_distance += int(111.320)*math.cos((aqi[i][1].y+aqi[i+1][1].y)/2)*(aqi[i][1].y-aqi[i+1][1].y)
         level = aqi[i][0][1]
+        distance = math.sqrt((abs(aqi[i][1].x-aqi[i+1][1].x))**2+(abs(aqi[i][1].y-aqi[i+1][1].y))**2)
         total += distance*level
+        total_distest += distance
+    total_distance = math.sqrt((abs(x_distance-x_origin))**2+(abs(y_distance-y_origin))**2)    
     print(total/total_distance, "for threshold", threshold)
+    print(total/total_distest, "test", threshold)
