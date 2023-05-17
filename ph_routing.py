@@ -45,7 +45,7 @@ def generate_route(coords, threshold):
     x_origin = aqi[0][1].x
     y_origin = aqi[0][1].y
     for i in range(len(aqi)-1):
-        print(aqi[i][1].x,aqi[i][1].y)
+        #print(aqi[i][1].x,aqi[i][1].y)
         x_distance += int(110.574)*(aqi[i][1].x-aqi[i+1][1].x)
         y_distance += int(111.320)*math.cos((aqi[i][1].y+aqi[i+1][1].y)/2)*(aqi[i][1].y-aqi[i+1][1].y)
         level = aqi[i][0][1]
