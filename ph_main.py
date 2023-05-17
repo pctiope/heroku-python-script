@@ -33,7 +33,7 @@ while 1:
         polygonize(threshold, date_time)
         filter(threshold, date_time)
         generate_route(coords, threshold)
-        if max_AQI <= 50:
+        '''if max_AQI <= 50:
             print("aqi less than 50")
-            break
+            break'''
     sleep(60)    # temporary
