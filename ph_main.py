@@ -27,10 +27,12 @@ while 1:
     df_to_shp(df, date_time)
     get_idw(date_time)
     max_AQI = max([int(i) for i in US_AQI])
-    for i in range(max_AQI, 0, -10):
+    for i in range(max_AQI, 0, -1):
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
         filter(threshold, date_time)
         generate_route(coords, threshold)
+        if max_AQI <= 50:
+            break
     sleep(60)    # temporary

@@ -11,6 +11,7 @@ def generate_route(coords, threshold):
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
 
     route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)
+    print(route)
 
     '''json_output = json.dumps(route.raw, indent=4)
     with open("./temp/route_results"+date_time+".json","w") as f:
