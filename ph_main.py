@@ -34,5 +34,6 @@ while 1:
         filter(threshold, date_time)
         generate_route(coords, threshold)
         if max_AQI <= 50:
+            print("aqi less than 50")
             break
     sleep(60)    # temporary
