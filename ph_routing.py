@@ -38,7 +38,7 @@ def generate_route(coords, threshold):
                 aqi.append([j,i])
                 break
     for i in range(len(aqi)-1):
-        print(aqi[i][1][0],aqi[i][1][1])
+        print(aqi[i][1].x,aqi[i][1].y)
         distance = int(110.574)*aqi[i][1].distance(aqi[i+1][1])
         total_distance += distance
         level = aqi[i][0][1]
