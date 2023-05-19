@@ -17,8 +17,9 @@ def filter(threshold, date_time):
     
     highest_aqi_poly = [[[]]]
     if len(temp):
+        aqi_highest_poly = polygon["properties"]["AQI"][0]
         highest_aqi_poly = mapping(temp[0])["coordinates"]
-        print(highest_aqi_poly)
+        print(highest_aqi_poly, aqi_highest_poly)
     exclude_poly = [[[]]]
     if len(temp):
         unions = unary_union(temp)
