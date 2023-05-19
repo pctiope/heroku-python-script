@@ -15,11 +15,11 @@ def filter(threshold, date_time):
             coordinates = polygon["geometry"]
             temp.append(shape(coordinates))
     
-    highest_aqi_poly = [[[]]]
-    aqi_highest_poly = sorted_data[0]["properties"]["AQI"]
-    highest_aqi_poly = mapping(temp[0])["coordinates"]
     exclude_poly = [[[]]]
     if len(temp):
+        highest_aqi_poly = [[[]]]
+        aqi_highest_poly = sorted_data[0]["properties"]["AQI"]
+        highest_aqi_poly = mapping(temp[0])["coordinates"]
         unions = unary_union(temp)
         # print(mapping(unions)["coordinates"])
         if (isinstance(mapping(unions)["coordinates"],list)):
