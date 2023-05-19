@@ -19,9 +19,9 @@ def random_waypoints(poly, max_poly):
             print(mp) 
             np_coords = list(nearest_points(poly, mp))
             np = Point(random.choice(np_coords))
+            print(np, 'nearest')
          else:
             np = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
-         print(np)
          p = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
          if poly.contains(p) and poly.contains(np):
              return np, p
