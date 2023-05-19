@@ -16,10 +16,8 @@ def filter(threshold, date_time):
             temp.append(shape(coordinates))
     
     highest_aqi_poly = [[[]]]
-    if len(temp):
-        aqi_highest_poly = sorted_data[0]["properties"]["AQI"]
-        highest_aqi_poly = mapping(temp[0])["coordinates"]
-        #print(highest_aqi_poly, aqi_highest_poly)
+    aqi_highest_poly = sorted_data[0]["properties"]["AQI"]
+    highest_aqi_poly = mapping(temp[0])["coordinates"]
     exclude_poly = [[[]]]
     if len(temp):
         unions = unary_union(temp)
