@@ -19,7 +19,7 @@ def filter(threshold, date_time):
     if len(temp):
         aqi_highest_poly = sorted_data[0]["properties"]["AQI"]
         highest_aqi_poly = mapping(temp[0])["coordinates"]
-        print(highest_aqi_poly, aqi_highest_poly)
+        #print(highest_aqi_poly, aqi_highest_poly)
     exclude_poly = [[[]]]
     if len(temp):
         unions = unary_union(temp)
@@ -36,6 +36,8 @@ def filter(threshold, date_time):
     json_output = json.dumps(output_dict, indent=4)
     with open("./temp/filtered"+str(threshold)+".json", "w") as outfile:
         outfile.write(json_output)
+        
+    return highest_aqi_poly, aqi_highest_poly
     
     '''coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
