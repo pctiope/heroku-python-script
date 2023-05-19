@@ -9,7 +9,7 @@ def random_waypoints(poly, max_poly):
          #mp_coords = None
          #mp_coords = list(Polygon(zip(max_poly[0])).exterior.coords)
          obj = mapping(Polygon(max_poly[0]))
-         mp_coords = list(obj['coordinates'][0])
+         mp_coords = obj['coordinates'][0]
          print(mp_coords)
      else:
          mp_coords = None
