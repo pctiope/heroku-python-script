@@ -9,13 +9,15 @@ def random_waypoints(poly, max_poly):
          #mp_coords = None
          #mp_coords = list(Polygon(zip(max_poly[0])).exterior.coords)
          obj = mapping(Polygon(max_poly[0]))
-         mp_coords = Point(obj['coordinates'][0])
+         mp_coords = list(obj['coordinates'][0])
          print(mp_coords)
      else:
          mp_coords = None
      while True:
          if mp_coords != None:
-            np_coords = list(nearest_points(poly, mp_coords))
+            mp = Point(random.choice(mp_coords))
+            print(mp) 
+            np_coords = list(nearest_points(poly, mp))
             np = Point(random.choice(np_coords))
          else:
             np = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
