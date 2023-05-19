@@ -14,7 +14,11 @@ def filter(threshold, date_time):
         if polygon["properties"]["AQI"] >= threshold and polygon["properties"]["AQI"] <= 500:
             coordinates = polygon["geometry"]
             temp.append(shape(coordinates))
-
+    
+    highest_aqi_poly = [[[]]]
+    if len(temp):
+        highest_aqi_poly = mapping(temp[0])["coordinates"]
+        print(highest_aqi_poly)
     exclude_poly = [[[]]]
     if len(temp):
         unions = unary_union(temp)
