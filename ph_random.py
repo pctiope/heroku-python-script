@@ -9,7 +9,7 @@ def random_waypoints(poly, max_poly):
      else:
          mp_coords = None
      while True:
-         if len(mp_coords) > 0:
+         if mp_coords != None:
             mp = random.choice(mp_coords)
             np_coords = list(nearest_points(poly, mp))
             np = random.choice(np_coords).wkt
