@@ -4,7 +4,7 @@ from shapely.ops import nearest_points
 
 def random_waypoints(poly, max_poly):
      minx, miny, maxx, maxy = poly.bounds
-     if len(max_poly[0][0].exterior.coords) > 0:
+     if len(max_poly[0][0]) > 0:
          mp_coords = list(max_poly[0][0].exterior.coords)
      while True:
          if len(mp_coords) > 0:
