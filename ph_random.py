@@ -24,5 +24,5 @@ def random_waypoints(poly, max_poly):
             np = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
          p = Point(random.uniform(minx, maxx), random.uniform(miny, maxy))
          if poly.contains(p) and poly.contains(np):
-             print('contains')
+             print('contains', np, )
              return np, p

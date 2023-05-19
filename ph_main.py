@@ -23,15 +23,21 @@ while 1:
     df_to_shp(df, date_time)
     get_idw(date_time)
     max_AQI = max([int(i) for i in US_AQI])
+    threshold = max_AQI
+    print("threshold: "+str(threshold))
+    polygonize(threshold, date_time)
+    max_poly, max_aqi = filter(threshold, date_time)
+    print(max_poly, max_aqi)
+    poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
+    first_point, second_point = random_waypoints(poly, max_poly)
+    coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
+    generate_route(coords, threshold)
     for i in range(max_AQI, 0, -1):
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
-        max_poly, max_aqi = filter(threshold, date_time)
+        filter(threshold, date_time)
         print(max_poly, max_aqi)
-        poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
-        first_point, second_point = random_waypoints(poly, max_poly)
-        coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
         generate_route(coords, threshold)
         '''if max_AQI <= 50:
             print("aqi less than 50")
