@@ -4,14 +4,14 @@ from shapely.geometry import Point, Polygon, shape, mapping
 import json
 import math
 
-def generate_route(coords, threshold):
+def generate_normal(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
 
     with open("./temp/filtered"+str(threshold)+".json","r") as f:
         data = json.load(f)
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
 
-    route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)
+    route = client.directions(locations=coords,instructions=True,profile="pedestrian")
     #print(route)
 
     '''json_output = json.dumps(route.raw, indent=4)
@@ -49,4 +49,4 @@ def generate_route(coords, threshold):
         total += distance*level
         total_distest += distance
     print(total/total_distest, "total exposure over distance")
-    return total/total_distest
+    return tota/total_distest

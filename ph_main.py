@@ -9,6 +9,7 @@ from ph_polygonize import polygonize
 from ph_filter import filter
 from ph_routing import generate_route
 from ph_random import random_waypoints
+from ph_normal import generate_normal
 
 with open("./metro_manila.geojson") as f:
         data = json.load(f)
@@ -32,7 +33,9 @@ while 1:
         poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
         first_point, second_point = random_waypoints(poly, max_poly)
         coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
-        generate_route(coords, threshold)
+        route_exposure = generate_route(coords, threshold)
+        normal_exposure = generate_normal(coords, threshold)
+        print(route_exposure, normal_exposure, "route exposure, normal exposure")
         '''if max_AQI <= 50:
             print("aqi less than 50")
             break'''
