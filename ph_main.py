@@ -44,8 +44,7 @@ while 1:
         '''if max_poly != old_max_poly:
             print(max_poly)'''
         old_max_poly = max_poly
-        route_exposure = generate_route(coords, threshold)
-        normal_exposure = generate_route(coords)
+        route_exposure, normal_exposure = generate_route(coords, threshold)
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
         old_route_exp = route_exposure
