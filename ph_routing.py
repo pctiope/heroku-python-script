@@ -16,14 +16,14 @@ def generate_route(coords, threshold):
 
     output_list = []
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
-    sleep(2)
+    sleep(5)
     route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)
     listy = [route, normal]
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
     json_output = json.dumps(output_dict, indent=4)
-    #print(json_output)
-    '''with open("./temp/route_results"+date_time+".json","w") as f:
-        f.write(json_output)'''
+    route_output = json.dumps(route.raw, indent=4)
+    '''with open("./results/route_results.raw","w") as f:
+        f.write(route_output)'''
     
     for selector in listy:
         polyline = selector.raw["trip"]["legs"][0]["shape"]
@@ -63,4 +63,6 @@ def generate_route(coords, threshold):
     repo = g.get_repo("pctiope/heroku-python-script")
     contents = repo.get_contents("/geojson/route.geojson", ref="dev")
     repo.update_file(contents.path, "updated route.geojson", json_output, contents.sha, branch="dev")
+    contents = repo.get_contents("/route/route_results.raw", ref="dev")
+    repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="dev")
     return output_list[0], output_list[1]
