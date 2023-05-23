@@ -58,6 +58,8 @@ while 1:
         polygonize(threshold, date_time)
         exclude_poly = filter(threshold, date_time)
         route_exposure = generate_route(coords, threshold)
+        if route_exposure > old_route_exp:
+            break
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
             i -= 1
