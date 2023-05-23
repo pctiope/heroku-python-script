@@ -44,7 +44,7 @@ while 1:
          sensors.append(Sensor(Sensor_Name[i],X_location[i],Y_location[i],US_AQI[i]))
     sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
     top5_rand = random.randint(0,0)
-    first_point, second_point = random_waypoints(poly, sensors[top5_rand].x, sensors[top5_rand].y)
+    first_point, second_point = random_waypoints(poly, sensors[0].x, sensors[0].y)
 
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
     route_exposure = generate_route(coords, threshold)
@@ -58,6 +58,7 @@ while 1:
         polygonize(threshold, date_time)
         max_poly = filter(threshold, date_time)
         route_exposure = generate_route(coords, threshold)
+        sleep(5)
         normal_exposure = generate_normal(coords, threshold)
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
