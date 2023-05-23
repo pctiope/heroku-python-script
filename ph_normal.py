@@ -48,5 +48,4 @@ def generate_normal(coords, threshold):
         distance = math.sqrt((abs(aqi[i][1].x-aqi[i+1][1].x))**2+(abs(aqi[i][1].y-aqi[i+1][1].y))**2)
         total += distance*level
         total_distest += distance
-    print(total/total_distest, "total exposure over distance")
     return total/total_distest
