@@ -51,5 +51,6 @@ while 1:
         #print(max_poly)
         route_exposure = generate_route(coords, threshold)
         normal_exposure = generate_normal(coords, threshold)
-        print(route_exposure, normal_exposure, "route exposure, normal exposure")
+        if route_exposure != normal_exposure:
+            print(route_exposure, normal_exposure, "route exposure, normal exposure")
     #sleep(60)    # temporary
