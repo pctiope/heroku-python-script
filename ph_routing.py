@@ -78,4 +78,4 @@ def generate_route(coords, threshold):
     repo.update_file(contents.path, "updated route.geojson", output, contents.sha, branch="dev")
     contents = repo.get_contents("/results/route_results.raw", ref="dev")
     repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="dev")
-    return output_list[0], output_list[1]
+    return output_list[0]
