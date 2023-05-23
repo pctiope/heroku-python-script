@@ -7,7 +7,7 @@ import base64
 from time import sleep
 from github import Github
 
-def generate_route(coords, threshold):
+def generate_normal(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
