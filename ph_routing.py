@@ -63,6 +63,6 @@ def generate_route(coords, threshold):
     repo = g.get_repo("pctiope/heroku-python-script")
     contents = repo.get_contents("/geojson/route.geojson", ref="dev")
     repo.update_file(contents.path, "updated route.geojson", json_output, contents.sha, branch="dev")
-    contents = repo.get_contents("/route/route_results.raw", ref="dev")
+    contents = repo.get_contents("/results/route_results.raw", ref="dev")
     repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="dev")
     return output_list[0], output_list[1]
