@@ -10,6 +10,14 @@ from ph_filter import filter
 from ph_routing import generate_route
 from ph_random import random_waypoints
 from ph_normal import generate_normal
+import random
+
+class Sensor:
+     def __init__(self,name,x,y,aqi):
+        self.name = name
+        self.x = x
+        self.y = y
+        self.aqi = aqi
 
 with open("./metro_manila.geojson") as f:
         data = json.load(f)
@@ -31,26 +39,31 @@ while 1:
     #print(max_poly)
     
     poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
-    temp = 0
-    max_idx = None
-    for idx,aqi in enumerate(US_AQI):
-         if aqi > temp:
-              temp = aqi
-              max_idx = idx
-    first_point, second_point = random_waypoints(poly, X_location[max_idx], Y_location[max_idx])          
+    sensors = []
+    for i in range(len(Sensor_Name)):
+         sensors.append(Sensor(Sensor_Name[i],X_location[i],Y_location[i],US_AQI[i]))
+    sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
+    top5_rand = random.randint(0,4)
+    first_point, second_point = random_waypoints(poly, sensors[top5_rand].x, sensors[top5_rand].y)
+
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
     route_exposure = generate_route(coords, threshold)
     normal_exposure = generate_normal(coords, threshold)
     print(route_exposure, normal_exposure, "route exposure, normal exposure")
 
-    for i in range(max_AQI-1, 0, -5):
+    i = max_AQI - 1
+    while i > 0:
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
         max_poly = filter(threshold, date_time)
-        #print(max_poly)
         route_exposure = generate_route(coords, threshold)
         normal_exposure = generate_normal(coords, threshold)
-        if route_exposure != normal_exposure:
+        if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
+            i -= 1
+        else:
+            i -= 5
+        old_route_exp, old_normal_exp = route_exposure, normal_exposure
+        print(route_exposure, normal_exposure, "route exposure, normal exposure")
     #sleep(60)    # temporary
