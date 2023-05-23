@@ -45,6 +45,7 @@ def generate_route(coords, threshold):
     with open("./temp/filtered"+str(threshold)+".json","r") as f:
         data = json.load(f)
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
+        print(exclude_poly)
         if exclude_poly == [[[]]]:
             route = client.directions(locations=coords,instructions=True,profile="pedestrian")
         else:
