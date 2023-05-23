@@ -15,6 +15,7 @@ def generate_route(coords, threshold):
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
 
     output_list = []
+    print(exclude_poly)
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     sleep(5)
     route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)

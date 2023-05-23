@@ -27,7 +27,7 @@ while 1:
     print("threshold: "+str(threshold))
     polygonize(threshold, date_time)
     max_poly = filter(threshold, date_time)
-    print(max_poly)
+    #print(max_poly)
     
     poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
     temp = 0
@@ -46,7 +46,7 @@ while 1:
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
         max_poly = filter(threshold, date_time)
-        print(max_poly)
+        #print(max_poly)
         route_exposure, normal_exposure = generate_route(coords, threshold)
         print(route_exposure, normal_exposure, "route exposure, normal exposure")
     #sleep(60)    # temporary
