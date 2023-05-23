@@ -21,13 +21,14 @@ while 1:
     df_to_csv(df, date_time)
     df_to_shp(df, date_time)
     get_idw(date_time)
+    
     max_AQI = max([int(i) for i in US_AQI])
     threshold = max_AQI
     print("threshold: "+str(threshold))
     polygonize(threshold, date_time)
     max_poly = filter(threshold, date_time)
-    old_max_poly = max_poly
     print(max_poly)
+    
     poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
     temp = 0
     max_idx = None
@@ -39,15 +40,13 @@ while 1:
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
     route_exposure, normal_exposure = generate_route(coords, threshold)
     print(route_exposure, normal_exposure, "route exposure, normal exposure")
+
     for i in range(max_AQI-1, 0, -2):
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
         max_poly = filter(threshold, date_time)
-        '''if max_poly != old_max_poly:
-            print(max_poly)'''
+        print(max_poly)
         route_exposure, normal_exposure = generate_route(coords, threshold)
-        '''if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
-            print(route_exposure, normal_exposure, "route exposure, normal exposure")'''
         print(route_exposure, normal_exposure, "route exposure, normal exposure")
     #sleep(60)    # temporary

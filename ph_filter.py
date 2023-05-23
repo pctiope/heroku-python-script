@@ -18,7 +18,6 @@ def filter(threshold, date_time):
     exclude_poly = [[[]]]
     if len(temp):
         unions = unary_union(temp)
-        # print(mapping(unions)["coordinates"])
         if (isinstance(mapping(unions)["coordinates"],list)):
             exclude_poly = [poly[0] for poly in mapping(unions)["coordinates"]]
         elif (isinstance(mapping(unions)["coordinates"],tuple)):
@@ -31,10 +30,7 @@ def filter(threshold, date_time):
     with open("./temp/filtered"+str(threshold)+".json", "w") as outfile:
         outfile.write(json_output)
         
-    if (temp):
-        return exclude_poly
-    else:
-        return None
+    return exclude_poly
     
     '''coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
