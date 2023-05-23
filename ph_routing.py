@@ -60,6 +60,8 @@ def generate_route(coords, threshold):
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/heroku-python-script")
+    contents = repo.get_contents("/geojson/route.geojson", ref="dev")
+    repo.update_file(contents.path, "updated route.geojson", output, contents.sha, branch="dev")
     contents = repo.get_contents("/results/route_results.raw", ref="dev")
     repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="dev")
     return total/total_distance
