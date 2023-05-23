@@ -45,7 +45,6 @@ while 1:
     top5_rand = random.randint(0,2)
     print(sensors[top5_rand].x,sensors[top5_rand].y)
     first_point, second_point = random_waypoints(poly, sensors[0].x, sensors[0].y)
-
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
     route_exposure = generate_route(coords, threshold)
     sleep(5)
@@ -59,8 +58,6 @@ while 1:
         polygonize(threshold, date_time)
         exclude_poly = filter(threshold, date_time)
         route_exposure = generate_route(coords, threshold)
-        sleep(5)
-        normal_exposure = generate_normal(coords, threshold)
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
             i -= 1
