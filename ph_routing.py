@@ -11,10 +11,10 @@ def generate_route(coords, threshold):
         data = json.load(f)
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
 
-    list = [route, normal]
     output_list = []
     route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
+    list = [route, normal]
     #print(route)
     
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
