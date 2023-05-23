@@ -44,6 +44,7 @@ def generate_route(coords, threshold):
         with open("./temp/polygonized"+str(threshold)+".json") as f:
             data = json.load(f)
         data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
+        output_dict["features"].append(data['features'])
         points = [Point(i[0], i[1]) for i in route_points]
         for polygon in data['features']:
             if polygon["properties"]["AQI"] <= 500:
