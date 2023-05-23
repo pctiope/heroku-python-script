@@ -1,25 +1,14 @@
 import random
 from shapely.geometry import Point, Polygon, mapping
 from shapely.ops import nearest_points
+import math
+import random
 
-def random_waypoints(poly, max_poly):
-    '''print(poly, type(poly))
-    print(max_poly, type(max_poly))'''
-    if max_poly is not None:
-        polydiff = poly.difference(max_poly)
-        minxdiff, minydiff, maxxdiff, maxydiff = polydiff.bounds
-        '''print(polydiff, type(polydiff))'''
-    else:
-        minxdiff, minydiff, maxxdiff, maxydiff = poly.bounds
-    '''if len(max_poly[0][0]) > 0:
-        obj = mapping(Polygon(max_poly[0]))
-        mp_coords = obj['coordinates'][0]
-        print(mp_coords)
-    else:
-        mp_coords = None'''
+def random_waypoints(poly,Xo,Yo):
+    d = 0.05
     while True:
-        p1 = Point(random.uniform(minxdiff, maxxdiff), random.uniform(minydiff, maxydiff))
-        p2 = Point(random.uniform(minxdiff, maxxdiff), random.uniform(minydiff, maxydiff))
+        rad = 2*math.pi*random.uniform(0,1)
+        p1 = Point(Xo+d*math.cos(rad),Yo+d*math.sin(rad))
+        p2 = Point(Xo-d*math.cos(rad),Yo-d*math.sin(rad))
         if poly.contains(p1) and poly.contains(p2):
-            print('contains', p1, p2)
             return p1, p2

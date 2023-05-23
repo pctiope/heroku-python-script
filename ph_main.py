@@ -29,7 +29,13 @@ while 1:
     old_max_poly = max_poly
     print(max_poly)
     poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
-    first_point, second_point = random_waypoints(poly, max_poly)
+    temp = 0
+    max_idx = None
+    for idx,aqi in enumerate(US_AQI):
+         if aqi > temp:
+              temp = aqi
+              max_idx = idx
+    first_point, second_point = random_waypoints(poly, X_location[max_idx], Y_location[max_idx])          
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
     route_exposure = generate_route(coords, threshold)
     normal_exposure = generate_route(coords, threshold)
