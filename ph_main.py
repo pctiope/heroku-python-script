@@ -50,7 +50,7 @@ while 1:
     route_exposure = generate_route(coords, threshold)
     normal_exposure = generate_normal(coords, threshold)
     print(route_exposure, normal_exposure, "route exposure, normal exposure")
-
+    old_route_exp, old_normal_exp = route_exposure, normal_exposure
     i = max_AQI - 1
     while i > 0:
         threshold = i
