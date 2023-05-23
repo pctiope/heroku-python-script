@@ -64,4 +64,3 @@ while 1:
         else:
             i -= 5
         old_route_exp, old_normal_exp = route_exposure, normal_exposure
-        print(route_exposure, normal_exposure, "route exposure, normal exposure")
