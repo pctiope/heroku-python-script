@@ -52,6 +52,7 @@ def generate_route(coords, threshold):
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
     json_output = json.dumps(output_dict, indent=4)
     route_output = json.dumps(route.raw, indent=4)
+    normal_output = json.dumps(normal.raw, indent=4)
     '''with open("./results/route_results.raw","w") as f:
         f.write(route_output)'''
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
@@ -61,4 +62,6 @@ def generate_route(coords, threshold):
     repo.update_file(contents.path, "updated route.geojson", json_output, contents.sha, branch="dev")
     contents = repo.get_contents("/results/route_results.raw", ref="dev")
     repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="dev")
+    contents = repo.get_contents("/results/normal_results.raw", ref="dev")
+    repo.update_file(contents.path, "updated normal_results.raw", normal_output, contents.sha, branch="dev")
     return calculate(route, threshold), calculate(normal, threshold)
