@@ -59,10 +59,11 @@ while 1:
         exclude_poly = filter(threshold, date_time)
         route_exposure = generate_route(coords, threshold)
         if route_exposure > old_route_exp:
+            route_exposure = generate_route(coords, old_threshold)
             break
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
             i -= 1
         else:
             i -= 5
-        old_route_exp, old_normal_exp = route_exposure, normal_exposure
+        old_route_exp, old_normal_exp, old_threshold = route_exposure, normal_exposure, threshold
