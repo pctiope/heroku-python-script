@@ -8,6 +8,7 @@ from ph_idw import get_idw
 from ph_polygonize import polygonize
 from ph_filter import filter
 from ph_routing import generate_route
+from ph_normal import generate_normal
 from ph_random import random_waypoints
 import random
 
@@ -46,19 +47,18 @@ while 1:
     first_point, second_point = random_waypoints(poly, sensors[0].x, sensors[0].y)
 
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
-    route_exposure, normal_exposure = generate_route(coords, threshold)
+    route_exposure = generate_route(coords, threshold)
+    normal_exposure = generate_normal(coords, threshold)
     old_route_exp, old_normal_exp = route_exposure, normal_exposure
     print(route_exposure, normal_exposure, "route exposure, normal exposure")
-
     i = max_AQI - 1
     while i > 0:
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
         exclude_poly = filter(threshold, date_time)
-        '''if max_poly != old_max_poly:
-            print(max_poly)'''
-        route_exposure, normal_exposure = generate_route(coords, threshold)
+        route_exposure = generate_route(coords, threshold)
+        normal_exposure = generate_normal(coords, threshold)
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
             i -= 1
@@ -66,4 +66,3 @@ while 1:
             i -= 5
         old_route_exp, old_normal_exp = route_exposure, normal_exposure
         print(route_exposure, normal_exposure, "route exposure, normal exposure")
-    #sleep(60)    # temporary
