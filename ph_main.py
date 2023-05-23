@@ -32,7 +32,7 @@ while 1:
     first_point, second_point = random_waypoints(poly, max_poly)
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
     route_exposure = generate_route(coords, threshold)
-    normal_exposure = generate_normal(coords, threshold)
+    normal_exposure = generate_route(coords, threshold)
     print(route_exposure, normal_exposure, "route exposure, normal exposure")
     old_route_exp = route_exposure
     old_normal_exp = normal_exposure
