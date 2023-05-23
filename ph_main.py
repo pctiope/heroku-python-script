@@ -42,8 +42,8 @@ while 1:
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
         max_poly = filter(threshold, date_time)
-        if max_poly != old_max_poly:
-            print(max_poly)
+        '''if max_poly != old_max_poly:
+            print(max_poly)'''
         old_max_poly = max_poly
         route_exposure = generate_route(coords, threshold)
         normal_exposure = generate_normal(coords, threshold)
