@@ -3,6 +3,8 @@ from routingpy.utils import decode_polyline6
 from shapely.geometry import Point, Polygon, shape, mapping
 import json
 import math
+import base64
+from github import Github
 
 def generate_route(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
@@ -12,11 +14,9 @@ def generate_route(coords, threshold):
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
 
     output_list = []
-    route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
+    route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)
     listy = [route, normal]
-    #print(route)
-    
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
     json_output = json.dumps(output_dict, indent=4)
     print(json_output)
@@ -55,4 +55,10 @@ def generate_route(coords, threshold):
             total += distance*level
             total_distest += distance
         output_list.append(total/total_distest)
+        
+    coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
+    g = Github(base64.b64decode(coded_string).decode("utf-8"))
+    repo = g.get_repo("pctiope/heroku-python-script")
+    contents = repo.get_contents("/geojson/route.geojson", ref="dev")
+    repo.update_file(contents.path, "updated route.geojson", json_output, contents.sha, branch="dev")
     return output_list[0], output_list[1]
