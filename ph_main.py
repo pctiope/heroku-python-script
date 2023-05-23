@@ -60,7 +60,7 @@ while 1:
         route_exposure = generate_route(coords, threshold)
         if route_exposure > old_route_exp:
             route_exposure = generate_route(coords, old_threshold)
-            print(route_exposure, normal_exposure, "route exposure, normal exposure")
+            print(old_route_exp, old_normal_exp, "route exposure, normal exposure")
             break
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
