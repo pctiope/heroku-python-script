@@ -38,7 +38,7 @@ while 1:
     print(route_exposure, normal_exposure, "route exposure, normal exposure")
     old_route_exp = route_exposure
     old_normal_exp = normal_exposure
-    for i in range(max_AQI-1, 0, -1):
+    for i in range(max_AQI-1, 0, -10):
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
