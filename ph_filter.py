@@ -38,7 +38,7 @@ def filter(threshold, date_time):
     if (temp):
         return highest_aqi_poly, aqi_highest_poly
     else:
-        return Polygon([[[]]]), 0
+        return None, 0
     
     '''coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
