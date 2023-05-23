@@ -9,19 +9,25 @@ from github import Github
 
 def generate_route(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
-    
+
     with open("./temp/filtered"+str(threshold)+".json","r") as f:
         data = json.load(f)
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
     if len(exclude_poly[0][0]):
-        route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly)
+        try:
+            route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly)
+            output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
+        except Exception:
+            route = client.directions(locations=coords,instructions=True,profile="pedestrian")
+            output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
     else:
         route = client.directions(locations=coords,instructions=True,profile="pedestrian")
-    output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
+        output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
     route_output = json.dumps(route.raw, indent=4)
     with open("./results/route_results"+str(threshold)+".json","w") as f:
         f.write(route_output)
-    
+
+
     polyline = route.raw["trip"]["legs"][0]["shape"]
     decoded = decode_polyline6(polyline)
     route_points = [list(element) for element in decoded]
@@ -52,11 +58,11 @@ def generate_route(coords, threshold):
         distance = math.sqrt((abs(aqi[i][1].x-aqi[i+1][1].x))**2+(abs(aqi[i][1].y-aqi[i+1][1].y))**2)
         total += distance*level
         total_distance += distance
-    
+
     output = json.dumps(output_dict, indent=4)
     '''with open("./results/results_"+str(threshold)+".json","w") as f:
         f.write(output)'''
-        
+
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/heroku-python-script")
