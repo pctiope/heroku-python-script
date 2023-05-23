@@ -9,7 +9,6 @@ from ph_polygonize import polygonize
 from ph_filter import filter
 from ph_routing import generate_route
 from ph_random import random_waypoints
-from ph_normal import generate_normal
 
 with open("./metro_manila.geojson") as f:
         data = json.load(f)
@@ -46,7 +45,7 @@ while 1:
             print(max_poly)'''
         old_max_poly = max_poly
         route_exposure = generate_route(coords, threshold)
-        normal_exposure = generate_normal(coords, threshold)
+        normal_exposure = generate_route(coords)
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
         old_route_exp = route_exposure

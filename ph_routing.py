@@ -4,18 +4,22 @@ from shapely.geometry import Point, Polygon, shape, mapping
 import json
 import math
 
-def generate_route(coords, threshold):
+def generate_route(coords, threshold=None):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
-
-    with open("./temp/filtered"+str(threshold)+".json","r") as f:
-        data = json.load(f)
-        exclude_poly = data["features"][0]["geometry"]["coordinates"]
+    if threshold is not None:
+        with open("./temp/filtered"+str(threshold)+".json","r") as f:
+            data = json.load(f)
+            exclude_poly = data["features"][0]["geometry"]["coordinates"]
+    else:
+        exclude_poly = None
 
     route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)
     #print(route)
-
-    '''json_output = json.dumps(route.raw, indent=4)
-    with open("./temp/route_results"+date_time+".json","w") as f:
+    
+    output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
+    json_output = json.dumps(output_dict, indent=4)
+    print(json_output)
+    '''with open("./temp/route_results"+date_time+".json","w") as f:
         f.write(json_output)'''
         
     polyline = route.raw["trip"]["legs"][0]["shape"]
