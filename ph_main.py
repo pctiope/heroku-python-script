@@ -53,4 +53,4 @@ while 1:
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
         old_route_exp = route_exposure
         old_normal_exp = normal_exposure
-    sleep(60)    # temporary
+    #sleep(60)    # temporary
