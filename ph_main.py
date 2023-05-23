@@ -26,10 +26,9 @@ while 1:
     threshold = max_AQI
     print("threshold: "+str(threshold))
     polygonize(threshold, date_time)
-    max_poly, max_aqi = filter(threshold, date_time)
+    max_poly = filter(threshold, date_time)
     old_max_poly = max_poly
-    old_max_aqi = max_aqi
-    print(max_poly, max_aqi)
+    print(max_poly)
     poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
     first_point, second_point = random_waypoints(poly, max_poly)
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
@@ -42,11 +41,10 @@ while 1:
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
-        max_poly, max_aqi = filter(threshold, date_time)
-        if max_aqi != old_max_aqi or max_poly != old_max_poly:
-            print(max_poly, max_aqi)
+        max_poly = filter(threshold, date_time)
+        if max_poly != old_max_poly:
+            print(max_poly)
         old_max_poly = max_poly
-        old_max_aqi = max_aqi
         route_exposure = generate_route(coords, threshold)
         normal_exposure = generate_normal(coords, threshold)
         if route_exposure != old_route_exp or normal_exposure != old_normal_exp:

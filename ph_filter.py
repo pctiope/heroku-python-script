@@ -17,9 +17,6 @@ def filter(threshold, date_time):
     
     exclude_poly = [[[]]]
     if len(temp):
-        highest_aqi_poly = [[[]]]
-        aqi_highest_poly = sorted_data[0]["properties"]["AQI"]
-        highest_aqi_poly = mapping(temp[0])["coordinates"]
         unions = unary_union(temp)
         # print(mapping(unions)["coordinates"])
         if (isinstance(mapping(unions)["coordinates"],list)):
@@ -28,7 +25,6 @@ def filter(threshold, date_time):
             exclude_poly = mapping(unions)["coordinates"]
         else:
             print("Something went wrong")
-    # print(exclude_poly)
 
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
@@ -36,9 +32,9 @@ def filter(threshold, date_time):
         outfile.write(json_output)
         
     if (temp):
-        return highest_aqi_poly, aqi_highest_poly
+        return exclude_poly
     else:
-        return None, 0
+        return None
     
     '''coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
