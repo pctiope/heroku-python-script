@@ -41,7 +41,7 @@ while 1:
     route_exposure, normal_exposure = generate_route(coords, threshold)
     print(route_exposure, normal_exposure, "route exposure, normal exposure")
 
-    for i in range(max_AQI-1, 0, -2):
+    for i in range(max_AQI-1, 0, -5):
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
