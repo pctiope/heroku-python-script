@@ -3,6 +3,8 @@ from shapely.geometry import Point, Polygon, mapping
 from shapely.ops import nearest_points
 
 def random_waypoints(poly, max_poly):
+    print(poly, type(poly))
+    print(max_poly, type(max_poly))
     polydiff = poly.difference(max_poly)
     print(polydiff, type(polydiff))
     minxdiff, minydiff, maxxdiff, maxydiff = polydiff.bounds
