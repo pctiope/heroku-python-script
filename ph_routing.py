@@ -7,7 +7,7 @@ import base64
 from time import sleep
 from github import Github
 
-def calculate(result):
+def calculate(result, threshold):
     polyline = result.raw["trip"]["legs"][0]["shape"]
     decoded = decode_polyline6(polyline)
     route_points = [list(element) for element in decoded]
@@ -61,4 +61,4 @@ def generate_route(coords, threshold):
     repo.update_file(contents.path, "updated route.geojson", json_output, contents.sha, branch="dev")
     contents = repo.get_contents("/results/route_results.raw", ref="dev")
     repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="dev")
-    return calculate(route), calculate(normal)
+    return calculate(route, threshold), calculate(normal, threshold)
