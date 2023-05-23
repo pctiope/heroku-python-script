@@ -14,7 +14,7 @@ def generate_route(coords, threshold):
     output_list = []
     route = client.directions(locations=coords,instructions=True,profile="pedestrian",exclude_polygon=exclude_poly)
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
-    list = [route, normal]
+    listy = [route, normal]
     #print(route)
     
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
@@ -23,7 +23,7 @@ def generate_route(coords, threshold):
     '''with open("./temp/route_results"+date_time+".json","w") as f:
         f.write(json_output)'''
     
-    for selector in list:
+    for selector in listy:
         polyline = selector.raw["trip"]["legs"][0]["shape"]
         decoded = decode_polyline6(polyline)
         route_points = [list(element) for element in decoded]
