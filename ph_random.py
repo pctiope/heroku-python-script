@@ -3,7 +3,7 @@ from shapely.geometry import Point, Polygon, mapping
 from shapely.ops import nearest_points
 
 def random_waypoints(poly, max_poly):
-    polydiff = poly.difference(max_poly)
+    polydiff = Polygon(poly.difference(max_poly))
     minxdiff, minydiff, maxxdiff, maxydiff = polydiff.bounds
     '''if len(max_poly[0][0]) > 0:
         obj = mapping(Polygon(max_poly[0]))
