@@ -3,15 +3,14 @@
         "locations": [
             {
                 "type": "break",
-                "lat": 14.495408,
-                "lon": 120.995769,
-                "side_of_street": "right",
+                "lat": 14.489099,
+                "lon": 121.011343,
                 "original_index": 0
             },
             {
                 "type": "break",
-                "lat": 14.479047,
-                "lon": 121.00727,
+                "lat": 14.485356,
+                "lon": 120.991696,
                 "original_index": 1
             }
         ],
@@ -19,85 +18,89 @@
             {
                 "maneuvers": [
                     {
-                        "type": 2,
-                        "instruction": "Walk southwest.",
-                        "verbal_succinct_transition_instruction": "Walk southwest. Then Turn right.",
-                        "verbal_pre_transition_instruction": "Walk southwest. Then Turn right.",
+                        "type": 1,
+                        "instruction": "Walk southwest on Joy.",
+                        "verbal_succinct_transition_instruction": "Walk southwest. Then Turn right onto Love.",
+                        "verbal_pre_transition_instruction": "Walk southwest on Joy. Then Turn right onto Love.",
                         "verbal_post_transition_instruction": "Continue for 50 meters.",
-                        "time": 38.29,
-                        "length": 0.051,
-                        "cost": 191.452,
+                        "street_names": [
+                            "Joy"
+                        ],
+                        "time": 37.982,
+                        "length": 0.053,
+                        "cost": 37.982,
                         "begin_shape_index": 0,
-                        "end_shape_index": 5,
+                        "end_shape_index": 1,
                         "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 10,
-                        "instruction": "Turn right.",
-                        "verbal_transition_alert_instruction": "Turn right.",
+                        "instruction": "Turn right onto Love.",
+                        "verbal_transition_alert_instruction": "Turn right onto Love.",
                         "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right.",
-                        "verbal_post_transition_instruction": "Continue for 20 meters.",
-                        "time": 15.981,
-                        "length": 0.019,
-                        "cost": 95.47,
+                        "verbal_pre_transition_instruction": "Turn right onto Love.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Love"
+                        ],
+                        "time": 85.835,
+                        "length": 0.118,
+                        "cost": 90.835,
+                        "begin_shape_index": 1,
+                        "end_shape_index": 4,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 8,
+                        "instruction": "Continue on the walkway.",
+                        "verbal_transition_alert_instruction": "Continue on the walkway.",
+                        "verbal_pre_transition_instruction": "Continue on the walkway.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
+                        "time": 19.764,
+                        "length": 0.028,
+                        "cost": 24.764,
+                        "begin_shape_index": 4,
+                        "end_shape_index": 5,
+                        "rough": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Madre Isabella Rosis.",
+                        "verbal_transition_alert_instruction": "Turn right onto Madre Isabella Rosis.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Madre Isabella Rosis.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "Madre Isabella Rosis"
+                        ],
+                        "time": 112.235,
+                        "length": 0.159,
+                        "cost": 117.235,
                         "begin_shape_index": 5,
-                        "end_shape_index": 8,
+                        "end_shape_index": 6,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 15,
-                        "instruction": "Turn left onto Global Airport Business Park Road.",
-                        "verbal_transition_alert_instruction": "Turn left onto Global Airport Business Park Road.",
+                        "instruction": "Turn left onto Jerusalem Extension.",
+                        "verbal_transition_alert_instruction": "Turn left onto Jerusalem Extension.",
                         "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Global Airport Business Park Road.",
-                        "verbal_post_transition_instruction": "Continue for 70 meters.",
+                        "verbal_pre_transition_instruction": "Turn left onto Jerusalem Extension.",
+                        "verbal_post_transition_instruction": "Continue for 800 meters.",
                         "street_names": [
-                            "Global Airport Business Park Road"
+                            "Jerusalem Extension"
                         ],
-                        "time": 85.256,
-                        "length": 0.065,
-                        "cost": 120.096,
-                        "begin_shape_index": 8,
+                        "time": 563.317,
+                        "length": 0.779,
+                        "cost": 1173.317,
+                        "begin_shape_index": 6,
                         "end_shape_index": 12,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 24,
-                        "instruction": "Keep left to stay on Global Airport Business Park Road.",
-                        "verbal_transition_alert_instruction": "Keep left to stay on Global Airport Business Park Road.",
-                        "verbal_pre_transition_instruction": "Keep left to stay on Global Airport Business Park Road.",
-                        "verbal_post_transition_instruction": "Continue for 50 meters.",
-                        "street_names": [
-                            "Global Airport Business Park Road"
-                        ],
-                        "time": 47.802,
-                        "length": 0.05,
-                        "cost": 84.07,
-                        "begin_shape_index": 12,
-                        "end_shape_index": 16,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left onto C-5 Road Extension.",
-                        "verbal_transition_alert_instruction": "Turn left onto C-5 Road Extension.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto C-5 Road Extension.",
-                        "verbal_post_transition_instruction": "Continue for 500 meters.",
-                        "street_names": [
-                            "C-5 Road Extension"
-                        ],
-                        "time": 351.331,
-                        "length": 0.449,
-                        "cost": 372.0,
-                        "begin_shape_index": 16,
-                        "end_shape_index": 25,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -107,138 +110,129 @@
                         "verbal_transition_alert_instruction": "Turn right onto Multinational Avenue.",
                         "verbal_succinct_transition_instruction": "Turn right.",
                         "verbal_pre_transition_instruction": "Turn right onto Multinational Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 700 meters.",
+                        "street_names": [
+                            "Multinational Avenue"
+                        ],
+                        "time": 500.315,
+                        "length": 0.65,
+                        "cost": 511.1,
+                        "begin_shape_index": 12,
+                        "end_shape_index": 33,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto C-5 Road Extension.",
+                        "verbal_transition_alert_instruction": "Turn left onto C-5 Road Extension.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto C-5 Road Extension.",
+                        "verbal_post_transition_instruction": "Continue for 700 meters.",
+                        "street_names": [
+                            "C-5 Road Extension"
+                        ],
+                        "time": 531.84,
+                        "length": 0.699,
+                        "cost": 568.991,
+                        "begin_shape_index": 33,
+                        "end_shape_index": 51,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 20,
+                        "instruction": "Take the exit.",
+                        "verbal_transition_alert_instruction": "Take the exit.",
+                        "verbal_pre_transition_instruction": "Take the exit.",
+                        "time": 121.249,
+                        "length": 0.125,
+                        "cost": 144.307,
+                        "begin_shape_index": 51,
+                        "end_shape_index": 61,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 24,
+                        "instruction": "Keep left at the fork.",
+                        "verbal_transition_alert_instruction": "Keep left at the fork.",
+                        "verbal_pre_transition_instruction": "Keep left at the fork.",
+                        "time": 43.482,
+                        "length": 0.044,
+                        "cost": 86.964,
+                        "begin_shape_index": 61,
+                        "end_shape_index": 64,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 24,
+                        "instruction": "Keep left to take Amvel Avenue.",
+                        "verbal_transition_alert_instruction": "Keep left to take Amvel Avenue.",
+                        "verbal_pre_transition_instruction": "Keep left to take Amvel Avenue.",
                         "verbal_post_transition_instruction": "Continue for 400 meters.",
                         "street_names": [
-                            "Multinational Avenue"
+                            "Amvel Avenue"
                         ],
-                        "time": 331.743,
-                        "length": 0.446,
-                        "cost": 943.152,
-                        "begin_shape_index": 25,
-                        "end_shape_index": 42,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 23,
-                        "instruction": "Keep right to stay on Multinational Avenue.",
-                        "verbal_transition_alert_instruction": "Keep right to stay on Multinational Avenue.",
-                        "verbal_pre_transition_instruction": "Keep right to stay on Multinational Avenue.",
-                        "verbal_post_transition_instruction": "Continue for 200 meters.",
-                        "street_names": [
-                            "Multinational Avenue"
-                        ],
-                        "time": 174.705,
-                        "length": 0.219,
-                        "cost": 177.501,
-                        "begin_shape_index": 42,
-                        "end_shape_index": 47,
+                        "time": 310.174,
+                        "length": 0.36,
+                        "cost": 344.905,
+                        "begin_shape_index": 64,
+                        "end_shape_index": 82,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 15,
-                        "instruction": "Turn left onto Jerusalem.",
-                        "verbal_transition_alert_instruction": "Turn left onto Jerusalem.",
+                        "instruction": "Turn left onto Ninoy Aquino Avenue/195.",
+                        "verbal_transition_alert_instruction": "Turn left onto Ninoy Aquino Avenue.",
                         "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Jerusalem.",
-                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "verbal_pre_transition_instruction": "Turn left onto Ninoy Aquino Avenue, 195.",
+                        "verbal_post_transition_instruction": "Continue for 700 meters.",
                         "street_names": [
-                            "Jerusalem"
+                            "Ninoy Aquino Avenue"
                         ],
-                        "time": 121.214,
-                        "length": 0.162,
-                        "cost": 126.214,
-                        "begin_shape_index": 47,
-                        "end_shape_index": 48,
+                        "begin_street_names": [
+                            "Ninoy Aquino Avenue",
+                            "195"
+                        ],
+                        "time": 546.965,
+                        "length": 0.703,
+                        "cost": 562.151,
+                        "begin_shape_index": 82,
+                        "end_shape_index": 115,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 10,
-                        "instruction": "Turn right onto Galilee.",
-                        "verbal_transition_alert_instruction": "Turn right onto Galilee.",
+                        "instruction": "Turn right onto the walkway.",
+                        "verbal_transition_alert_instruction": "Turn right onto the walkway.",
                         "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Galilee.",
+                        "verbal_pre_transition_instruction": "Turn right onto the walkway.",
+                        "verbal_post_transition_instruction": "Continue for 20 meters.",
+                        "time": 18.806,
+                        "length": 0.018,
+                        "cost": 24.32,
+                        "begin_shape_index": 115,
+                        "end_shape_index": 117,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto the walkway.",
+                        "verbal_transition_alert_instruction": "Turn left onto the walkway.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto the walkway.",
                         "verbal_post_transition_instruction": "Continue for 80 meters.",
-                        "street_names": [
-                            "Galilee"
-                        ],
-                        "time": 59.788,
-                        "length": 0.077,
-                        "cost": 64.788,
-                        "begin_shape_index": 48,
-                        "end_shape_index": 49,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left onto Nazareth.",
-                        "verbal_transition_alert_instruction": "Turn left onto Nazareth.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Nazareth.",
-                        "verbal_post_transition_instruction": "Continue for 200 meters.",
-                        "street_names": [
-                            "Nazareth"
-                        ],
-                        "time": 164.329,
-                        "length": 0.194,
-                        "cost": 177.545,
-                        "begin_shape_index": 49,
-                        "end_shape_index": 50,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 10,
-                        "instruction": "Turn right onto Judea.",
-                        "verbal_transition_alert_instruction": "Turn right onto Judea.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Judea.",
-                        "verbal_post_transition_instruction": "Continue for 1 kilometer.",
-                        "street_names": [
-                            "Judea"
-                        ],
-                        "time": 966.152,
-                        "length": 1.23,
-                        "cost": 1000.585,
-                        "begin_shape_index": 50,
-                        "end_shape_index": 70,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left onto Philip Street.",
-                        "verbal_transition_alert_instruction": "Turn left onto Philip Street.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Philip Street.",
-                        "verbal_post_transition_instruction": "Continue for 500 meters.",
-                        "street_names": [
-                            "Philip Street"
-                        ],
-                        "time": 357.188,
-                        "length": 0.464,
-                        "cost": 370.785,
-                        "begin_shape_index": 70,
-                        "end_shape_index": 76,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left.",
-                        "verbal_transition_alert_instruction": "Turn left.",
-                        "verbal_succinct_transition_instruction": "Turn left. Then You will arrive at your destination.",
-                        "verbal_pre_transition_instruction": "Turn left. Then You will arrive at your destination.",
-                        "verbal_post_transition_instruction": "Continue for 10 meters.",
-                        "time": 8.568,
-                        "length": 0.01,
-                        "cost": 13.997,
-                        "begin_shape_index": 76,
-                        "end_shape_index": 77,
-                        "verbal_multi_cue": true,
+                        "time": 56.83,
+                        "length": 0.08,
+                        "cost": 56.83,
+                        "begin_shape_index": 117,
+                        "end_shape_index": 121,
+                        "rough": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -250,8 +244,8 @@
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 77,
-                        "end_shape_index": 77,
+                        "begin_shape_index": 121,
+                        "end_shape_index": 121,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -261,15 +255,15 @@
                     "has_toll": false,
                     "has_highway": false,
                     "has_ferry": false,
-                    "min_lat": 14.47895,
-                    "min_lon": 120.995711,
-                    "max_lat": 14.496158,
-                    "max_lon": 121.0073,
-                    "time": 2722.353,
-                    "length": 3.439,
-                    "cost": 3737.66
+                    "min_lat": 14.485346,
+                    "min_lon": 120.991256,
+                    "max_lat": 14.496051,
+                    "max_lon": 121.011363,
+                    "time": 2948.798,
+                    "length": 3.818,
+                    "cost": 3743.707
                 },
-                "shape": "wdvsZg~~weFnC|EtAJ|Ao@r@oArBqJjA~AhB~@pAn@dEyStAiDhEcCnAo@xCyCpAe@nDCjK_DaBqDsAqDmd@kpAwV{l@oO{^mEwJeGsMmPa[iB_DtE_C~a@uUff@wYnCeC`AgCbBqOjA_UVcE^wGv@cLX}DdC_[jAkFlAwEfFeOzBeEvCyC|DyAnEY~FXnNpBvrAbRdU_zAfi@vIlY{kB|g@rHzg@jIzSdDdJtA~LxBbh@vIvm@nKjl@|Ibl@`Jha@fGfIjA~OrCtDp@~UvE~m@|Lrj@vN~k@nMrk@bM~h@pL~l@lOj]ybBfRm~@zJ}e@xBsK`Kqf@TmAoDw@"
+                "shape": "y~isZei}xeFhWnQyApCuL`YyLj]sCdN{uAySeMd}@_M||@cXbhBaFv\\eS|wAeU~yAwrAcRoNqB_GYoEX}DxAwCxC{BdEgFdOmAvEkAjFeC~ZY|Dw@bL_@vGWbEkA~TcBpOaAfCoCdCgf@vY_b@tUfSx`@dGdNxPfa@jCnG|Vrm@sDxAld@jpArApD`BpDzC~DjCfClEnCxEjBxE`AtE\\fORdm@dAh[ZlD|@zCdB~BfC~AbDv@tDItD{AlDaDpBaDxAgP~C{HxAiEvBwCdDgA`Ll@jH`BjGdJnWhD~HbFnKnArCnErNr@~D|A|ONjHUxRSxEU`EqBhR]pD_@dEU~BfDX|L`A`Gj@jNpAvTxBdBPvMrAdBPxD^dE`@`Ff@rEb@fGl@hBRbHp@bf@zExMpA`J|@dl@jG~BPlE`@vGd@~@FvGd@pHd@zNr@hJb@h`@pAhDKnJWfLwAfGiAvHmBzAtEf@zA`IeEfK}EnHwGzC{C"
             }
         ],
         "summary": {
@@ -277,13 +271,13 @@
             "has_toll": false,
             "has_highway": false,
             "has_ferry": false,
-            "min_lat": 14.47895,
-            "min_lon": 120.995711,
-            "max_lat": 14.496158,
-            "max_lon": 121.0073,
-            "time": 2722.353,
-            "length": 3.439,
-            "cost": 3737.66
+            "min_lat": 14.485346,
+            "min_lon": 120.991256,
+            "max_lat": 14.496051,
+            "max_lon": 121.011363,
+            "time": 2948.798,
+            "length": 3.818,
+            "cost": 3743.707
         },
         "status_message": "Found route between points",
         "status": 0,
