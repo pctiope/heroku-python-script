@@ -5,7 +5,7 @@
                 "type": "break",
                 "lat": 14.595896,
                 "lon": 121.064571,
-                "side_of_street": "right",
+                "side_of_street": "left",
                 "original_index": 0
             },
             {
@@ -20,19 +20,57 @@
             {
                 "maneuvers": [
                     {
-                        "type": 2,
-                        "instruction": "Walk north on Don Vicente Rufino.",
-                        "verbal_succinct_transition_instruction": "Walk north.",
-                        "verbal_pre_transition_instruction": "Walk north on Don Vicente Rufino.",
-                        "verbal_post_transition_instruction": "Continue for 500 meters.",
+                        "type": 3,
+                        "instruction": "Walk south on Don Vicente Rufino.",
+                        "verbal_succinct_transition_instruction": "Walk south. Then Turn left onto D. V. Madrigal Avenue.",
+                        "verbal_pre_transition_instruction": "Walk south on Don Vicente Rufino. Then Turn left onto D. V. Madrigal Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
                         "street_names": [
                             "Don Vicente Rufino"
                         ],
-                        "time": 361.531,
-                        "length": 0.451,
-                        "cost": 375.213,
+                        "time": 20.8,
+                        "length": 0.029,
+                        "cost": 20.8,
                         "begin_shape_index": 0,
-                        "end_shape_index": 4,
+                        "end_shape_index": 1,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto D. V. Madrigal Avenue/Don Vicente Madrigal Avenue.",
+                        "verbal_transition_alert_instruction": "Turn left onto D. V. Madrigal Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto D. V. Madrigal Avenue, Don Vicente Madrigal Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 80 meters.",
+                        "street_names": [
+                            "D. V. Madrigal Avenue",
+                            "Don Vicente Madrigal Avenue"
+                        ],
+                        "time": 64.376,
+                        "length": 0.076,
+                        "cost": 75.814,
+                        "begin_shape_index": 1,
+                        "end_shape_index": 2,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto David.",
+                        "verbal_transition_alert_instruction": "Turn left onto David.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto David.",
+                        "verbal_post_transition_instruction": "Continue for 500 meters.",
+                        "street_names": [
+                            "David"
+                        ],
+                        "time": 432.741,
+                        "length": 0.48,
+                        "cost": 486.134,
+                        "begin_shape_index": 2,
+                        "end_shape_index": 5,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -46,11 +84,11 @@
                         "street_names": [
                             "Castrillo"
                         ],
-                        "time": 145.482,
-                        "length": 0.175,
-                        "cost": 169.382,
-                        "begin_shape_index": 4,
-                        "end_shape_index": 6,
+                        "time": 200.103,
+                        "length": 0.248,
+                        "cost": 224.003,
+                        "begin_shape_index": 5,
+                        "end_shape_index": 8,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -67,8 +105,8 @@
                         "time": 73.051,
                         "length": 0.085,
                         "cost": 87.202,
-                        "begin_shape_index": 6,
-                        "end_shape_index": 10,
+                        "begin_shape_index": 8,
+                        "end_shape_index": 12,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -85,8 +123,8 @@
                         "time": 173.647,
                         "length": 0.205,
                         "cost": 187.329,
-                        "begin_shape_index": 10,
-                        "end_shape_index": 11,
+                        "begin_shape_index": 12,
+                        "end_shape_index": 13,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -100,8 +138,8 @@
                         "time": 247.668,
                         "length": 0.238,
                         "cost": 903.353,
-                        "begin_shape_index": 11,
-                        "end_shape_index": 19,
+                        "begin_shape_index": 13,
+                        "end_shape_index": 21,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -115,8 +153,8 @@
                         "time": 366.131,
                         "length": 0.422,
                         "cost": 396.478,
-                        "begin_shape_index": 19,
-                        "end_shape_index": 34,
+                        "begin_shape_index": 21,
+                        "end_shape_index": 36,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -136,8 +174,8 @@
                         "time": 582.169,
                         "length": 0.75,
                         "cost": 587.169,
-                        "begin_shape_index": 34,
-                        "end_shape_index": 45,
+                        "begin_shape_index": 36,
+                        "end_shape_index": 47,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -151,8 +189,8 @@
                         "time": 42.861,
                         "length": 0.046,
                         "cost": 69.291,
-                        "begin_shape_index": 45,
-                        "end_shape_index": 46,
+                        "begin_shape_index": 47,
+                        "end_shape_index": 48,
                         "rough": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -167,8 +205,8 @@
                         "time": 26.287,
                         "length": 0.028,
                         "cost": 60.23,
-                        "begin_shape_index": 46,
-                        "end_shape_index": 48,
+                        "begin_shape_index": 48,
+                        "end_shape_index": 50,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -188,8 +226,8 @@
                         "time": 453.317,
                         "length": 0.58,
                         "cost": 468.945,
-                        "begin_shape_index": 48,
-                        "end_shape_index": 53,
+                        "begin_shape_index": 50,
+                        "end_shape_index": 55,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -203,8 +241,8 @@
                         "time": 52.67,
                         "length": 0.063,
                         "cost": 59.83,
-                        "begin_shape_index": 53,
-                        "end_shape_index": 56,
+                        "begin_shape_index": 55,
+                        "end_shape_index": 58,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -221,8 +259,8 @@
                         "time": 88.941,
                         "length": 0.126,
                         "cost": 93.941,
-                        "begin_shape_index": 56,
-                        "end_shape_index": 58,
+                        "begin_shape_index": 58,
+                        "end_shape_index": 60,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -238,9 +276,9 @@
                         ],
                         "time": 818.762,
                         "length": 1.05,
-                        "cost": 888.462,
-                        "begin_shape_index": 58,
-                        "end_shape_index": 79,
+                        "cost": 888.461,
+                        "begin_shape_index": 60,
+                        "end_shape_index": 81,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -258,8 +296,8 @@
                         "time": 39.529,
                         "length": 0.056,
                         "cost": 44.529,
-                        "begin_shape_index": 79,
-                        "end_shape_index": 80,
+                        "begin_shape_index": 81,
+                        "end_shape_index": 82,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -276,8 +314,8 @@
                         "time": 120.0,
                         "length": 0.17,
                         "cost": 120.0,
-                        "begin_shape_index": 80,
-                        "end_shape_index": 82,
+                        "begin_shape_index": 82,
+                        "end_shape_index": 84,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -291,8 +329,8 @@
                         "time": 33.314,
                         "length": 0.04,
                         "cost": 45.769,
-                        "begin_shape_index": 82,
-                        "end_shape_index": 89,
+                        "begin_shape_index": 84,
+                        "end_shape_index": 91,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -306,8 +344,8 @@
                         "time": 296.256,
                         "length": 0.372,
                         "cost": 302.323,
-                        "begin_shape_index": 89,
-                        "end_shape_index": 97,
+                        "begin_shape_index": 91,
+                        "end_shape_index": 99,
                         "rough": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -322,8 +360,8 @@
                         "time": 4.941,
                         "length": 0.007,
                         "cost": 4.941,
-                        "begin_shape_index": 97,
-                        "end_shape_index": 98,
+                        "begin_shape_index": 99,
+                        "end_shape_index": 100,
                         "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -341,8 +379,8 @@
                         "time": 569.738,
                         "length": 0.71,
                         "cost": 605.421,
-                        "begin_shape_index": 98,
-                        "end_shape_index": 123,
+                        "begin_shape_index": 100,
+                        "end_shape_index": 125,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -359,8 +397,8 @@
                         "time": 73.68,
                         "length": 0.101,
                         "cost": 78.68,
-                        "begin_shape_index": 123,
-                        "end_shape_index": 128,
+                        "begin_shape_index": 125,
+                        "end_shape_index": 130,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -376,8 +414,8 @@
                         "time": 635.188,
                         "length": 0.834,
                         "cost": 643.93,
-                        "begin_shape_index": 128,
-                        "end_shape_index": 146,
+                        "begin_shape_index": 130,
+                        "end_shape_index": 148,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -394,8 +432,8 @@
                         "time": 267.971,
                         "length": 0.287,
                         "cost": 308.577,
-                        "begin_shape_index": 146,
-                        "end_shape_index": 148,
+                        "begin_shape_index": 148,
+                        "end_shape_index": 150,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -412,8 +450,8 @@
                         "time": 85.184,
                         "length": 0.097,
                         "cost": 106.775,
-                        "begin_shape_index": 148,
-                        "end_shape_index": 151,
+                        "begin_shape_index": 150,
+                        "end_shape_index": 153,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -431,8 +469,8 @@
                         "time": 225.537,
                         "length": 0.254,
                         "cost": 369.477,
-                        "begin_shape_index": 151,
-                        "end_shape_index": 165,
+                        "begin_shape_index": 153,
+                        "end_shape_index": 167,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -446,8 +484,8 @@
                         "time": 28.922,
                         "length": 0.034,
                         "cost": 756.844,
-                        "begin_shape_index": 165,
-                        "end_shape_index": 171,
+                        "begin_shape_index": 167,
+                        "end_shape_index": 173,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -459,8 +497,8 @@
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 171,
-                        "end_shape_index": 171,
+                        "begin_shape_index": 173,
+                        "end_shape_index": 173,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -473,12 +511,12 @@
                     "min_lat": 14.586606,
                     "min_lon": 121.039082,
                     "max_lat": 14.607519,
-                    "max_lon": 121.064406,
-                    "time": 5812.786,
-                    "length": 7.185,
-                    "cost": 7734.102
+                    "max_lon": 121.065149,
+                    "time": 6023.795,
+                    "length": 7.392,
+                    "cost": 7996.259
                 },
-                "shape": "kpzyZm|d|eFoy@bLyg@~G_i@rHuiBvVrJzn@tJxq@uRlCwNnBaBTuFt@gZyrBaWpDmCb@eDh@m@JsV`E{AVy^hGcc@`HrAhIl@`DjCnRtApJpCjEjUbb@hB|C~BfFbNha@|DpNhFpT|Ep^z@xF`AlFfAvF}TvEeRnFuGvB}ExA}HbC_nCt`A}@ZmlBpp@cp@~TyHhCwFtBbInWaDbAiC}HdLgEnz@yYxDqA`n@iTfkD}mAtAnE`FdOtCxIp^yMx`@kLjJr^nL`g@vGb[vBfQdAnI|@pRS~YiBpd@wKvuA{Cb`@k@lHyB|X}Ezk@a@pE@zDj@vAx^fd@dh@lo@`@h@f^hc@~ClDmRjXwv@pjAeA~A|AlBdCvCVVBT?TwBzDw@bAn[jTze@t\\pc@h_@n`@hc@fK~Lv@~@z@dA~ApBsAzAhZx]dKtLdEzFxB`FvAhDxBxGlAhGv@hFp@fF|@bRJxV]dTcA~Ra@bW]`JEdCQbIKrHi@v`@C|AqAhbAaA~a@l@`B?|@AxDFrBjBx@bIgAfJ_CbYsIbo@uStjAmo@jBaA~QuJ`@U^OzBgAtYgOtMiIt]_Gfk@mNpJcCt[cIbHgBlHeBnTiFh\\gIhp@}P`[ujAt[goAjIDvf@XxBIdAwCxCoIlJaVdDwIzOcc@~CaGzCqEpDiEJMfAyAfCgDlAa@|D}Et@w@nBv@vBx@rABt@C|@_ApAiB"
+                "shape": "kpzyZm|d|eFdOsBwIyi@}d@xGcuBfZ}iBtWpHdh@rJzn@tJxq@uRlCwNnBaBTuFt@gZyrBaWpDmCb@eDh@m@JsV`E{AVy^hGcc@`HrAhIl@`DjCnRtApJpCjEjUbb@hB|C~BfFbNha@|DpNhFpT|Ep^z@xF`AlFfAvF}TvEeRnFuGvB}ExA}HbC_nCt`A}@ZmlBpp@cp@~TyHhCwFtBbInWaDbAiC}HdLgEnz@yYxDqA`n@iTfkD}mAtAnE`FdOtCxIp^yMx`@kLjJr^nL`g@vGb[vBfQdAnI|@pRS~YiBpd@wKvuA{Cb`@k@lHyB|X}Ezk@a@pE@zDj@vAx^fd@dh@lo@`@h@f^hc@~ClDmRjXwv@pjAeA~A|AlBdCvCVVBT?TwBzDw@bAn[jTze@t\\pc@h_@n`@hc@fK~Lv@~@z@dA~ApBsAzAhZx]dKtLdEzFxB`FvAhDxBxGlAhGv@hFp@fF|@bRJxV]dTcA~Ra@bW]`JEdCQbIKrHi@v`@C|AqAhbAaA~a@l@`B?|@AxDFrBjBx@bIgAfJ_CbYsIbo@uStjAmo@jBaA~QuJ`@U^OzBgAtYgOtMiIt]_Gfk@mNpJcCt[cIbHgBlHeBnTiFh\\gIhp@}P`[ujAt[goAjIDvf@XxBIdAwCxCoIlJaVdDwIzOcc@~CaGzCqEpDiEJMfAyAfCgDlAa@|D}Et@w@nBv@vBx@rABt@C|@_ApAiB"
             }
         ],
         "summary": {
@@ -489,10 +527,10 @@
             "min_lat": 14.586606,
             "min_lon": 121.039082,
             "max_lat": 14.607519,
-            "max_lon": 121.064406,
-            "time": 5812.786,
-            "length": 7.185,
-            "cost": 7734.102
+            "max_lon": 121.065149,
+            "time": 6023.795,
+            "length": 7.392,
+            "cost": 7996.259
         },
         "status_message": "Found route between points",
         "status": 0,
