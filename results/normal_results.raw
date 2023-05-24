@@ -3,15 +3,15 @@
         "locations": [
             {
                 "type": "break",
-                "lat": 14.582941,
-                "lon": 121.050126,
-                "side_of_street": "right",
+                "lat": 14.584154,
+                "lon": 121.048656,
+                "side_of_street": "left",
                 "original_index": 0
             },
             {
                 "type": "break",
-                "lat": 14.599506,
-                "lon": 121.061333,
+                "lat": 14.598293,
+                "lon": 121.062803,
                 "side_of_street": "right",
                 "original_index": 1
             }
@@ -20,36 +20,36 @@
             {
                 "maneuvers": [
                     {
-                        "type": 2,
-                        "instruction": "Walk northwest on Queen's Road.",
-                        "verbal_succinct_transition_instruction": "Walk northwest.",
-                        "verbal_pre_transition_instruction": "Walk northwest on Queen's Road.",
-                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "type": 3,
+                        "instruction": "Walk southeast on Lopez Rizal Street.",
+                        "verbal_succinct_transition_instruction": "Walk southeast.",
+                        "verbal_pre_transition_instruction": "Walk southeast on Lopez Rizal Street.",
+                        "verbal_post_transition_instruction": "Continue for 90 meters.",
                         "street_names": [
-                            "Queen's Road"
+                            "Lopez Rizal Street"
                         ],
-                        "time": 98.726,
-                        "length": 0.111,
-                        "cost": 123.407,
+                        "time": 85.146,
+                        "length": 0.087,
+                        "cost": 99.476,
                         "begin_shape_index": 0,
-                        "end_shape_index": 2,
+                        "end_shape_index": 3,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 10,
-                        "instruction": "Turn right onto Samat Street.",
-                        "verbal_transition_alert_instruction": "Turn right onto Samat Street.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Samat Street.",
-                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "type": 15,
+                        "instruction": "Turn left onto Samat Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Samat Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Samat Street.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
                         "street_names": [
                             "Samat Street"
                         ],
-                        "time": 146.682,
-                        "length": 0.175,
-                        "cost": 161.539,
-                        "begin_shape_index": 2,
+                        "time": 80.964,
+                        "length": 0.105,
+                        "cost": 85.964,
+                        "begin_shape_index": 3,
                         "end_shape_index": 6,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -175,7 +175,7 @@
                         ],
                         "time": 559.919,
                         "length": 0.718,
-                        "cost": 581.72,
+                        "cost": 581.719,
                         "begin_shape_index": 34,
                         "end_shape_index": 53,
                         "travel_mode": "pedestrian",
@@ -322,7 +322,7 @@
                         "verbal_succinct_transition_instruction": "Turn left.",
                         "verbal_pre_transition_instruction": "Turn left.",
                         "verbal_post_transition_instruction": "Continue for 700 meters.",
-                        "time": 561.906,
+                        "time": 561.905,
                         "length": 0.717,
                         "cost": 563.811,
                         "begin_shape_index": 78,
@@ -365,20 +365,38 @@
                         "travel_type": "foot"
                     },
                     {
-                        "type": 10,
-                        "instruction": "Turn right onto Castrillo.",
-                        "verbal_transition_alert_instruction": "Turn right onto Castrillo.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Castrillo.",
-                        "verbal_post_transition_instruction": "Continue for 60 meters.",
+                        "type": 15,
+                        "instruction": "Turn left onto Castrillo.",
+                        "verbal_transition_alert_instruction": "Turn left onto Castrillo.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Castrillo.",
+                        "verbal_post_transition_instruction": "Continue for 90 meters.",
                         "street_names": [
                             "Castrillo"
                         ],
-                        "time": 48.501,
-                        "length": 0.062,
-                        "cost": 53.501,
+                        "time": 67.341,
+                        "length": 0.09,
+                        "cost": 72.341,
                         "begin_shape_index": 116,
                         "end_shape_index": 117,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Francisco.",
+                        "verbal_transition_alert_instruction": "Turn right onto Francisco.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Francisco.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "Francisco"
+                        ],
+                        "time": 143.447,
+                        "length": 0.152,
+                        "cost": 169.964,
+                        "begin_shape_index": 117,
+                        "end_shape_index": 120,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -390,8 +408,8 @@
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 117,
-                        "end_shape_index": 117,
+                        "begin_shape_index": 120,
+                        "end_shape_index": 120,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -402,14 +420,14 @@
                     "has_highway": false,
                     "has_ferry": false,
                     "min_lat": 14.58241,
-                    "min_lon": 121.049011,
+                    "min_lon": 121.048617,
                     "max_lat": 14.600024,
-                    "max_lon": 121.061939,
-                    "time": 2707.99,
-                    "length": 3.379,
-                    "cost": 3651.694
+                    "max_lon": 121.062954,
+                    "time": 2790.979,
+                    "length": 3.466,
+                    "cost": 3740.991
                 },
-                "shape": "er`yZkph{eFgXff@mG|Mua@{QgYwLiU_KwBaA|BcCpQuTmBcB~MkQ`Xe[~JoRhSwX~H}JvMeQvHoJfDcEcCeBsB_B{BqBUaEo[gYk`@k[gDoDO_@Eo@TuB~@uCrS}\\|FyJ\\c@jCoBr@iAz@qAaWeMwJuEuK{DaMcFiHiCuLwDaE{EwA]mj@sM}IoBea@{Ik{@{QyNkD{T_FcPoD_OeDc@K{SaFeg@oNiW{Co`@uHgb@gIci@eKki@gKsXgGiCe@uEiAQp@_MaDeIyAsFWqBSs@G|CuQDSiDg^zEuBj@t@m@`@iCvAwBt@mDh@sDNMoB_BJyADwAB_BQyB]eRwEuUqFiVkF{XeGe\\}GwAy@g@g@k@m@kE_AqH}A}FmAeBZsAHyBa@cGaAsJqAmOgBcScB}PqAkS_AoFWsMc@yKY}HI_NCmKFaq@dAs@o@[c@W}@_XknBvNoBtRmCxFhb@"
+                "shape": "mpcyZqaf{eFN]bDoHfSa`@gYwLiU_KwBaA|BcCpQuTmBcB~MkQ`Xe[~JoRhSwX~H}JvMeQvHoJfDcEcCeBsB_B{BqBUaEo[gYk`@k[gDoDO_@Eo@TuB~@uCrS}\\|FyJ\\c@jCoBr@iAz@qAaWeMwJuEuK{DaMcFiHiCuLwDaE{EwA]mj@sM}IoBea@{Ik{@{QyNkD{T_FcPoD_OeDc@K{SaFeg@oNiW{Co`@uHgb@gIci@eKki@gKsXgGiCe@uEiAQp@_MaDeIyAsFWqBSs@G|CuQDSiDg^zEuBj@t@m@`@iCvAwBt@mDh@sDNMoB_BJyADwAB_BQyB]eRwEuUqFiVkF{XeGe\\}GwAy@g@g@k@m@kE_AqH}A}FmAeBZsAHyBa@cGaAsJqAmOgBcScB}PqAkS_AoFWsMc@yKY}HI_NCmKFaq@dAs@o@[c@W}@_XknBvNoBtRmCuJyq@hl@eI~MmAfWH"
             }
         ],
         "summary": {
@@ -418,12 +436,12 @@
             "has_highway": false,
             "has_ferry": false,
             "min_lat": 14.58241,
-            "min_lon": 121.049011,
+            "min_lon": 121.048617,
             "max_lat": 14.600024,
-            "max_lon": 121.061939,
-            "time": 2707.99,
-            "length": 3.379,
-            "cost": 3651.694
+            "max_lon": 121.062954,
+            "time": 2790.979,
+            "length": 3.466,
+            "cost": 3740.991
         },
         "status_message": "Found route between points",
         "status": 0,
