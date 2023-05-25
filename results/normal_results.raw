@@ -3,15 +3,15 @@
         "locations": [
             {
                 "type": "break",
-                "lat": 14.475477,
-                "lon": 121.015357,
-                "side_of_street": "left",
+                "lat": 14.47696,
+                "lon": 121.0353,
                 "original_index": 0
             },
             {
                 "type": "break",
-                "lat": 14.47724,
-                "lon": 121.03528,
+                "lat": 14.475757,
+                "lon": 121.015337,
+                "side_of_street": "right",
                 "original_index": 1
             }
         ],
@@ -19,199 +19,92 @@
             {
                 "maneuvers": [
                     {
-                        "type": 3,
-                        "instruction": "Walk south on Rosal Street.",
-                        "verbal_succinct_transition_instruction": "Walk south.",
-                        "verbal_pre_transition_instruction": "Walk south on Rosal Street.",
-                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "type": 1,
+                        "instruction": "Walk south on Redwood.",
+                        "verbal_succinct_transition_instruction": "Walk south. Then Turn right onto Marcelo Avenue.",
+                        "verbal_pre_transition_instruction": "Walk south on Redwood. Then Turn right onto Marcelo Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 20 meters.",
                         "street_names": [
-                            "Rosal Street"
+                            "Redwood"
                         ],
-                        "time": 102.746,
-                        "length": 0.143,
-                        "cost": 103.26,
+                        "time": 15.811,
+                        "length": 0.02,
+                        "cost": 16.602,
                         "begin_shape_index": 0,
-                        "end_shape_index": 2,
+                        "end_shape_index": 1,
+                        "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 10,
-                        "instruction": "Turn right onto Rufino.",
-                        "verbal_transition_alert_instruction": "Turn right onto Rufino.",
+                        "instruction": "Turn right onto Marcelo Avenue.",
+                        "verbal_transition_alert_instruction": "Turn right onto Marcelo Avenue.",
                         "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Rufino.",
-                        "verbal_post_transition_instruction": "Continue for 1 kilometer.",
-                        "street_names": [
-                            "Rufino"
-                        ],
-                        "time": 851.571,
-                        "length": 1.001,
-                        "cost": 943.734,
-                        "begin_shape_index": 2,
-                        "end_shape_index": 37,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left onto Doctor A. Santos Avenue/63. Continue on 63.",
-                        "verbal_transition_alert_instruction": "Turn left onto Doctor A. Santos Avenue.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Doctor A. Santos Avenue, 63.",
-                        "verbal_post_transition_instruction": "Continue on 63 for 1.5 kilometers.",
-                        "street_names": [
-                            "63"
-                        ],
-                        "begin_street_names": [
-                            "Doctor A. Santos Avenue",
-                            "63"
-                        ],
-                        "time": 1112.307,
-                        "length": 1.462,
-                        "cost": 1153.334,
-                        "begin_shape_index": 37,
-                        "end_shape_index": 80,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left onto San Antonio Avenue.",
-                        "verbal_transition_alert_instruction": "Turn left onto San Antonio Avenue.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto San Antonio Avenue.",
-                        "verbal_post_transition_instruction": "Continue for 900 meters.",
-                        "street_names": [
-                            "San Antonio Avenue"
-                        ],
-                        "time": 741.851,
-                        "length": 0.949,
-                        "cost": 770.827,
-                        "begin_shape_index": 80,
-                        "end_shape_index": 105,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 10,
-                        "instruction": "Turn right onto Scholastica.",
-                        "verbal_transition_alert_instruction": "Turn right onto Scholastica.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Scholastica.",
-                        "verbal_post_transition_instruction": "Continue for 100 meters.",
-                        "street_names": [
-                            "Scholastica"
-                        ],
-                        "time": 85.538,
-                        "length": 0.113,
-                        "cost": 90.538,
-                        "begin_shape_index": 105,
-                        "end_shape_index": 111,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left onto Santa Magdalena Avenue.",
-                        "verbal_transition_alert_instruction": "Turn left onto Santa Magdalena Avenue.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Santa Magdalena Avenue.",
-                        "verbal_post_transition_instruction": "Continue for 90 meters.",
-                        "street_names": [
-                            "Santa Magdalena Avenue"
-                        ],
-                        "time": 68.046,
-                        "length": 0.087,
-                        "cost": 75.037,
-                        "begin_shape_index": 111,
-                        "end_shape_index": 115,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 10,
-                        "instruction": "Turn right onto Hernandez Avenue.",
-                        "verbal_transition_alert_instruction": "Turn right onto Hernandez Avenue.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Hernandez Avenue.",
-                        "verbal_post_transition_instruction": "Continue for 700 meters.",
-                        "street_names": [
-                            "Hernandez Avenue"
-                        ],
-                        "time": 575.27,
-                        "length": 0.734,
-                        "cost": 623.823,
-                        "begin_shape_index": 115,
-                        "end_shape_index": 135,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 23,
-                        "instruction": "Keep right to stay on Hernandez Avenue.",
-                        "verbal_transition_alert_instruction": "Keep right to stay on Hernandez Avenue.",
-                        "verbal_pre_transition_instruction": "Keep right to stay on Hernandez Avenue.",
+                        "verbal_pre_transition_instruction": "Turn right onto Marcelo Avenue.",
                         "verbal_post_transition_instruction": "Continue for 200 meters.",
                         "street_names": [
-                            "Hernandez Avenue"
+                            "Marcelo Avenue"
                         ],
-                        "time": 130.404,
-                        "length": 0.162,
-                        "cost": 139.135,
-                        "begin_shape_index": 135,
-                        "end_shape_index": 139,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 10,
-                        "instruction": "Turn right.",
-                        "verbal_transition_alert_instruction": "Turn right.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right.",
-                        "verbal_post_transition_instruction": "Continue for 50 meters.",
-                        "time": 67.058,
-                        "length": 0.051,
-                        "cost": 682.058,
-                        "begin_shape_index": 139,
-                        "end_shape_index": 143,
+                        "time": 165.891,
+                        "length": 0.215,
+                        "cost": 175.55,
+                        "begin_shape_index": 1,
+                        "end_shape_index": 9,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 15,
-                        "instruction": "Turn left onto Nuestra Se\u00f1ora Soledad Street.",
-                        "verbal_transition_alert_instruction": "Turn left onto Nuestra Se\u00f1ora Soledad Street.",
+                        "instruction": "Turn left onto Maharlika Avenue.",
+                        "verbal_transition_alert_instruction": "Turn left onto Maharlika Avenue.",
                         "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Nuestra Se\u00f1ora Soledad Street.",
-                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "verbal_pre_transition_instruction": "Turn left onto Maharlika Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 500 meters.",
                         "street_names": [
-                            "Nuestra Se\u00f1ora Soledad Street"
+                            "Maharlika Avenue"
                         ],
-                        "time": 85.411,
-                        "length": 0.11,
-                        "cost": 90.411,
-                        "begin_shape_index": 143,
-                        "end_shape_index": 147,
+                        "time": 410.037,
+                        "length": 0.546,
+                        "cost": 421.69,
+                        "begin_shape_index": 9,
+                        "end_shape_index": 34,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 16,
-                        "instruction": "Bear left onto Nuestra Se\u00f1ora Del Pilar Street.",
-                        "verbal_transition_alert_instruction": "Bear left onto Nuestra Se\u00f1ora Del Pilar Street.",
-                        "verbal_succinct_transition_instruction": "Bear left.",
-                        "verbal_pre_transition_instruction": "Bear left onto Nuestra Se\u00f1ora Del Pilar Street.",
+                        "type": 10,
+                        "instruction": "Turn right onto Alabastro.",
+                        "verbal_transition_alert_instruction": "Turn right onto Alabastro.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Alabastro.",
                         "verbal_post_transition_instruction": "Continue for 200 meters.",
                         "street_names": [
-                            "Nuestra Se\u00f1ora Del Pilar Street"
+                            "Alabastro"
                         ],
-                        "time": 110.823,
-                        "length": 0.157,
-                        "cost": 115.823,
-                        "begin_shape_index": 147,
-                        "end_shape_index": 152,
+                        "time": 132.635,
+                        "length": 0.17,
+                        "cost": 139.964,
+                        "begin_shape_index": 34,
+                        "end_shape_index": 39,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Topacio.",
+                        "verbal_transition_alert_instruction": "Turn right onto Topacio.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Topacio.",
+                        "verbal_post_transition_instruction": "Continue for 40 meters.",
+                        "street_names": [
+                            "Topacio"
+                        ],
+                        "time": 32.188,
+                        "length": 0.038,
+                        "cost": 38.797,
+                        "begin_shape_index": 39,
+                        "end_shape_index": 41,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -227,166 +120,203 @@
                         ],
                         "time": 25.411,
                         "length": 0.036,
-                        "cost": 30.412,
-                        "begin_shape_index": 152,
-                        "end_shape_index": 154,
+                        "cost": 30.411,
+                        "begin_shape_index": 41,
+                        "end_shape_index": 43,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 10,
-                        "instruction": "Turn right onto Topacio.",
-                        "verbal_transition_alert_instruction": "Turn right onto Topacio.",
+                        "instruction": "Turn right onto Nuestra Se\u00f1ora Del Pilar Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Nuestra Se\u00f1ora Del Pilar Street.",
                         "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Topacio.",
-                        "verbal_post_transition_instruction": "Continue for 40 meters.",
-                        "street_names": [
-                            "Topacio"
-                        ],
-                        "time": 30.042,
-                        "length": 0.038,
-                        "cost": 36.544,
-                        "begin_shape_index": 154,
-                        "end_shape_index": 156,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left onto Alabastro.",
-                        "verbal_transition_alert_instruction": "Turn left onto Alabastro.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Alabastro.",
+                        "verbal_pre_transition_instruction": "Turn right onto Nuestra Se\u00f1ora Del Pilar Street.",
                         "verbal_post_transition_instruction": "Continue for 200 meters.",
                         "street_names": [
-                            "Alabastro"
+                            "Nuestra Se\u00f1ora Del Pilar Street"
                         ],
-                        "time": 132.776,
-                        "length": 0.17,
-                        "cost": 139.95,
-                        "begin_shape_index": 156,
-                        "end_shape_index": 161,
+                        "time": 110.823,
+                        "length": 0.157,
+                        "cost": 715.823,
+                        "begin_shape_index": 43,
+                        "end_shape_index": 48,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 15,
-                        "instruction": "Turn left onto Maharlika Avenue.",
-                        "verbal_transition_alert_instruction": "Turn left onto Maharlika Avenue.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Maharlika Avenue.",
+                        "type": 9,
+                        "instruction": "Bear right onto Nuestra Se\u00f1ora Soledad Street.",
+                        "verbal_transition_alert_instruction": "Bear right onto Nuestra Se\u00f1ora Soledad Street.",
+                        "verbal_succinct_transition_instruction": "Bear right.",
+                        "verbal_pre_transition_instruction": "Bear right onto Nuestra Se\u00f1ora Soledad Street.",
                         "verbal_post_transition_instruction": "Continue for 100 meters.",
                         "street_names": [
-                            "Maharlika Avenue"
+                            "Nuestra Se\u00f1ora Soledad Street"
                         ],
-                        "time": 105.246,
-                        "length": 0.14,
-                        "cost": 112.703,
-                        "begin_shape_index": 161,
-                        "end_shape_index": 168,
+                        "time": 82.305,
+                        "length": 0.11,
+                        "cost": 87.305,
+                        "begin_shape_index": 48,
+                        "end_shape_index": 52,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 10,
-                        "instruction": "Turn right onto Tindalo Street.",
-                        "verbal_transition_alert_instruction": "Turn right onto Tindalo Street.",
+                        "instruction": "Turn right.",
+                        "verbal_transition_alert_instruction": "Turn right.",
                         "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Tindalo Street.",
-                        "verbal_post_transition_instruction": "Continue for 300 meters.",
-                        "street_names": [
-                            "Tindalo Street"
-                        ],
-                        "time": 243.694,
-                        "length": 0.297,
-                        "cost": 255.343,
-                        "begin_shape_index": 168,
-                        "end_shape_index": 174,
+                        "verbal_pre_transition_instruction": "Turn right.",
+                        "verbal_post_transition_instruction": "Continue for 50 meters.",
+                        "time": 66.635,
+                        "length": 0.051,
+                        "cost": 81.635,
+                        "begin_shape_index": 52,
+                        "end_shape_index": 56,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 15,
-                        "instruction": "Turn left onto Mangga.",
-                        "verbal_transition_alert_instruction": "Turn left onto Mangga.",
+                        "instruction": "Turn left onto Hernandez Avenue.",
+                        "verbal_transition_alert_instruction": "Turn left onto Hernandez Avenue.",
                         "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Mangga.",
-                        "verbal_post_transition_instruction": "Continue for 70 meters.",
+                        "verbal_pre_transition_instruction": "Turn left onto Hernandez Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 900 meters.",
                         "street_names": [
-                            "Mangga"
+                            "Hernandez Avenue"
                         ],
-                        "time": 51.529,
-                        "length": 0.073,
-                        "cost": 56.529,
-                        "begin_shape_index": 174,
-                        "end_shape_index": 177,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 10,
-                        "instruction": "Turn right onto Acacia Street.",
-                        "verbal_transition_alert_instruction": "Turn right onto Acacia Street.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Acacia Street.",
-                        "verbal_post_transition_instruction": "Continue for 60 meters.",
-                        "street_names": [
-                            "Acacia Street"
-                        ],
-                        "time": 42.353,
-                        "length": 0.06,
-                        "cost": 47.353,
-                        "begin_shape_index": 177,
-                        "end_shape_index": 178,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 10,
-                        "instruction": "Turn right onto Greenwood.",
-                        "verbal_transition_alert_instruction": "Turn right onto Greenwood.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Greenwood.",
-                        "verbal_post_transition_instruction": "Continue for 400 meters.",
-                        "street_names": [
-                            "Greenwood"
-                        ],
-                        "time": 362.829,
-                        "length": 0.398,
-                        "cost": 393.502,
-                        "begin_shape_index": 178,
-                        "end_shape_index": 197,
+                        "time": 698.489,
+                        "length": 0.895,
+                        "cost": 730.58,
+                        "begin_shape_index": 56,
+                        "end_shape_index": 80,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 15,
-                        "instruction": "Turn left onto Highland.",
-                        "verbal_transition_alert_instruction": "Turn left onto Highland.",
+                        "instruction": "Turn left onto Santa Magdalena Avenue.",
+                        "verbal_transition_alert_instruction": "Turn left onto Santa Magdalena Avenue.",
                         "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Highland.",
-                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "verbal_pre_transition_instruction": "Turn left onto Santa Magdalena Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
                         "street_names": [
-                            "Highland"
+                            "Santa Magdalena Avenue"
                         ],
-                        "time": 223.353,
-                        "length": 0.286,
-                        "cost": 234.494,
-                        "begin_shape_index": 197,
-                        "end_shape_index": 203,
+                        "time": 190.762,
+                        "length": 0.234,
+                        "cost": 211.492,
+                        "begin_shape_index": 80,
+                        "end_shape_index": 88,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 4,
-                        "instruction": "You have arrived at your destination.",
-                        "verbal_transition_alert_instruction": "You will arrive at your destination.",
-                        "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                        "type": 10,
+                        "instruction": "Turn right onto San Martin de Porres.",
+                        "verbal_transition_alert_instruction": "Turn right onto San Martin de Porres.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto San Martin de Porres.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "San Martin de Porres"
+                        ],
+                        "time": 84.564,
+                        "length": 0.11,
+                        "cost": 93.715,
+                        "begin_shape_index": 88,
+                        "end_shape_index": 90,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto San Antonio Avenue.",
+                        "verbal_transition_alert_instruction": "Turn left onto San Antonio Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto San Antonio Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 800 meters.",
+                        "street_names": [
+                            "San Antonio Avenue"
+                        ],
+                        "time": 599.891,
+                        "length": 0.758,
+                        "cost": 629.036,
+                        "begin_shape_index": 90,
+                        "end_shape_index": 108,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Doctor A. Santos Avenue/63. Continue on 63.",
+                        "verbal_transition_alert_instruction": "Turn right onto Doctor A. Santos Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Doctor A. Santos Avenue, 63.",
+                        "verbal_post_transition_instruction": "Continue on 63 for 1.5 kilometers.",
+                        "street_names": [
+                            "63"
+                        ],
+                        "begin_street_names": [
+                            "Doctor A. Santos Avenue",
+                            "63"
+                        ],
+                        "time": 1101.599,
+                        "length": 1.462,
+                        "cost": 1138.296,
+                        "begin_shape_index": 108,
+                        "end_shape_index": 151,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Kabesang Segundo Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Kabesang Segundo Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Kabesang Segundo Street.",
+                        "verbal_post_transition_instruction": "Continue for 1 kilometer.",
+                        "street_names": [
+                            "Kabesang Segundo Street"
+                        ],
+                        "time": 849.412,
+                        "length": 1.002,
+                        "cost": 1551.004,
+                        "begin_shape_index": 151,
+                        "end_shape_index": 186,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Rosal Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Rosal Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Rosal Street.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "Rosal Street"
+                        ],
+                        "time": 128.292,
+                        "length": 0.173,
+                        "cost": 135.083,
+                        "begin_shape_index": 186,
+                        "end_shape_index": 188,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 5,
+                        "instruction": "Your destination is on the right.",
+                        "verbal_transition_alert_instruction": "Your destination will be on the right.",
+                        "verbal_pre_transition_instruction": "Your destination is on the right.",
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 203,
-                        "end_shape_index": 203,
+                        "begin_shape_index": 188,
+                        "end_shape_index": 188,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -398,13 +328,13 @@
                     "has_ferry": false,
                     "min_lat": 14.464827,
                     "min_lon": 121.007891,
-                    "max_lat": 14.477342,
-                    "max_lon": 121.037845,
-                    "time": 5148.269,
-                    "length": 6.468,
-                    "cost": 6094.82
+                    "max_lat": 14.47692,
+                    "max_lon": 121.035356,
+                    "time": 4694.754,
+                    "length": 5.978,
+                    "cost": 6196.992
                 },
-                "shape": "woorZ}vdyeF|EbApcAtZeFlXwC|QeAhFq@bDa@lB]hBwDhTkDvUwDrVwDrUaAtJCjEl@vOTxFVxFk@nDiBnLoD`UiApHZrA`AfAj[lGfXvEjElAlGlC`OrJtj@v^nJtGnI~FvRxMxHbF~o@ba@jObOtCbEtBtClAcChBuDjEwIz@gBhT_b@tDiHtE_JdC}EbEcIvCwFhNeXrFoKrCsFvAqCj@gAnAcC|MoWnRa^|E{K`@}@`JiR~CmHTg@pJyTzPi`@nCaH`GmOxG{PzI_TpAuDdBwEhe@_kA`Zgu@xJiZfHoTlIgWpFsNvAeEdBuE~@qCzXev@~KsZjMe^mXyHeE{@yCs@iVkF}[cIi^{Icg@cMkvAe]kCo@cKiCi\\_IaGyAeCm@sG_Bs\\eIsJsCob@}JuKkC_y@aS}CmAaH}D}IgGcEmDy@kC?uBb@_DfBaDrDaFxKcOxK_KrCaCmJiMuAmBiE_GaIwLlFeWb@kDnOus@bEi^jCuXr@mX|Cio@bBkKxEkQbLsd@lDoOh@oDv@}CFwBgEgR_HyX_CmHmCwMeCwHgL}JcH}JqKmOeRy\\eKyPfKiBnCe@rAQfGeAiDwI[iEzCa[n@qOm@oFcEsIGcEv@iBbv@~TdAyJj@uGtJ\\vHN\\s^@a_@?qL_CsJ}AgGoF@uGTi\\~C_Et@aFdB}FrCgFnEkF{DubAuh@w\\_QsLmBmMoCyMcB]zFeCbU^vJi`@pE]kHt@uHfB_I`AwHj@cIGwLG{RW_BkFiPmAgCgRm`@yFeKuEcHyGuCkCw@sB[kE]cJm@kPiAkTlpAqAzIa@`JCdNv@~JzEf^"
+                "shape": "ofrrZmblzeFzIkAvDr_@BpP?nDZvDfBdGhFxGzVfMlJtEjIsDfHa@zELpEjAxOvFrGZnLc@~Hs@vFcB~GcE|DsCbBk@x\\cDxf@mFrD{@rCsAxEmE|M_OfFoE|FsC`FeB~Du@h\\_DtGUnFA|AfG~BrJ?pLA`_@]r^wHOuJ]k@tGeAxJcv@_Uw@hBFbEbErIl@nFo@pO{C`[ZhEhDvIgGdAsAPoCd@gKhBdKxPdRx\\pKlObH|JfL|JdCvHlCvM~BlH~GxXfEfRGvBw@|Ci@nDmDnOcLrd@yEjQcBjK}Cho@s@lXkCtXcEh^oOts@c@jDmFdW`IvLhE~FtAlBlJhMlJpMzDbCvSbFb`@nLeH`ZkJb`@tKjCnb@|JrJrCr\\dIrG~AdCl@`GxAh\\~HbKhCjCn@jvAd]bg@bMh^zI|[bIhVjFxCr@dEz@lXxHkMd^_LrZ{Xdv@_ApCeBtEwAdEqFrNmIfWgHnTyJhZaZfu@ie@~jAeBvEqAtD{I~SyGzPaGlOoC`H{Ph`@qJxTUf@_DlHaJhRa@|@}EzKoR`^}MnWoAbCk@fAwApCsCrFsFnKiNdXwCvFcEbIeC|EuE~IuDhHiT~a@{@fBkEvIiBtDmAbCuBuCuCcEkOcO_p@ca@yHcFwRyMoI_GoJuGuj@w^aOsJmGmCkEmAgXwEk[mGaAgA[sAhAqHnDaUhBoLj@oDWyFUyFm@wOBkE`AuJvDsUvDsVjDwUvDiT\\iB`@mBp@cDdAiFvC}QdFmXqcAuZuU{E"
             }
         ],
         "summary": {
@@ -414,11 +344,11 @@
             "has_ferry": false,
             "min_lat": 14.464827,
             "min_lon": 121.007891,
-            "max_lat": 14.477342,
-            "max_lon": 121.037845,
-            "time": 5148.269,
-            "length": 6.468,
-            "cost": 6094.82
+            "max_lat": 14.47692,
+            "max_lon": 121.035356,
+            "time": 4694.754,
+            "length": 5.978,
+            "cost": 6196.992
         },
         "status_message": "Found route between points",
         "status": 0,
