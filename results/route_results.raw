@@ -5,7 +5,7 @@
                 "type": "break",
                 "lat": 14.597298,
                 "lon": 121.063673,
-                "side_of_street": "left",
+                "side_of_street": "right",
                 "original_index": 0
             },
             {
@@ -19,19 +19,56 @@
             {
                 "maneuvers": [
                     {
-                        "type": 3,
-                        "instruction": "Walk west on Imao.",
-                        "verbal_succinct_transition_instruction": "Walk west.",
-                        "verbal_pre_transition_instruction": "Walk west on Imao.",
-                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "type": 2,
+                        "instruction": "Walk east on Imao.",
+                        "verbal_succinct_transition_instruction": "Walk east. Then Turn left onto Don Vicente Rufino.",
+                        "verbal_pre_transition_instruction": "Walk east on Imao. Then Turn left onto Don Vicente Rufino.",
+                        "verbal_post_transition_instruction": "Continue for 40 meters.",
                         "street_names": [
                             "Imao"
                         ],
-                        "time": 133.037,
-                        "length": 0.188,
-                        "cost": 133.037,
+                        "time": 30.726,
+                        "length": 0.043,
+                        "cost": 30.726,
                         "begin_shape_index": 0,
+                        "end_shape_index": 1,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Don Vicente Rufino.",
+                        "verbal_transition_alert_instruction": "Turn left onto Don Vicente Rufino.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Don Vicente Rufino.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "street_names": [
+                            "Don Vicente Rufino"
+                        ],
+                        "time": 216.858,
+                        "length": 0.271,
+                        "cost": 225.12,
+                        "begin_shape_index": 1,
                         "end_shape_index": 3,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Castrillo.",
+                        "verbal_transition_alert_instruction": "Turn left onto Castrillo.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Castrillo.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "Castrillo"
+                        ],
+                        "time": 145.482,
+                        "length": 0.175,
+                        "cost": 169.382,
+                        "begin_shape_index": 3,
+                        "end_shape_index": 5,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -41,15 +78,15 @@
                         "verbal_transition_alert_instruction": "Turn right onto Bautista.",
                         "verbal_succinct_transition_instruction": "Turn right.",
                         "verbal_pre_transition_instruction": "Turn right onto Bautista.",
-                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "verbal_post_transition_instruction": "Continue for 90 meters.",
                         "street_names": [
                             "Bautista"
                         ],
-                        "time": 249.322,
-                        "length": 0.326,
-                        "cost": 263.473,
-                        "begin_shape_index": 3,
-                        "end_shape_index": 12,
+                        "time": 73.051,
+                        "length": 0.085,
+                        "cost": 87.202,
+                        "begin_shape_index": 5,
+                        "end_shape_index": 9,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -66,8 +103,8 @@
                         "time": 160.119,
                         "length": 0.217,
                         "cost": 165.119,
-                        "begin_shape_index": 12,
-                        "end_shape_index": 16,
+                        "begin_shape_index": 9,
+                        "end_shape_index": 13,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -87,8 +124,8 @@
                         "time": 730.856,
                         "length": 0.926,
                         "cost": 769.577,
-                        "begin_shape_index": 16,
-                        "end_shape_index": 34,
+                        "begin_shape_index": 13,
+                        "end_shape_index": 31,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -102,8 +139,8 @@
                         "time": 42.861,
                         "length": 0.046,
                         "cost": 69.291,
-                        "begin_shape_index": 34,
-                        "end_shape_index": 35,
+                        "begin_shape_index": 31,
+                        "end_shape_index": 32,
                         "rough": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -118,8 +155,8 @@
                         "time": 26.287,
                         "length": 0.028,
                         "cost": 60.23,
-                        "begin_shape_index": 35,
-                        "end_shape_index": 37,
+                        "begin_shape_index": 32,
+                        "end_shape_index": 34,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -139,8 +176,8 @@
                         "time": 453.317,
                         "length": 0.58,
                         "cost": 468.945,
-                        "begin_shape_index": 37,
-                        "end_shape_index": 42,
+                        "begin_shape_index": 34,
+                        "end_shape_index": 39,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -154,8 +191,8 @@
                         "time": 52.67,
                         "length": 0.063,
                         "cost": 59.83,
-                        "begin_shape_index": 42,
-                        "end_shape_index": 45,
+                        "begin_shape_index": 39,
+                        "end_shape_index": 42,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -172,8 +209,8 @@
                         "time": 88.941,
                         "length": 0.126,
                         "cost": 93.941,
-                        "begin_shape_index": 45,
-                        "end_shape_index": 47,
+                        "begin_shape_index": 42,
+                        "end_shape_index": 44,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -190,8 +227,8 @@
                         "time": 818.762,
                         "length": 1.05,
                         "cost": 888.462,
-                        "begin_shape_index": 47,
-                        "end_shape_index": 68,
+                        "begin_shape_index": 44,
+                        "end_shape_index": 65,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -209,8 +246,8 @@
                         "time": 39.529,
                         "length": 0.056,
                         "cost": 44.529,
-                        "begin_shape_index": 68,
-                        "end_shape_index": 69,
+                        "begin_shape_index": 65,
+                        "end_shape_index": 66,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -227,8 +264,8 @@
                         "time": 120.0,
                         "length": 0.17,
                         "cost": 120.0,
-                        "begin_shape_index": 69,
-                        "end_shape_index": 71,
+                        "begin_shape_index": 66,
+                        "end_shape_index": 68,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -242,8 +279,8 @@
                         "time": 33.314,
                         "length": 0.04,
                         "cost": 45.769,
-                        "begin_shape_index": 71,
-                        "end_shape_index": 78,
+                        "begin_shape_index": 68,
+                        "end_shape_index": 75,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -257,8 +294,8 @@
                         "time": 296.256,
                         "length": 0.372,
                         "cost": 302.323,
-                        "begin_shape_index": 78,
-                        "end_shape_index": 86,
+                        "begin_shape_index": 75,
+                        "end_shape_index": 83,
                         "rough": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -273,8 +310,8 @@
                         "time": 4.941,
                         "length": 0.007,
                         "cost": 4.941,
-                        "begin_shape_index": 86,
-                        "end_shape_index": 87,
+                        "begin_shape_index": 83,
+                        "end_shape_index": 84,
                         "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -292,8 +329,8 @@
                         "time": 569.738,
                         "length": 0.71,
                         "cost": 605.421,
-                        "begin_shape_index": 87,
-                        "end_shape_index": 112,
+                        "begin_shape_index": 84,
+                        "end_shape_index": 109,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -309,9 +346,9 @@
                         ],
                         "time": 73.68,
                         "length": 0.101,
-                        "cost": 78.679,
-                        "begin_shape_index": 112,
-                        "end_shape_index": 117,
+                        "cost": 78.68,
+                        "begin_shape_index": 109,
+                        "end_shape_index": 114,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -327,8 +364,8 @@
                         "time": 635.188,
                         "length": 0.834,
                         "cost": 643.93,
-                        "begin_shape_index": 117,
-                        "end_shape_index": 135,
+                        "begin_shape_index": 114,
+                        "end_shape_index": 132,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -345,8 +382,8 @@
                         "time": 267.971,
                         "length": 0.287,
                         "cost": 308.577,
-                        "begin_shape_index": 135,
-                        "end_shape_index": 137,
+                        "begin_shape_index": 132,
+                        "end_shape_index": 134,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -363,8 +400,8 @@
                         "time": 85.184,
                         "length": 0.097,
                         "cost": 106.775,
-                        "begin_shape_index": 137,
-                        "end_shape_index": 140,
+                        "begin_shape_index": 134,
+                        "end_shape_index": 137,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -382,8 +419,8 @@
                         "time": 412.278,
                         "length": 0.43,
                         "cost": 726.174,
-                        "begin_shape_index": 140,
-                        "end_shape_index": 160,
+                        "begin_shape_index": 137,
+                        "end_shape_index": 157,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -397,8 +434,8 @@
                         "time": 74.964,
                         "length": 0.091,
                         "cost": 685.046,
-                        "begin_shape_index": 160,
-                        "end_shape_index": 165,
+                        "begin_shape_index": 157,
+                        "end_shape_index": 162,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -412,8 +449,8 @@
                         "time": 8.897,
                         "length": 0.009,
                         "cost": 17.795,
-                        "begin_shape_index": 165,
-                        "end_shape_index": 166,
+                        "begin_shape_index": 162,
+                        "end_shape_index": 163,
                         "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -426,8 +463,8 @@
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 166,
-                        "end_shape_index": 166,
+                        "begin_shape_index": 163,
+                        "end_shape_index": 163,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -440,12 +477,12 @@
                     "min_lat": 14.585114,
                     "min_lon": 121.039082,
                     "max_lat": 14.607519,
-                    "max_lon": 121.063657,
-                    "time": 5378.122,
-                    "length": 6.758,
-                    "cost": 6661.876
+                    "max_lon": 121.064053,
+                    "time": 5461.882,
+                    "length": 6.818,
+                    "cost": 6777.797
                 },
-                "shape": "qn}yZsmc|eFbJht@JdGuEbm@qi@}Acc@a@uNAqT^kRxAuRlCwNnBaBTuFt@nJzq@|Jht@fAdJ\\nFy]rCoGj@wEr@oM`B{SlD_Dh@cIpA}TvEeRnFuGvB}ExA}HbC_nCt`A}@ZmlBpp@cp@~TyHhCwFtBbInWaDbAiC}HdLgEnz@yYxDqA`n@iTfkD}mAtAnE`FdOtCxIp^yMx`@kLjJr^nL`g@vGb[vBfQdAnI|@pRS~YiBpd@wKvuA{Cb`@k@lHyB|X}Ezk@a@pE@zDj@vAx^fd@dh@lo@`@h@f^hc@~ClDmRjXwv@pjAeA~A|AlBdCvCVVBT?TwBzDw@bAn[jTze@t\\pc@h_@n`@hc@fK~Lv@~@z@dA~ApBsAzAhZx]dKtLdEzFxB`FvAhDxBxGlAhGv@hFp@fF|@bRJxV]dTcA~Ra@bW]`JEdCQbIKrHi@v`@C|AqAhbAaA~a@l@`B?|@AxDFrBjBx@bIgAfJ_CbYsIbo@uStjAmo@jBaA~QuJ`@U^OzBgAtYgOtMiIt]_Gfk@mNpJcCt[cIbHgBlHeBnTiFh\\gIhp@}P`[ujAt[goAjIDvf@XxBIdAwCxCoIlJaVdDwIzOcc@~CaGzCqEpDiEJMfAyAfCgDlAa@|D}Et@w@nCkDbEqFlGcIlCqDzZia@vKoN`C`BnAz@zIpE`I`F|MtItAmC"
+                "shape": "qn}yZsmc|eFcDuW_i@rHuiBvVrJzn@tJxq@uRlCwNnBaBTuFt@nJzq@|Jht@fAdJ\\nFy]rCoGj@wEr@oM`B{SlD_Dh@cIpA}TvEeRnFuGvB}ExA}HbC_nCt`A}@ZmlBpp@cp@~TyHhCwFtBbInWaDbAiC}HdLgEnz@yYxDqA`n@iTfkD}mAtAnE`FdOtCxIp^yMx`@kLjJr^nL`g@vGb[vBfQdAnI|@pRS~YiBpd@wKvuA{Cb`@k@lHyB|X}Ezk@a@pE@zDj@vAx^fd@dh@lo@`@h@f^hc@~ClDmRjXwv@pjAeA~A|AlBdCvCVVBT?TwBzDw@bAn[jTze@t\\pc@h_@n`@hc@fK~Lv@~@z@dA~ApBsAzAhZx]dKtLdEzFxB`FvAhDxBxGlAhGv@hFp@fF|@bRJxV]dTcA~Ra@bW]`JEdCQbIKrHi@v`@C|AqAhbAaA~a@l@`B?|@AxDFrBjBx@bIgAfJ_CbYsIbo@uStjAmo@jBaA~QuJ`@U^OzBgAtYgOtMiIt]_Gfk@mNpJcCt[cIbHgBlHeBnTiFh\\gIhp@}P`[ujAt[goAjIDvf@XxBIdAwCxCoIlJaVdDwIzOcc@~CaGzCqEpDiEJMfAyAfCgDlAa@|D}Et@w@nCkDbEqFlGcIlCqDzZia@vKoN`C`BnAz@zIpE`I`F|MtItAmC"
             }
         ],
         "summary": {
@@ -456,10 +493,10 @@
             "min_lat": 14.585114,
             "min_lon": 121.039082,
             "max_lat": 14.607519,
-            "max_lon": 121.063657,
-            "time": 5378.122,
-            "length": 6.758,
-            "cost": 6661.876
+            "max_lon": 121.064053,
+            "time": 5461.882,
+            "length": 6.818,
+            "cost": 6777.797
         },
         "status_message": "Found route between points",
         "status": 0,
