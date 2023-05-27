@@ -3,15 +3,16 @@
         "locations": [
             {
                 "type": "break",
-                "lat": 14.487077,
-                "lon": 120.991521,
+                "lat": 14.478534,
+                "lon": 120.996578,
                 "side_of_street": "right",
                 "original_index": 0
             },
             {
                 "type": "break",
-                "lat": 14.487378,
-                "lon": 121.011518,
+                "lat": 14.495921,
+                "lon": 121.006461,
+                "side_of_street": "right",
                 "original_index": 1
             }
         ],
@@ -20,176 +21,316 @@
                 "maneuvers": [
                     {
                         "type": 2,
-                        "instruction": "Walk north on Kayboboy Bridge/63.",
-                        "verbal_succinct_transition_instruction": "Walk north.",
-                        "verbal_pre_transition_instruction": "Walk north on Kayboboy Bridge, 63.",
-                        "verbal_post_transition_instruction": "Continue for 1.5 kilometers.",
-                        "street_names": [
-                            "63"
-                        ],
-                        "begin_street_names": [
-                            "Kayboboy Bridge",
-                            "63"
-                        ],
-                        "time": 1180.867,
-                        "length": 1.521,
-                        "cost": 1224.76,
+                        "instruction": "Walk southeast.",
+                        "verbal_succinct_transition_instruction": "Walk southeast. Then Turn right.",
+                        "verbal_pre_transition_instruction": "Walk southeast. Then Turn right.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
+                        "time": 21.741,
+                        "length": 0.03,
+                        "cost": 21.741,
                         "begin_shape_index": 0,
-                        "end_shape_index": 66,
+                        "end_shape_index": 2,
+                        "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 10,
-                        "instruction": "Turn right onto the walkway.",
-                        "verbal_transition_alert_instruction": "Turn right onto the walkway.",
+                        "instruction": "Turn right.",
+                        "verbal_transition_alert_instruction": "Turn right.",
                         "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto the walkway.",
+                        "verbal_pre_transition_instruction": "Turn right.",
+                        "verbal_post_transition_instruction": "Continue for 90 meters.",
+                        "time": 94.235,
+                        "length": 0.09,
+                        "cost": 104.235,
+                        "begin_shape_index": 2,
+                        "end_shape_index": 6,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Aurenina Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Aurenina Street.",
+                        "verbal_succinct_transition_instruction": "Turn left. Then Keep right to stay on Aurenina Street.",
+                        "verbal_pre_transition_instruction": "Turn left onto Aurenina Street. Then Keep right to stay on Aurenina Street.",
+                        "verbal_post_transition_instruction": "Continue for 10 meters.",
+                        "street_names": [
+                            "Aurenina Street"
+                        ],
+                        "time": 9.176,
+                        "length": 0.013,
+                        "cost": 14.176,
+                        "begin_shape_index": 6,
+                        "end_shape_index": 7,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 23,
+                        "instruction": "Keep right to stay on Aurenina Street.",
+                        "verbal_transition_alert_instruction": "Keep right to stay on Aurenina Street.",
+                        "verbal_pre_transition_instruction": "Keep right to stay on Aurenina Street.",
+                        "verbal_post_transition_instruction": "Continue for 20 meters.",
+                        "street_names": [
+                            "Aurenina Street"
+                        ],
+                        "time": 18.974,
+                        "length": 0.024,
+                        "cost": 19.922,
+                        "begin_shape_index": 7,
+                        "end_shape_index": 10,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Doctor A. Santos Avenue/63.",
+                        "verbal_transition_alert_instruction": "Turn right onto Doctor A. Santos Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Doctor A. Santos Avenue, 63.",
+                        "verbal_post_transition_instruction": "Continue for 600 meters.",
+                        "street_names": [
+                            "Doctor A. Santos Avenue",
+                            "63"
+                        ],
+                        "time": 415.425,
+                        "length": 0.56,
+                        "cost": 426.829,
+                        "begin_shape_index": 10,
+                        "end_shape_index": 23,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Schiling Lane.",
+                        "verbal_transition_alert_instruction": "Turn left onto Schiling Lane.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Schiling Lane.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "Schiling Lane"
+                        ],
+                        "time": 191.192,
+                        "length": 0.185,
+                        "cost": 811.92,
+                        "begin_shape_index": 23,
+                        "end_shape_index": 29,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Franc Lane.",
+                        "verbal_transition_alert_instruction": "Turn right onto Franc Lane.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Franc Lane.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
+                        "street_names": [
+                            "Franc Lane"
+                        ],
+                        "time": 27.134,
+                        "length": 0.032,
+                        "cost": 38.941,
+                        "begin_shape_index": 29,
+                        "end_shape_index": 31,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Rupee Lane.",
+                        "verbal_transition_alert_instruction": "Turn left onto Rupee Lane.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Rupee Lane.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "Rupee Lane"
+                        ],
+                        "time": 124.122,
+                        "length": 0.157,
+                        "cost": 135.328,
+                        "begin_shape_index": 31,
+                        "end_shape_index": 36,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Drachma Lane.",
+                        "verbal_transition_alert_instruction": "Turn right onto Drachma Lane.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Drachma Lane.",
+                        "verbal_post_transition_instruction": "Continue for 50 meters.",
+                        "street_names": [
+                            "Drachma Lane"
+                        ],
+                        "time": 36.776,
+                        "length": 0.049,
+                        "cost": 46.776,
+                        "begin_shape_index": 36,
+                        "end_shape_index": 39,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 16,
+                        "instruction": "Bear left onto Multinational Avenue.",
+                        "verbal_transition_alert_instruction": "Bear left onto Multinational Avenue.",
+                        "verbal_succinct_transition_instruction": "Bear left.",
+                        "verbal_pre_transition_instruction": "Bear left onto Multinational Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 1.5 kilometers.",
+                        "street_names": [
+                            "Multinational Avenue"
+                        ],
+                        "time": 1180.783,
+                        "length": 1.467,
+                        "cost": 1838.563,
+                        "begin_shape_index": 39,
+                        "end_shape_index": 63,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Nazareth.",
+                        "verbal_transition_alert_instruction": "Turn right onto Nazareth.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Nazareth.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "Nazareth"
+                        ],
+                        "time": 144.0,
+                        "length": 0.204,
+                        "cost": 149.0,
+                        "begin_shape_index": 63,
+                        "end_shape_index": 64,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Jordan.",
+                        "verbal_transition_alert_instruction": "Turn left onto Jordan.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Jordan.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "Jordan"
+                        ],
+                        "time": 182.007,
+                        "length": 0.232,
+                        "cost": 195.903,
+                        "begin_shape_index": 64,
+                        "end_shape_index": 68,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Daang Batang.",
+                        "verbal_transition_alert_instruction": "Turn right onto Daang Batang.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Daang Batang.",
                         "verbal_post_transition_instruction": "Continue for 300 meters.",
-                        "time": 251.682,
-                        "length": 0.319,
-                        "cost": 268.572,
-                        "begin_shape_index": 66,
-                        "end_shape_index": 74,
+                        "street_names": [
+                            "Daang Batang"
+                        ],
+                        "time": 206.258,
+                        "length": 0.289,
+                        "cost": 211.258,
+                        "begin_shape_index": 68,
+                        "end_shape_index": 78,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Santo Ni\u00f1o.",
+                        "verbal_transition_alert_instruction": "Turn left onto Santo Ni\u00f1o.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Santo Ni\u00f1o.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Santo Ni\u00f1o"
+                        ],
+                        "time": 84.564,
+                        "length": 0.108,
+                        "cost": 94.562,
+                        "begin_shape_index": 78,
+                        "end_shape_index": 81,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Swigert Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Swigert Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Swigert Street.",
+                        "verbal_post_transition_instruction": "Continue for 500 meters.",
+                        "street_names": [
+                            "Swigert Street"
+                        ],
+                        "time": 387.846,
+                        "length": 0.532,
+                        "cost": 402.071,
+                        "begin_shape_index": 81,
+                        "end_shape_index": 100,
                         "rough": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 10,
-                        "instruction": "Turn right onto Multinational Avenue.",
-                        "verbal_transition_alert_instruction": "Turn right onto Multinational Avenue.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Multinational Avenue.",
-                        "verbal_post_transition_instruction": "Continue for 600 meters.",
-                        "street_names": [
-                            "Multinational Avenue"
-                        ],
-                        "time": 465.875,
-                        "length": 0.597,
-                        "cost": 476.881,
-                        "begin_shape_index": 74,
-                        "end_shape_index": 90,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
                         "type": 15,
-                        "instruction": "Turn left onto Kaingin Road.",
-                        "verbal_transition_alert_instruction": "Turn left onto Kaingin Road.",
+                        "instruction": "Turn left onto Cooper Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Cooper Street.",
                         "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Kaingin Road.",
-                        "verbal_post_transition_instruction": "Continue for 600 meters.",
-                        "street_names": [
-                            "Kaingin Road"
-                        ],
-                        "time": 495.684,
-                        "length": 0.639,
-                        "cost": 513.378,
-                        "begin_shape_index": 90,
-                        "end_shape_index": 108,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 24,
-                        "instruction": "Keep left to take C-5 Road Extension.",
-                        "verbal_transition_alert_instruction": "Keep left to take C-5 Road Extension.",
-                        "verbal_pre_transition_instruction": "Keep left to take C-5 Road Extension.",
-                        "verbal_post_transition_instruction": "Continue for 400 meters.",
-                        "street_names": [
-                            "C-5 Road Extension"
-                        ],
-                        "time": 288.846,
-                        "length": 0.376,
-                        "cost": 293.846,
-                        "begin_shape_index": 108,
-                        "end_shape_index": 114,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 10,
-                        "instruction": "Turn right onto E. Rodriguez Avenue.",
-                        "verbal_transition_alert_instruction": "Turn right onto E. Rodriguez Avenue.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto E. Rodriguez Avenue.",
-                        "verbal_post_transition_instruction": "Continue for 1.5 kilometers.",
-                        "street_names": [
-                            "E. Rodriguez Avenue"
-                        ],
-                        "time": 1312.563,
-                        "length": 1.629,
-                        "cost": 1373.437,
-                        "begin_shape_index": 114,
-                        "end_shape_index": 202,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 10,
-                        "instruction": "Turn right onto Meekness Extension.",
-                        "verbal_transition_alert_instruction": "Turn right onto Meekness Extension.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Meekness Extension.",
+                        "verbal_pre_transition_instruction": "Turn left onto Cooper Street.",
                         "verbal_post_transition_instruction": "Continue for 100 meters.",
                         "street_names": [
-                            "Meekness Extension"
+                            "Cooper Street"
                         ],
-                        "time": 107.597,
-                        "length": 0.097,
-                        "cost": 126.263,
-                        "begin_shape_index": 202,
-                        "end_shape_index": 210,
+                        "time": 69.882,
+                        "length": 0.099,
+                        "cost": 74.882,
+                        "begin_shape_index": 100,
+                        "end_shape_index": 101,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 10,
-                        "instruction": "Turn right onto Humility.",
-                        "verbal_transition_alert_instruction": "Turn right onto Humility.",
+                        "instruction": "Turn right onto Haise Extension.",
+                        "verbal_transition_alert_instruction": "Turn right onto Haise Extension.",
                         "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Humility.",
-                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "verbal_pre_transition_instruction": "Turn right onto Haise Extension.",
+                        "verbal_post_transition_instruction": "Continue for 60 meters.",
                         "street_names": [
-                            "Humility"
+                            "Haise Extension"
                         ],
-                        "time": 119.915,
-                        "length": 0.155,
-                        "cost": 129.816,
-                        "begin_shape_index": 210,
-                        "end_shape_index": 212,
+                        "time": 47.57,
+                        "length": 0.062,
+                        "cost": 53.003,
+                        "begin_shape_index": 101,
+                        "end_shape_index": 105,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 15,
-                        "instruction": "Turn left onto Goodness.",
-                        "verbal_transition_alert_instruction": "Turn left onto Goodness.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Goodness.",
-                        "verbal_post_transition_instruction": "Continue for 300 meters.",
-                        "street_names": [
-                            "Goodness"
-                        ],
-                        "time": 241.566,
-                        "length": 0.265,
-                        "cost": 274.292,
-                        "begin_shape_index": 212,
-                        "end_shape_index": 220,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 4,
-                        "instruction": "You have arrived at your destination.",
-                        "verbal_transition_alert_instruction": "You will arrive at your destination.",
-                        "verbal_pre_transition_instruction": "You have arrived at your destination.",
+                        "type": 5,
+                        "instruction": "Your destination is on the right.",
+                        "verbal_transition_alert_instruction": "Your destination will be on the right.",
+                        "verbal_pre_transition_instruction": "Your destination is on the right.",
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 220,
-                        "end_shape_index": 220,
+                        "begin_shape_index": 105,
+                        "end_shape_index": 105,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -199,15 +340,15 @@
                     "has_toll": false,
                     "has_highway": false,
                     "has_ferry": false,
-                    "min_lat": 14.487094,
-                    "min_lon": 120.991282,
-                    "max_lat": 14.500539,
-                    "max_lon": 121.014724,
-                    "time": 4464.599,
-                    "length": 5.601,
-                    "cost": 4681.25
+                    "min_lat": 14.475513,
+                    "min_lon": 120.996752,
+                    "max_lat": 14.495908,
+                    "max_lon": 121.011259,
+                    "time": 3241.692,
+                    "length": 4.136,
+                    "cost": 4639.118
                 },
-                "shape": "mbfsZcbvweF}K_@iJc@{Ns@qHe@wGe@_AGwGe@mEa@_CQel@kGaJ}@yMqAcf@{EcHq@iBSgGm@sEc@aFg@eEa@yD_@eBQwMsAeBQwTyBkNqAaGk@}LaAgDYgL}@}mAcKcL_AyIu@eE]kDYcHm@gNiAqNkAeAKkCSsb@oDyLcAeE]mFY}Os@}G[uAB_DHuKT}GLsCFiI\\aEZgLbAs[hBoDMuFYsFgAiFuBuD_DyEmHa@cB}BgJkA_JqHyr@mAsJeFka@xAOaGea@kC}QuFePyH}S}NwX_IaMiY_XfH_ElF_B|lAiPfHaArJuAdu@oJvB_@hAm@hPiSvHsMdA{Dv@uElG}a@v@eCdB{B|c@wg@}e@}eAuOm\\}FcMu@{A_MaX{A}GOiKDcI`@_[t@wa@YmC{@eBoSs[sBiBeDiAyNgEiN_EeQgL{GoGsGuHkYsm@gUof@qU_g@cWuf@vCkBpLmNdOoRzAyBzDgGLS|GsK~AqEl@gNHoEQaGeDqq@Ey@MsEB_CViCjBeMlAkHxAiGpD}HnJkQ~GkMtKeSx@sApAsAjCuBvJmHjL}FrRiJbCsA|FwCnIgEx@a@hB}@pAq@r@_@lGaDdAc@lH_DfFiB\\MxFyB~H}ChDqAtC_AjCm@vAW`BYvEm@dKgA`J}@vCc@vBc@fCm@fVaKnRqHfAk@vF}B~HmCjToGxJiC`Cg@`AOt@MvHeA`J}@zHu@zPcBjGi@xDOvDIfFS~HMfQYdC?bMDpSFff@LpSF`PLv^d@vM`@rMf@Z@jENlA?j@Mf@_@@rE?lE@r@Lh@ZZd@ZtInCvVxGwDxOgX~aAhVxI~NzFfNlGHDD@d[bUrAbAdf@z]"
+                "shape": "e`vrZ_x`xeF~CcI{DkAdEqLuYqMn@wAz@eBsEoB]kBeB{AgC{Bzd@iXfM{G~j@{Zve@sXvGiEsCwDpa@aZn@g@pF_Fla@o]nGyGvH_IfFsG_ViYkAaB}DgFkAmA_VgS}PeNvDcH|BuE_P}LwTePkHkBmL\\kKzHiL}CuGs@kCYoSrCwSqAgi@aLak@cN_m@mO_i@qLsk@cM_l@oMsj@wN_n@}L_VwEuDq@_PsCgIkAia@gGcl@aJkl@}Iwm@oKch@wI_MyBeJuA{SeD{g@kI}g@sHdZcrBoj@qIaj@sIqPyBkU{DxAml@@oHDoBrBi\\DsAKmAw@{FQwAGwAeDe|@oZq@eFU}Xq@_@hKI~AS`BkBlNyCvO{Ghg@gEtYuFt]uEpZuC|SiA~Gi@bDu@dCsDjJmMv[q@f@}@^aJg@eWkEgLvv@uGmBiCWkNZyDj@"
             }
         ],
         "summary": {
@@ -215,13 +356,13 @@
             "has_toll": false,
             "has_highway": false,
             "has_ferry": false,
-            "min_lat": 14.487094,
-            "min_lon": 120.991282,
-            "max_lat": 14.500539,
-            "max_lon": 121.014724,
-            "time": 4464.599,
-            "length": 5.601,
-            "cost": 4681.25
+            "min_lat": 14.475513,
+            "min_lon": 120.996752,
+            "max_lat": 14.495908,
+            "max_lon": 121.011259,
+            "time": 3241.692,
+            "length": 4.136,
+            "cost": 4639.118
         },
         "status_message": "Found route between points",
         "status": 0,
