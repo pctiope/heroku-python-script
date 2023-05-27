@@ -3,14 +3,15 @@
         "locations": [
             {
                 "type": "break",
-                "lat": 14.561613,
-                "lon": 121.042049,
+                "lat": 14.561982,
+                "lon": 121.041586,
+                "side_of_street": "left",
                 "original_index": 0
             },
             {
                 "type": "break",
-                "lat": 14.546336,
-                "lon": 121.029142,
+                "lat": 14.545967,
+                "lon": 121.029605,
                 "side_of_street": "left",
                 "original_index": 1
             }
@@ -19,18 +20,36 @@
             {
                 "maneuvers": [
                     {
-                        "type": 1,
-                        "instruction": "Walk southwest on Zodiac Street.",
-                        "verbal_succinct_transition_instruction": "Walk southwest.",
-                        "verbal_pre_transition_instruction": "Walk southwest on Zodiac Street.",
+                        "type": 3,
+                        "instruction": "Walk south on Lirio Street.",
+                        "verbal_succinct_transition_instruction": "Walk south.",
+                        "verbal_pre_transition_instruction": "Walk south on Lirio Street.",
+                        "verbal_post_transition_instruction": "Continue for 60 meters.",
+                        "street_names": [
+                            "Lirio Street"
+                        ],
+                        "time": 50.676,
+                        "length": 0.059,
+                        "cost": 53.209,
+                        "begin_shape_index": 0,
+                        "end_shape_index": 1,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Zodiac Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Zodiac Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Zodiac Street.",
                         "verbal_post_transition_instruction": "Continue for 200 meters.",
                         "street_names": [
                             "Zodiac Street"
                         ],
-                        "time": 255.324,
-                        "length": 0.218,
-                        "cost": 330.423,
-                        "begin_shape_index": 0,
+                        "time": 222.402,
+                        "length": 0.174,
+                        "cost": 302.501,
+                        "begin_shape_index": 1,
                         "end_shape_index": 6,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -358,15 +377,15 @@
                         "verbal_transition_alert_instruction": "Turn right onto Acacia Avenue.",
                         "verbal_succinct_transition_instruction": "Turn right.",
                         "verbal_pre_transition_instruction": "Turn right onto Acacia Avenue.",
-                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
                         "street_names": [
                             "Acacia Avenue"
                         ],
-                        "time": 178.386,
-                        "length": 0.229,
-                        "cost": 183.386,
+                        "time": 221.769,
+                        "length": 0.285,
+                        "cost": 226.769,
                         "begin_shape_index": 75,
-                        "end_shape_index": 79,
+                        "end_shape_index": 80,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -378,8 +397,8 @@
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 79,
-                        "end_shape_index": 79,
+                        "begin_shape_index": 80,
+                        "end_shape_index": 80,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -389,15 +408,15 @@
                     "has_toll": false,
                     "has_highway": false,
                     "has_ferry": false,
-                    "min_lat": 14.546287,
+                    "min_lat": 14.545826,
                     "min_lon": 121.026473,
-                    "max_lat": 14.561688,
-                    "max_lon": 121.041887,
-                    "time": 2652.059,
-                    "length": 3.066,
-                    "cost": 3603.743
+                    "max_lat": 14.561942,
+                    "max_lon": 121.041587,
+                    "time": 2713.195,
+                    "length": 3.138,
+                    "cost": 3672.413
                 },
-                "shape": "oxwwZ}|xzeFlOtQtOdR|NhRz[`b@HH`ApAzSkP|@hAfCbD`L`M`tBplCdoC|iDzDpEGzAIdDdBrBsBhBoBdBqHxGxFbH^rAqEpDbAzAdBhCpDjF\\f@fIcGbKuHdAo@jEqAd@GZ@`@Db@HfK|MhCfDd[v`@vI|KblCvgDnGvLnZzc@~Ul[pDbITlGqA|CqEzEvBlC`DeDhCyBhMoKvNyKjFzFv[za@tO`TxFnHlA|AzTvXjKtMfv@r`AtAcApHzIbBaB|@^dAJn@Er@Kp@c@rE{DfGnH~CkCtBqBoCeDGEoRkWyf@{p@`\\oV|M_Kvi@oYzSgJ"
+                "shape": "mhxwZ_axzeFj_@gHtOdR|NhRz[`b@HH`ApAzSkP|@hAfCbD`L`M`tBplCdoC|iDzDpEGzAIdDdBrBsBhBoBdBqHxGxFbH^rAqEpDbAzAdBhCpDjF\\f@fIcGbKuHdAo@jEqAd@GZ@`@Db@HfK|MhCfDd[v`@vI|KblCvgDnGvLnZzc@~Ul[pDbITlGqA|CqEzEvBlC`DeDhCyBhMoKvNyKjFzFv[za@tO`TxFnHlA|AzTvXjKtMfv@r`AtAcApHzIbBaB|@^dAJn@Er@Kp@c@rE{DfGnH~CkCtBqBoCeDGEoRkWyf@{p@`\\oV|M_Kvi@oYzWmLxWqI"
             }
         ],
         "summary": {
@@ -405,13 +424,13 @@
             "has_toll": false,
             "has_highway": false,
             "has_ferry": false,
-            "min_lat": 14.546287,
+            "min_lat": 14.545826,
             "min_lon": 121.026473,
-            "max_lat": 14.561688,
-            "max_lon": 121.041887,
-            "time": 2652.059,
-            "length": 3.066,
-            "cost": 3603.743
+            "max_lat": 14.561942,
+            "max_lon": 121.041587,
+            "time": 2713.195,
+            "length": 3.138,
+            "cost": 3672.413
         },
         "status_message": "Found route between points",
         "status": 0,
