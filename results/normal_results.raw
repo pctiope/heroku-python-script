@@ -3,15 +3,14 @@
         "locations": [
             {
                 "type": "break",
-                "lat": 14.544002,
-                "lon": 121.03485,
-                "side_of_street": "right",
+                "lat": 14.544557,
+                "lon": 121.032231,
                 "original_index": 0
             },
             {
                 "type": "break",
-                "lat": 14.563947,
-                "lon": 121.036341,
+                "lat": 14.563392,
+                "lon": 121.03896,
                 "side_of_street": "left",
                 "original_index": 1
             }
@@ -20,38 +19,55 @@
             {
                 "maneuvers": [
                     {
-                        "type": 2,
-                        "instruction": "Walk southwest on Molave Place.",
-                        "verbal_succinct_transition_instruction": "Walk southwest. Then Turn left onto Molave Street.",
-                        "verbal_pre_transition_instruction": "Walk southwest on Molave Place. Then Turn left onto Molave Street.",
-                        "verbal_post_transition_instruction": "Continue for 40 meters.",
+                        "type": 1,
+                        "instruction": "Walk south on Banaba Circle.",
+                        "verbal_succinct_transition_instruction": "Walk south.",
+                        "verbal_pre_transition_instruction": "Walk south on Banaba Circle.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
                         "street_names": [
-                            "Molave Place"
+                            "Banaba Circle"
                         ],
-                        "time": 29.418,
-                        "length": 0.034,
-                        "cost": 32.36,
+                        "time": 76.464,
+                        "length": 0.098,
+                        "cost": 76.464,
                         "begin_shape_index": 0,
-                        "end_shape_index": 1,
-                        "verbal_multi_cue": true,
+                        "end_shape_index": 7,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 15,
-                        "instruction": "Turn left onto Molave Street.",
-                        "verbal_transition_alert_instruction": "Turn left onto Molave Street.",
+                        "instruction": "Turn left to stay on Banaba Circle.",
+                        "verbal_transition_alert_instruction": "Turn left to stay on Banaba Circle.",
                         "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Molave Street.",
-                        "verbal_post_transition_instruction": "Continue for 90 meters.",
+                        "verbal_pre_transition_instruction": "Turn left to stay on Banaba Circle.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Banaba Circle"
+                        ],
+                        "time": 108.48,
+                        "length": 0.136,
+                        "cost": 111.359,
+                        "begin_shape_index": 7,
+                        "end_shape_index": 9,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Molave Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Molave Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Molave Street.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
                         "street_names": [
                             "Molave Street"
                         ],
-                        "time": 98.632,
-                        "length": 0.089,
-                        "cost": 128.291,
-                        "begin_shape_index": 1,
-                        "end_shape_index": 4,
+                        "time": 220.538,
+                        "length": 0.246,
+                        "cost": 250.197,
+                        "begin_shape_index": 9,
+                        "end_shape_index": 16,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -68,8 +84,8 @@
                         "time": 114.635,
                         "length": 0.145,
                         "cost": 125.367,
-                        "begin_shape_index": 4,
-                        "end_shape_index": 8,
+                        "begin_shape_index": 16,
+                        "end_shape_index": 20,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -86,8 +102,8 @@
                         "time": 132.705,
                         "length": 0.188,
                         "cost": 137.705,
-                        "begin_shape_index": 8,
-                        "end_shape_index": 15,
+                        "begin_shape_index": 20,
+                        "end_shape_index": 27,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -104,8 +120,8 @@
                         "time": 485.421,
                         "length": 0.596,
                         "cost": 531.742,
-                        "begin_shape_index": 15,
-                        "end_shape_index": 33,
+                        "begin_shape_index": 27,
+                        "end_shape_index": 45,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -122,8 +138,8 @@
                         "time": 86.047,
                         "length": 0.115,
                         "cost": 91.047,
-                        "begin_shape_index": 33,
-                        "end_shape_index": 40,
+                        "begin_shape_index": 45,
+                        "end_shape_index": 52,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -140,8 +156,8 @@
                         "time": 520.136,
                         "length": 0.687,
                         "cost": 535.572,
-                        "begin_shape_index": 40,
-                        "end_shape_index": 50,
+                        "begin_shape_index": 52,
+                        "end_shape_index": 62,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -155,8 +171,8 @@
                         "time": 46.644,
                         "length": 0.059,
                         "cost": 53.976,
-                        "begin_shape_index": 50,
-                        "end_shape_index": 52,
+                        "begin_shape_index": 62,
+                        "end_shape_index": 64,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -173,8 +189,8 @@
                         "time": 44.894,
                         "length": 0.06,
                         "cost": 49.894,
-                        "begin_shape_index": 52,
-                        "end_shape_index": 54,
+                        "begin_shape_index": 64,
+                        "end_shape_index": 66,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -191,8 +207,8 @@
                         "time": 332.404,
                         "length": 0.372,
                         "cost": 387.028,
-                        "begin_shape_index": 54,
-                        "end_shape_index": 65,
+                        "begin_shape_index": 66,
+                        "end_shape_index": 77,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -212,8 +228,8 @@
                         "time": 143.202,
                         "length": 0.17,
                         "cost": 186.592,
-                        "begin_shape_index": 65,
-                        "end_shape_index": 70,
+                        "begin_shape_index": 77,
+                        "end_shape_index": 82,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -227,8 +243,8 @@
                         "time": 10.277,
                         "length": 0.013,
                         "cost": 15.791,
-                        "begin_shape_index": 70,
-                        "end_shape_index": 71,
+                        "begin_shape_index": 82,
+                        "end_shape_index": 83,
                         "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -243,8 +259,8 @@
                         "time": 13.044,
                         "length": 0.014,
                         "cost": 19.567,
-                        "begin_shape_index": 71,
-                        "end_shape_index": 72,
+                        "begin_shape_index": 83,
+                        "end_shape_index": 84,
                         "rough": true,
                         "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
@@ -260,8 +276,8 @@
                         "time": 11.858,
                         "length": 0.012,
                         "cost": 53.717,
-                        "begin_shape_index": 72,
-                        "end_shape_index": 74,
+                        "begin_shape_index": 84,
+                        "end_shape_index": 86,
                         "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -279,8 +295,8 @@
                         "time": 39.529,
                         "length": 0.048,
                         "cost": 46.223,
-                        "begin_shape_index": 74,
-                        "end_shape_index": 77,
+                        "begin_shape_index": 86,
+                        "end_shape_index": 89,
                         "rough": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -295,8 +311,8 @@
                         "time": 18.084,
                         "length": 0.014,
                         "cost": 54.414,
-                        "begin_shape_index": 77,
-                        "end_shape_index": 79,
+                        "begin_shape_index": 89,
+                        "end_shape_index": 91,
                         "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
@@ -311,8 +327,8 @@
                         "time": 104.286,
                         "length": 0.083,
                         "cost": 139.552,
-                        "begin_shape_index": 79,
-                        "end_shape_index": 81,
+                        "begin_shape_index": 91,
+                        "end_shape_index": 93,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -326,65 +342,45 @@
                         "street_names": [
                             "Estrella Street"
                         ],
-                        "time": 295.468,
-                        "length": 0.376,
-                        "cost": 318.598,
-                        "begin_shape_index": 81,
-                        "end_shape_index": 95,
-                        "travel_mode": "pedestrian",
-                        "travel_type": "foot"
-                    },
-                    {
-                        "type": 15,
-                        "instruction": "Turn left onto Rockwell Drive.",
-                        "verbal_transition_alert_instruction": "Turn left onto Rockwell Drive.",
-                        "verbal_succinct_transition_instruction": "Turn left.",
-                        "verbal_pre_transition_instruction": "Turn left onto Rockwell Drive.",
-                        "verbal_post_transition_instruction": "Continue for 300 meters.",
-                        "street_names": [
-                            "Rockwell Drive"
-                        ],
-                        "time": 254.496,
-                        "length": 0.296,
-                        "cost": 307.528,
-                        "begin_shape_index": 95,
+                        "time": 275.59,
+                        "length": 0.352,
+                        "cost": 295.163,
+                        "begin_shape_index": 93,
                         "end_shape_index": 105,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
                         "type": 10,
-                        "instruction": "Turn right onto Lopez Drive.",
-                        "verbal_transition_alert_instruction": "Turn right onto Lopez Drive.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Lopez Drive.",
-                        "verbal_post_transition_instruction": "Continue for 80 meters.",
+                        "instruction": "Turn right onto Amapola Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Amapola Street.",
+                        "verbal_succinct_transition_instruction": "Turn right. Then Turn left.",
+                        "verbal_pre_transition_instruction": "Turn right onto Amapola Street. Then Turn left.",
+                        "verbal_post_transition_instruction": "Continue for 20 meters.",
                         "street_names": [
-                            "Lopez Drive"
+                            "Amapola Street"
                         ],
-                        "time": 104.666,
-                        "length": 0.082,
-                        "cost": 145.881,
+                        "time": 11.971,
+                        "length": 0.016,
+                        "cost": 16.971,
                         "begin_shape_index": 105,
-                        "end_shape_index": 113,
+                        "end_shape_index": 106,
+                        "verbal_multi_cue": true,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 10,
-                        "instruction": "Turn right onto Hidalgo Drive.",
-                        "verbal_transition_alert_instruction": "Turn right onto Hidalgo Drive.",
-                        "verbal_succinct_transition_instruction": "Turn right.",
-                        "verbal_pre_transition_instruction": "Turn right onto Hidalgo Drive.",
-                        "verbal_post_transition_instruction": "Continue for 30 meters.",
-                        "street_names": [
-                            "Hidalgo Drive"
-                        ],
-                        "time": 25.016,
-                        "length": 0.031,
-                        "cost": 30.808,
-                        "begin_shape_index": 113,
-                        "end_shape_index": 117,
+                        "type": 15,
+                        "instruction": "Turn left.",
+                        "verbal_transition_alert_instruction": "Turn left.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left.",
+                        "verbal_post_transition_instruction": "Continue for 60 meters.",
+                        "time": 82.37,
+                        "length": 0.063,
+                        "cost": 112.278,
+                        "begin_shape_index": 106,
+                        "end_shape_index": 109,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -396,8 +392,8 @@
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 117,
-                        "end_shape_index": 117,
+                        "begin_shape_index": 109,
+                        "end_shape_index": 109,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -408,14 +404,14 @@
                     "has_highway": false,
                     "has_ferry": false,
                     "min_lat": 14.543038,
-                    "min_lon": 121.034707,
-                    "max_lat": 14.563804,
+                    "min_lon": 121.032204,
+                    "max_lat": 14.563416,
                     "max_lon": 121.041564,
-                    "time": 2910.873,
-                    "length": 3.485,
-                    "cost": 3391.662
+                    "time": 2878.59,
+                    "length": 3.488,
+                    "cost": 3290.628
                 },
-                "shape": "e`uvZkkkzeFpKdNvFoExGuEbWwO_KcSoEuMiE{N}GuX}RbBuItAwNbEyEfBqHhE{NxJeNlKyUuYiSmYoLqU}JsWgNy^gBeDiCkDiDiCaEaCwDaAcGi@uFCqKd@aLZ}P\\ef@|@uPa@k]_F_CpJgCjJmAhCiAvAkF|C_HdE{IzE{O_TgSwQmRoKuvAga@ig@sOaj@iPg_@iH_`@kFct@}HiCx@wI{@gU}A`BoUl@uJyZ]mVHgVNmAAY?sER{GNwZhBeX|Awy@|E{AHqLmNiIwJiNcPiL_NqJyLrDmCmDsDJKkC_DEDuObNaBxAlCjDQRb\\n`@|@hA{FzEgLfIkKhIoPrJcInD{ClAuHjCSFmH|Bc{@~VsKjF}NdEgGhBcCz@`AtDZfD?hBVfPDzLZz_AAvFaDBAx]AlPkEFsBLeBNiDx@sGhD}C~A{C~A}CxAwAaFiAkDe@uC??"
+                "shape": "_jvvZw`fzeFpALbFN|DOzGqB|H{D`HoF|CcDqV}]sV{]|K_VdOsUpJsLlKwKvFoExGuEbWwO_KcSoEuMiE{N}GuX}RbBuItAwNbEyEfBqHhE{NxJeNlKyUuYiSmYoLqU}JsWgNy^gBeDiCkDiDiCaEaCwDaAcGi@uFCqKd@aLZ}P\\ef@|@uPa@k]_F_CpJgCjJmAhCiAvAkF|C_HdE{IzE{O_TgSwQmRoKuvAga@ig@sOaj@iPg_@iH_`@kFct@}HiCx@wI{@gU}A`BoUl@uJyZ]mVHgVNmAAY?sER{GNwZhBeX|Awy@|E{AHqLmNiIwJiNcPiL_NqJyLrDmCmDsDJKkC_DEDuObNaBxAlCjDQRb\\n`@|@hA{FzEgLfIkKhIoPrJcInD{ClAuHjCSFmH|Bc{@~VsKjF}NdEuBmGiBb@kOjFkL~D"
             }
         ],
         "summary": {
@@ -424,12 +420,12 @@
             "has_highway": false,
             "has_ferry": false,
             "min_lat": 14.543038,
-            "min_lon": 121.034707,
-            "max_lat": 14.563804,
+            "min_lon": 121.032204,
+            "max_lat": 14.563416,
             "max_lon": 121.041564,
-            "time": 2910.873,
-            "length": 3.485,
-            "cost": 3391.662
+            "time": 2878.59,
+            "length": 3.488,
+            "cost": 3290.628
         },
         "status_message": "Found route between points",
         "status": 0,
