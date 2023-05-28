@@ -3,15 +3,16 @@
         "locations": [
             {
                 "type": "break",
-                "lat": 14.592224,
-                "lon": 121.02786,
+                "lat": 14.585729,
+                "lon": 121.028236,
+                "side_of_street": "right",
                 "original_index": 0
             },
             {
                 "type": "break",
-                "lat": 14.586821,
-                "lon": 121.047117,
-                "side_of_street": "left",
+                "lat": 14.593316,
+                "lon": 121.046741,
+                "side_of_street": "right",
                 "original_index": 1
             }
         ],
@@ -19,19 +20,141 @@
             {
                 "maneuvers": [
                     {
-                        "type": 1,
-                        "instruction": "Walk east on P. Martinez Street.",
-                        "verbal_succinct_transition_instruction": "Walk east.",
-                        "verbal_pre_transition_instruction": "Walk east on P. Martinez Street.",
-                        "verbal_post_transition_instruction": "Continue for 600 meters.",
+                        "type": 2,
+                        "instruction": "Walk south on G. Alvaran Street.",
+                        "verbal_succinct_transition_instruction": "Walk south.",
+                        "verbal_pre_transition_instruction": "Walk south on G. Alvaran Street.",
+                        "verbal_post_transition_instruction": "Continue for 90 meters.",
                         "street_names": [
-                            "P. Martinez Street"
+                            "G. Alvaran Street"
                         ],
-                        "time": 504.151,
-                        "length": 0.609,
-                        "cost": 583.195,
+                        "time": 63.389,
+                        "length": 0.089,
+                        "cost": 63.389,
                         "begin_shape_index": 0,
-                        "end_shape_index": 18,
+                        "end_shape_index": 3,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto P. Lopez Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto P. Lopez Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto P. Lopez Street.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "street_names": [
+                            "P. Lopez Street"
+                        ],
+                        "time": 213.719,
+                        "length": 0.264,
+                        "cost": 229.321,
+                        "begin_shape_index": 3,
+                        "end_shape_index": 8,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto T. Bernardo Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto T. Bernardo Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto T. Bernardo Street.",
+                        "verbal_post_transition_instruction": "Continue for 70 meters.",
+                        "street_names": [
+                            "T. Bernardo Street"
+                        ],
+                        "time": 51.247,
+                        "length": 0.065,
+                        "cost": 56.247,
+                        "begin_shape_index": 8,
+                        "end_shape_index": 9,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto F. Ortigas Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto F. Ortigas Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto F. Ortigas Street.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "F. Ortigas Street"
+                        ],
+                        "time": 169.651,
+                        "length": 0.194,
+                        "cost": 188.579,
+                        "begin_shape_index": 9,
+                        "end_shape_index": 16,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 22,
+                        "instruction": "Keep straight to stay on F. Ortigas Street.",
+                        "verbal_transition_alert_instruction": "Keep straight to stay on F. Ortigas Street.",
+                        "verbal_pre_transition_instruction": "Keep straight to stay on F. Ortigas Street.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
+                        "street_names": [
+                            "F. Ortigas Street"
+                        ],
+                        "time": 19.451,
+                        "length": 0.025,
+                        "cost": 19.451,
+                        "begin_shape_index": 16,
+                        "end_shape_index": 20,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 23,
+                        "instruction": "Keep right to stay on F. Ortigas Street.",
+                        "verbal_transition_alert_instruction": "Keep right to stay on F. Ortigas Street.",
+                        "verbal_pre_transition_instruction": "Keep right to stay on F. Ortigas Street.",
+                        "verbal_post_transition_instruction": "Continue for 1 kilometer.",
+                        "street_names": [
+                            "F. Ortigas Street"
+                        ],
+                        "time": 843.131,
+                        "length": 1.098,
+                        "cost": 889.415,
+                        "begin_shape_index": 20,
+                        "end_shape_index": 67,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 23,
+                        "instruction": "Keep right to take Nueve de Pebrero Street.",
+                        "verbal_transition_alert_instruction": "Keep right to take Nueve de Pebrero Street.",
+                        "verbal_pre_transition_instruction": "Keep right to take Nueve de Pebrero Street.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Nueve de Pebrero Street"
+                        ],
+                        "time": 113.957,
+                        "length": 0.145,
+                        "cost": 117.261,
+                        "begin_shape_index": 67,
+                        "end_shape_index": 73,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 24,
+                        "instruction": "Keep left to take S. Laurel Street.",
+                        "verbal_transition_alert_instruction": "Keep left to take S. Laurel Street.",
+                        "verbal_pre_transition_instruction": "Keep left to take S. Laurel Street.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "street_names": [
+                            "S. Laurel Street"
+                        ],
+                        "time": 245.482,
+                        "length": 0.241,
+                        "cost": 308.558,
+                        "begin_shape_index": 73,
+                        "end_shape_index": 82,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -41,52 +164,67 @@
                         "verbal_transition_alert_instruction": "Turn right onto Shaw Boulevard.",
                         "verbal_succinct_transition_instruction": "Turn right.",
                         "verbal_pre_transition_instruction": "Turn right onto Shaw Boulevard, 141.",
-                        "verbal_post_transition_instruction": "Continue for 800 meters.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
                         "street_names": [
                             "Shaw Boulevard",
                             "141"
                         ],
-                        "time": 692.501,
-                        "length": 0.835,
-                        "cost": 746.934,
-                        "begin_shape_index": 18,
-                        "end_shape_index": 60,
+                        "time": 139.842,
+                        "length": 0.181,
+                        "cost": 150.709,
+                        "begin_shape_index": 82,
+                        "end_shape_index": 88,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 23,
-                        "instruction": "Keep right to stay on Shaw Boulevard/141.",
-                        "verbal_transition_alert_instruction": "Keep right to stay on Shaw Boulevard.",
-                        "verbal_pre_transition_instruction": "Keep right to stay on Shaw Boulevard, 141.",
-                        "verbal_post_transition_instruction": "Continue for 400 meters.",
+                        "type": 15,
+                        "instruction": "Turn left onto Lee Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Lee Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Lee Street.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
                         "street_names": [
-                            "Shaw Boulevard",
-                            "141"
+                            "Lee Street"
                         ],
-                        "time": 406.15,
-                        "length": 0.43,
-                        "cost": 505.504,
-                        "begin_shape_index": 60,
-                        "end_shape_index": 74,
+                        "time": 26.88,
+                        "length": 0.034,
+                        "cost": 33.224,
+                        "begin_shape_index": 88,
+                        "end_shape_index": 89,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 24,
-                        "instruction": "Keep left to stay on Shaw Boulevard/141.",
-                        "verbal_transition_alert_instruction": "Keep left to stay on Shaw Boulevard.",
-                        "verbal_pre_transition_instruction": "Keep left to stay on Shaw Boulevard, 141.",
-                        "verbal_post_transition_instruction": "Continue for 400 meters.",
+                        "type": 11,
+                        "instruction": "Make a sharp right onto Wack-wack Road.",
+                        "verbal_transition_alert_instruction": "Make a sharp right onto Wack-wack Road.",
+                        "verbal_succinct_transition_instruction": "Make a sharp right.",
+                        "verbal_pre_transition_instruction": "Make a sharp right onto Wack-wack Road.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
                         "street_names": [
-                            "Shaw Boulevard",
-                            "141"
+                            "Wack-wack Road"
                         ],
-                        "time": 350.054,
-                        "length": 0.391,
-                        "cost": 514.431,
-                        "begin_shape_index": 74,
-                        "end_shape_index": 94,
+                        "time": 200.668,
+                        "length": 0.249,
+                        "cost": 220.018,
+                        "begin_shape_index": 89,
+                        "end_shape_index": 99,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 16,
+                        "instruction": "Bear left.",
+                        "verbal_transition_alert_instruction": "Bear left.",
+                        "verbal_succinct_transition_instruction": "Bear left.",
+                        "verbal_pre_transition_instruction": "Bear left.",
+                        "verbal_post_transition_instruction": "Continue for 20 meters.",
+                        "time": 15.247,
+                        "length": 0.018,
+                        "cost": 21.009,
+                        "begin_shape_index": 99,
+                        "end_shape_index": 100,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
@@ -94,28 +232,59 @@
                         "type": 15,
                         "instruction": "Turn left.",
                         "verbal_transition_alert_instruction": "Turn left.",
-                        "verbal_succinct_transition_instruction": "Turn left. Then Your destination will be on the left.",
-                        "verbal_pre_transition_instruction": "Turn left. Then Your destination will be on the left.",
-                        "verbal_post_transition_instruction": "Continue for 10 meters.",
-                        "time": 9.191,
-                        "length": 0.011,
-                        "cost": 614.65,
-                        "begin_shape_index": 94,
-                        "end_shape_index": 95,
-                        "verbal_multi_cue": true,
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
+                        "time": 28.884,
+                        "length": 0.032,
+                        "cost": 632.264,
+                        "begin_shape_index": 100,
+                        "end_shape_index": 103,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     },
                     {
-                        "type": 6,
-                        "instruction": "Your destination is on the left.",
-                        "verbal_transition_alert_instruction": "Your destination will be on the left.",
-                        "verbal_pre_transition_instruction": "Your destination is on the left.",
+                        "type": 15,
+                        "instruction": "Turn left.",
+                        "verbal_transition_alert_instruction": "Turn left.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left.",
+                        "verbal_post_transition_instruction": "Continue for 600 meters.",
+                        "time": 490.545,
+                        "length": 0.588,
+                        "cost": 516.929,
+                        "begin_shape_index": 103,
+                        "end_shape_index": 132,
+                        "rough": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right.",
+                        "verbal_transition_alert_instruction": "Turn right.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right.",
+                        "verbal_post_transition_instruction": "Continue for 200 meters.",
+                        "time": 189.549,
+                        "length": 0.187,
+                        "cost": 228.209,
+                        "begin_shape_index": 132,
+                        "end_shape_index": 144,
+                        "rough": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 5,
+                        "instruction": "Your destination is on the right.",
+                        "verbal_transition_alert_instruction": "Your destination will be on the right.",
+                        "verbal_pre_transition_instruction": "Your destination is on the right.",
                         "time": 0.0,
                         "length": 0.0,
                         "cost": 0.0,
-                        "begin_shape_index": 95,
-                        "end_shape_index": 95,
+                        "begin_shape_index": 144,
+                        "end_shape_index": 144,
                         "travel_mode": "pedestrian",
                         "travel_type": "foot"
                     }
@@ -125,15 +294,15 @@
                     "has_toll": false,
                     "has_highway": false,
                     "has_ferry": false,
-                    "min_lat": 14.586692,
-                    "min_lon": 121.02787,
-                    "max_lat": 14.592247,
-                    "max_lon": 121.047179,
-                    "time": 1962.048,
-                    "length": 2.276,
-                    "cost": 2964.717
+                    "min_lat": 14.584988,
+                    "min_lon": 121.028381,
+                    "max_lat": 14.593449,
+                    "max_lon": 121.048887,
+                    "time": 2811.649,
+                    "length": 3.413,
+                    "cost": 3674.588
                 },
-                "shape": "onsyZ}p}yeFj@kBhAkE\\wKd@{[bBcOtHgMxLaI~FyDzDmGrN{b@jOsf@rF_RjHcVnH{VpEmLCyBmCqFyUai@lGsQ\\cAvC}HdBcFdDmJXeAbE_LbFaM`@}@fCiF|IsOFMjBgD`UkXnEuElA{ApAkB~@wBb@sBJcCK_TCmDAuBSyOYsSEwCKoL]mPIyH?i@G{EMiHScSCiECqEGgIg@}h@GkHq@qm@?uD@mJJyExGae@~CoT~C{SnAqHzAeH\\cBbB_JlAqGr@oC`HkXbGqShF_QtHwZdFmQ@wBbCwItLwb@zAsGdAwCxCoIlJaVdDwIzOcc@~CaGzCqEpDiEJMfAyAfCgDlAa@|D}Et@w@nCkDbEqF}CeC"
+                "shape": "swfyZ{p~yeFxRi@vAMhWyLwOu[yOu\\mOm\\wQe_@yEgJ`[sWsJ_UcFwNcF_OcFaPqGuSeAwCoAcD_ByEg@aBYcAKk@R_CWqDq@uEyCg[y@sIkBiTwCs]aEi]{A_EXkGvZo_A|AaGd@qDiCgPk@wDqAwBw^iT}BoAeGqCuBoAaLyGeDoBoB{EkAkF^iJd@oLJyDHaM?}@B_D@kD@wA@q@CyCWa]bAyIrIaPbIsMpNsR~K{PxAyC~I}NtEkH|CcEbDwEbBqGeDqN}BmOw@mG_@{BWyBcEk]MoRkCuDaVa]}Zsb@{CsEqMyRm@s@yAeBeD{BgA[dAwCxCoIlJaVdDwIzOcc@~CaGwQiBrIgBxAm@bAeAf@cBh@_CoBcXuFo~@iBeTYyCGgBmBuH_E}@aEcCqB_CkS`RqI|DyHtBoThJ}Ap@wL`GkL`@sClAsBhGiKpFkDtDgC~@eL|B{CdBgFhCqHbC}@~A{@jE}@v@{D`@qI|AcHzGoOnQoGzIqInOyJdLkIdCwFxDqCbEwHmF{EkD_FcEmEs@qJjBsFbByJa@_DsA_E}DkFyFmIuDME"
             }
         ],
         "summary": {
@@ -141,13 +310,13 @@
             "has_toll": false,
             "has_highway": false,
             "has_ferry": false,
-            "min_lat": 14.586692,
-            "min_lon": 121.02787,
-            "max_lat": 14.592247,
-            "max_lon": 121.047179,
-            "time": 1962.048,
-            "length": 2.276,
-            "cost": 2964.717
+            "min_lat": 14.584988,
+            "min_lon": 121.028381,
+            "max_lat": 14.593449,
+            "max_lon": 121.048887,
+            "time": 2811.649,
+            "length": 3.413,
+            "cost": 3674.588
         },
         "status_message": "Found route between points",
         "status": 0,
