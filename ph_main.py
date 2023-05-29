@@ -46,25 +46,30 @@ while 1:
     print(sensors[top_rand].x,sensors[top_rand].y)
     first_point, second_point = random_waypoints(poly, sensors[top_rand].x, sensors[top_rand].y)
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
-    route_exposure = generate_route(coords, threshold)
+    route_exposure, total_route = generate_route(coords, threshold)
     sleep(5)
-    normal_exposure = generate_normal(coords, threshold)
+    normal_exposure, total_normal = generate_normal(coords, threshold)
     old_route_exp, old_normal_exp = route_exposure, normal_exposure
+    old_total_route, old_total_normal = total_route, total_normal
     print(route_exposure, normal_exposure, "route exposure, normal exposure")
+    print(total_route, total_normal, "total route exposure, total normal exposure")
     i = max_AQI - 1
     while i > 0:
         threshold = i
         print("threshold: "+str(threshold))
         polygonize(threshold, date_time)
         exclude_poly = filter(threshold, date_time)
-        route_exposure = generate_route(coords, threshold)
+        route_exposure, total_route = generate_route(coords, threshold)
         if route_exposure == None:
-            route_exposure = generate_route(coords, old_threshold)
-            print(old_route_exp, old_normal_exp, "route exposure, normal exposure")
-            break
-        if route_exposure != old_route_exp or normal_exposure != old_normal_exp:
+            route_exposure, total_route = generate_route(coords, threshold)
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
+            print(total_route, total_normal, "total route exposure, total normal exposure")
+            break
+        if route_exposure != old_route_exp or normal_exposure != old_normal_exp or total_route != old_total_route or total_normal != old_total_normal:
+            print(route_exposure, normal_exposure, "route exposure, normal exposure")
+            print(total_route, total_normal, "total route exposure, total normal exposure")
             i -= 1
         else:
             i -= 5
         old_route_exp, old_normal_exp, old_threshold = route_exposure, normal_exposure, threshold
+        old_total_route, old_total_normal = total_route, total_normal

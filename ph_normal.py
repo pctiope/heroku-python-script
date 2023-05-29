@@ -49,4 +49,4 @@ def generate_normal(coords, threshold):
     repo = g.get_repo("pctiope/heroku-python-script")
     contents = repo.get_contents("/results/normal_results.raw", ref="dev")
     repo.update_file(contents.path, "updated normal_results.raw", normal_output, contents.sha, branch="dev")
-    return total/total_distance
+    return total/total_distance, total

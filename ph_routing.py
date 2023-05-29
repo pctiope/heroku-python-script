@@ -10,6 +10,7 @@ from github import Github
 def generate_route(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
     output_list = []
+    total_list = []
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     sleep(5)
     with open("./temp/filtered"+str(threshold)+".json","r") as f:
@@ -65,6 +66,7 @@ def generate_route(coords, threshold):
             total += distance*level
             total_distest += distance
         output_list.append(total/total_distest)
+        total_list.append(total)
     
     output = json.dumps(output_dict, indent=4)
     # with open("./results/results_"+str(threshold)+".json","w") as f:
@@ -77,4 +79,4 @@ def generate_route(coords, threshold):
     repo.update_file(contents.path, "updated route.geojson", output, contents.sha, branch="dev")
     contents = repo.get_contents("/results/route_results.raw", ref="dev")
     repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="dev")
-    return output_list[0]
+    return output_list[0], total_list[0]
