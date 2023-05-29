@@ -11,7 +11,7 @@ from ph_routing import generate_route
 from ph_normal import generate_normal
 from ph_random import random_waypoints
 import random
-from scikit-learn.metrics import mean_squared_error
+import numpy as np
 
 with open("./metro_manila.geojson") as f:
         data = json.load(f)
@@ -32,7 +32,7 @@ while 1:
         df_to_shp(df, date_time)
         get_idw(date_time)
         original_value, interpolated_value = get_error(date_time)
-        print("RMSE:", mean_squared_error(original_value, interpolated_value, squared=False))
+        print("RMSE:", np.square(np.subtract(original_value,interpolated_value)).mean())
         max_AQI = max(int(i) for i in US_AQI)
         poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
         sensors = []
