@@ -26,8 +26,8 @@ def filter(threshold, date_time, poly):
         else:
             print("Something went wrong")
 
-    print(type(Polygon(exclude_poly[0])), 'exclude_poly')
-    print(type(poly), 'poly')
+    # print(type(Polygon(exclude_poly[0])), 'exclude_poly')
+    # print(type(poly), 'poly')
     
     ''''polygon = Polygon(exclude_poly)
     geod = Geod(ellps="WGS84")

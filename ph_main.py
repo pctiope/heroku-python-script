@@ -58,6 +58,7 @@ while 1:
                 print(f"threshold: {str(threshold)}")
                 polygonize(threshold, date_time)
                 exclude_poly = filter(threshold, date_time, poly)
+                print(exclude_poly)
                 route_exposure, total_route = generate_route(coords, threshold)
                 if route_exposure is None or total_route is None:
                         route_exposure, total_route = generate_route(coords, threshold)
