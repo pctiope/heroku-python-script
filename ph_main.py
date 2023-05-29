@@ -43,8 +43,8 @@ while 1:
         threshold = max_AQI
         print(f"threshold: {str(threshold)}")
         polygonize(threshold, date_time)
-        exclude_poly = filter(threshold, date_time, poly)
-        print(exclude_poly)
+        exclude_poly, area_diff = filter(threshold, date_time, poly)
+        print(exclude_poly, area_diff)
         route_exposure, total_route = generate_route(coords, threshold)
         sleep(2)
         normal_exposure, total_normal = generate_normal(coords, threshold)
@@ -57,8 +57,8 @@ while 1:
                 threshold = i
                 print(f"threshold: {str(threshold)}")
                 polygonize(threshold, date_time)
-                exclude_poly = filter(threshold, date_time, poly)
-                print(exclude_poly)
+                exclude_poly, area_diff = filter(threshold, date_time, poly)
+                print(exclude_poly, area_diff)
                 route_exposure, total_route = generate_route(coords, threshold)
                 sleep(2)
                 if route_exposure is None or total_route is None:

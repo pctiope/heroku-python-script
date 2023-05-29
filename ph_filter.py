@@ -33,8 +33,6 @@ def filter(threshold, date_time, poly):
     
     maps = Polygon(poly)
     maps_area, maps_perimeter = geod.geometry_area_perimeter(maps)
-    print(maps_area, 'map area')
-    print(maps_area-poly_area, 'difference')
 
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
@@ -48,5 +46,5 @@ def filter(threshold, date_time, poly):
     contents = repo.get_contents("/public/filtered.json", ref="main")
     repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
 
-    return exclude_poly
+    return exclude_poly, abs(maps_area-poly_area)
     
