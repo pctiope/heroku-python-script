@@ -3,6 +3,10 @@ from datetime import datetime
 from shapely.geometry import shape
 from shapely.geometry.polygon import Polygon
 import json
+import warnings
+from sklearn.metrics import mean_squared_error
+warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.simplefilter(action='ignore', category=UserWarning)
 from ph_aqi import init_sensors, get_sensor_data, df_to_csv, df_to_shp
 from ph_idw import get_idw, get_error
 from ph_polygonize import polygonize
@@ -11,7 +15,7 @@ from ph_routing import generate_route
 from ph_normal import generate_normal
 from ph_random import random_waypoints
 import random
-import numpy as np
+
 
 with open("./metro_manila.geojson") as f:
         data = json.load(f)
@@ -31,8 +35,9 @@ while 1:
         df_to_csv(df, date_time)
         df_to_shp(df, date_time)
         get_idw(date_time)
-        original_value, interpolated_value = get_error(date_time)
-        print("RMSE:", np.sqrt(np.mean(np.square(((original_value, interpolated_value) / original_value)), axis=0)))
+        for power in range(1,11):
+                original_value, interpolated_value = get_error(date_time, power)
+                print(f"RMSE (power={power}):", mean_squared_error(original_value, interpolated_value, squared=False))
         max_AQI = max(int(i) for i in US_AQI)
         poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
         sensors = []
