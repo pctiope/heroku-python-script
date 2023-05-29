@@ -5,7 +5,7 @@ import math
 import random
 
 def random_waypoints(poly,Xo,Yo):
-    d = float(random.randrange(25, 100, 5)/100)
+    d = float(random.randrange(25, 100, 5)/10000)
     while True:
         print(d, 'calculating')
         rad = 2*math.pi*random.uniform(0,1)
