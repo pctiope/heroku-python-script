@@ -18,6 +18,7 @@ def filter(threshold, date_time, poly):
             temp.append(shape(coordinates))
     
     exclude_poly = [[[]]]
+    poly_area = 0
     if len(temp):
         unions = unary_union(temp)
         if (isinstance(mapping(unions)["coordinates"], list)):
@@ -28,7 +29,6 @@ def filter(threshold, date_time, poly):
             poly_area, poly_perimeter = geod.geometry_area_perimeter(Polygon(exclude_poly[0]))
         else:
             print("Something went wrong")
-            poly_area = 0
         print(poly_area, 'poly area')
     
     maps = Polygon(poly)
