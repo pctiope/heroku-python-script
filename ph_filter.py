@@ -25,8 +25,11 @@ def filter(threshold, date_time, poly):
             exclude_poly = mapping(unions)["coordinates"]
         else:
             print("Something went wrong")
-        
-    polygon = Polygon(exclude_poly)
+    
+    print(type(exclude_poly), 'exclude_poly')
+    print(type(epoly), 'poly')
+    
+    ''''polygon = Polygon(exclude_poly)
     geod = Geod(ellps="WGS84")
     poly_area, poly_perimeter = geod.geometry_area_perimeter(polygon)
     print(poly_area, 'poly area')
@@ -35,7 +38,7 @@ def filter(threshold, date_time, poly):
     geod = Geod(ellps="WGS84")
     maps_area, maps_perimeter = geod.geometry_area_perimeter(maps)
     print(maps_area, 'map area')
-    print(maps_area-poly_area, 'difference')
+    print(maps_area-poly_area, 'difference')'''
 
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
