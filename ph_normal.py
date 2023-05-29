@@ -47,6 +47,6 @@ def generate_normal(coords, threshold):
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/heroku-python-script")
-    contents = repo.get_contents("/results/normal_results.raw", ref="dev")
-    repo.update_file(contents.path, "updated normal_results.raw", normal_output, contents.sha, branch="dev")
+    contents = repo.get_contents("/results/normal_results.raw", ref="master")
+    repo.update_file(contents.path, "updated normal_results.raw", normal_output, contents.sha, branch="master")
     return total/total_distance, total
