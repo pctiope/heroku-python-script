@@ -37,8 +37,8 @@ while 1:
              sensors.append(Sensor(Sensor_Name[i],X_location[i],Y_location[i],US_AQI[i]))
         sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
         top_rand = random.randint(0, 1)
-        print(sensors[top_rand].x,sensors[top_rand].y)
-        first_point, second_point = random_waypoints(poly, sensors[top_rand].x, sensors[top_rand].y)
+        print(sensors[0].x,sensors[0].y)
+        first_point, second_point = random_waypoints(poly, sensors[0].x, sensors[0].y)
         coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
         threshold = max_AQI
         print(f"threshold: {str(threshold)}")
