@@ -60,7 +60,7 @@ while 1:
         polygonize(threshold, date_time)
         exclude_poly = filter(threshold, date_time)
         route_exposure, total_route = generate_route(coords, threshold)
-        if route_exposure == None:
+        if route_exposure == None or total_route == None:
             route_exposure, total_route = generate_route(coords, threshold)
             print(route_exposure, normal_exposure, "route exposure, normal exposure")
             print(total_route, total_normal, "total route exposure, total normal exposure")
