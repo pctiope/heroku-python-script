@@ -26,8 +26,6 @@ def filter(threshold, date_time, poly):
         else:
             print("Something went wrong")
 
-    print(exclude_poly[0])
-    print(Polygon(exclude_poly[0]))
     print(type(Polygon(exclude_poly[0])), 'exclude_poly')
     print(type(poly), 'poly')
     
