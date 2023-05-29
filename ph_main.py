@@ -11,7 +11,7 @@ from ph_routing import generate_route
 from ph_normal import generate_normal
 from ph_random import random_waypoints
 import random
-from sklearn.metrics import mean_squared_error
+from scikit-learn.metrics import mean_squared_error
 
 with open("./metro_manila.geojson") as f:
         data = json.load(f)
