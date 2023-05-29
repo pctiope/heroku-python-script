@@ -46,5 +46,5 @@ def filter(threshold, date_time, poly):
     contents = repo.get_contents("/public/filtered.json", ref="main")
     repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
 
-    return exclude_poly, abs(poly_area/maps_area)
+    return exclude_poly, abs(poly_area/maps_area)*100
     
