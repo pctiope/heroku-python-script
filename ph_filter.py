@@ -1,6 +1,6 @@
 import json
 import base64
-#from github import Github
+from github import Github
 from shapely.geometry import Point, Polygon, shape, mapping
 from shapely.ops import unary_union
 
@@ -29,11 +29,12 @@ def filter(threshold, date_time):
     json_output = json.dumps(output_dict, indent=4)
     with open("./temp/filtered"+str(threshold)+".json", "w") as outfile:
         outfile.write(json_output)
-        
-    return exclude_poly
-    
-    '''coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
+
+    coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/express-leaflet")
     contents = repo.get_contents("/public/filtered.json", ref="main")
-    repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")'''
+    repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
+
+    return exclude_poly
+    

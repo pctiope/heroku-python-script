@@ -1,7 +1,7 @@
 import rasterio
 import json
 import base64
-#from github import Github
+from github import Github
 from rasterio.features import shapes
 
 def polygonize(threshold, date_time):
@@ -17,8 +17,8 @@ def polygonize(threshold, date_time):
     with open("./temp/polygonized"+str(threshold)+".json", "w") as outfile:
         outfile.write(json_output)
     
-    '''coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
+    coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/express-leaflet")
     contents = repo.get_contents("/public/polygonized.json", ref="main")
-    repo.update_file(contents.path, "updated polygonized.json", json_output, contents.sha, branch="main")'''
+    repo.update_file(contents.path, "updated polygonized.json", json_output, contents.sha, branch="main")
