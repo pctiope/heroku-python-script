@@ -40,8 +40,8 @@ def filter(threshold, date_time, poly):
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
     
-    '''with open("./temp/filtered"+str(threshold)+".json", "w") as outfile:
-        outfile.write(json_output)'''
+    with open("./temp/filtered"+str(threshold)+".json", "w") as outfile:
+        outfile.write(json_output)
 
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
