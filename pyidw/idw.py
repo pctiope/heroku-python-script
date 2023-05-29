@@ -207,7 +207,7 @@ def idw_interpolation(input_point_shapefile='',
         with rasterio.open(output_filename, 'w', **baseRasterFile.meta) as std_idw:
             std_idw.write(idw_array, 1)
 
-        show_map(output_filename)
+        # show_map(output_filename)
 
 
 #################################################
@@ -380,7 +380,7 @@ def regression_idw_interpolation(input_point_shapefile='',
         with rasterio.open(output_filename, 'w', **re_elevation.meta) as reg_idw:
             reg_idw.write(regression_idw_array, 1)
 
-        show_map(output_filename)
+        # show_map(output_filename)
 
 
 #################################################
