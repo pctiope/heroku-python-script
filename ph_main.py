@@ -42,9 +42,9 @@ while 1:
     for i in range(len(Sensor_Name)):
          sensors.append(Sensor(Sensor_Name[i],X_location[i],Y_location[i],US_AQI[i]))
     sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
-    top5_rand = random.randint(0,2)
-    print(sensors[top5_rand].x,sensors[top5_rand].y)
-    first_point, second_point = random_waypoints(poly, sensors[0].x, sensors[0].y)
+    top_rand = random.randint(0, len(sensors)-1)
+    print(sensors[top_rand].x,sensors[top_rand].y)
+    first_point, second_point = random_waypoints(poly, sensors[top_rand].x, sensors[top_rand].y)
     coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
     route_exposure = generate_route(coords, threshold)
     sleep(5)
