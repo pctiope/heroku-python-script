@@ -1,5 +1,8 @@
 from time import sleep
 from datetime import datetime
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+warnings.simplefilter(action='ignore', category=UserWarning)
 from shapely.geometry import shape
 from shapely.geometry.polygon import Polygon
 import json
@@ -32,9 +35,10 @@ while 1:
     df_to_shp(df, date_time)
 
     get_idw(date_time)
-    original_value, interpolated_value = get_error(date_time)
-    print("RMSE:", mean_squared_error(original_value, interpolated_value, squared=False))
-    
+    for power in range(1,6):
+        original_value, interpolated_value = get_error(date_time, power)
+        print(f"RMSE (power={power}):", mean_squared_error(original_value, interpolated_value, squared=False))
+
     max_AQI = max([int(i) for i in US_AQI])
     threshold = max_AQI
     print("threshold: "+str(threshold))
