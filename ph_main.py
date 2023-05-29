@@ -46,7 +46,7 @@ while 1:
         exclude_poly = filter(threshold, date_time, poly)
         print(exclude_poly)
         route_exposure, total_route = generate_route(coords, threshold)
-        sleep(5)
+        sleep(2)
         normal_exposure, total_normal = generate_normal(coords, threshold)
         old_route_exp, old_normal_exp = route_exposure, normal_exposure
         old_total_route, old_total_normal = total_route, total_normal
@@ -60,6 +60,7 @@ while 1:
                 exclude_poly = filter(threshold, date_time, poly)
                 print(exclude_poly)
                 route_exposure, total_route = generate_route(coords, threshold)
+                sleep(2)
                 if route_exposure is None or total_route is None:
                         route_exposure, total_route = generate_route(coords, threshold)
                         print(route_exposure, normal_exposure, "route exposure, normal exposure")
