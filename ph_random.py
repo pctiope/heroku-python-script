@@ -7,6 +7,7 @@ import random
 def random_waypoints(poly,Xo,Yo):
     d = 0.005
     while True:
+        print('calculating')
         rad = 2*math.pi*random.uniform(0,1)
         p1 = Point(Xo+d*math.cos(rad),Yo+d*math.sin(rad))
         p2 = Point(Xo-d*math.cos(rad),Yo-d*math.sin(rad))
