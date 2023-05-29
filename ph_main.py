@@ -32,7 +32,7 @@ while 1:
         df_to_shp(df, date_time)
         get_idw(date_time)
         original_value, interpolated_value = get_error(date_time)
-        print("RMSE:", np.square(np.subtract(original_value,interpolated_value)).mean())
+        print("RMSE:", np.sqrt(np.mean(np.square(((original_value, interpolated_value) / original_value)), axis=0)))
         max_AQI = max(int(i) for i in US_AQI)
         poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
         sensors = []
