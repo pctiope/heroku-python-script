@@ -58,17 +58,18 @@ while 1:
                 print(f"threshold: {str(threshold)}")
                 polygonize(threshold, date_time)
                 exclude_poly, area_diff = filter(threshold, date_time, poly)
-                print(area_diff, 'area diff percentage')
                 route_exposure, total_route = generate_route(coords, threshold)
                 sleep(2)
                 if route_exposure is None or total_route is None:
                         route_exposure, total_route = generate_route(coords, threshold)
                         print(route_exposure, normal_exposure, "route exposure, normal exposure")
                         print(total_route, total_normal, "total route exposure, total normal exposure")
+                        print(area_diff, 'area diff percentage')
                         break
                 if route_exposure != old_route_exp or normal_exposure != old_normal_exp or total_route != old_total_route or total_normal != old_total_normal:
                     print(route_exposure, normal_exposure, "route exposure, normal exposure")
                     print(total_route, total_normal, "total route exposure, total normal exposure")
+                    print(area_diff, 'area diff percentage')
                     i -= 1
                 else:
                     i -= 5

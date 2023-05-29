@@ -29,7 +29,7 @@ def filter(threshold, date_time, poly):
             poly_area, poly_perimeter = geod.geometry_area_perimeter(Polygon(exclude_poly[0]))
         else:
             print("Something went wrong")
-        print(abs(poly_area), 'poly area')
+        # print(abs(poly_area), 'poly area')
     
     maps = Polygon(poly)
     maps_area, maps_perimeter = geod.geometry_area_perimeter(maps)
