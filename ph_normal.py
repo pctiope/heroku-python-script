@@ -11,8 +11,9 @@ def generate_normal(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     normal_output = json.dumps(normal.raw, indent=4)
-    with open("./results/normal_results"+str(threshold)+".json","w") as f:
-        f.write(normal_output)
+    
+    '''with open("./results/normal_results"+str(threshold)+".json","w") as f:
+        f.write(normal_output)'''
     
     polyline = normal.raw["trip"]["legs"][0]["shape"]
     decoded = decode_polyline6(polyline)
