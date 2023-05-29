@@ -31,11 +31,11 @@ def filter(threshold, date_time, poly):
     poly_area, poly_perimeter = geod.geometry_area_perimeter(polygon)
     print(poly_area, 'poly area')
     
-    map = Polygon(poly)
+    maps = Polygon(poly)
     geod = Geod(ellps="WGS84")
-    map_area, map_perimeter = geod.geometry_area_perimeter(map)
-    print(map_area, 'map area')
-    print(map_area-poly_area, 'difference')
+    maps_area, maps_perimeter = geod.geometry_area_perimeter(maps)
+    print(maps_area, 'map area')
+    print(maps_area-poly_area, 'difference')
 
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
