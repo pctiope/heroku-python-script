@@ -11,7 +11,7 @@ def generate_route(coords, threshold):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
     output_list = []
     total_list = []
-    normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
+    #normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     sleep(5)
     with open("./temp/filtered"+str(threshold)+".json","r") as f:
         data = json.load(f)
@@ -26,7 +26,8 @@ def generate_route(coords, threshold):
         route = client.directions(locations=coords,instructions=True,profile="pedestrian")
         output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
     route_output = json.dumps(route.raw, indent=4)
-    listy = [route, normal]
+    # listy = [route, normal]
+    listy = [route]
     # normal_output = json.dumps(normal.raw, indent=4)
     # with open("./results/normal_results"+str(threshold)+".json","w") as f:
     #     f.write(normal_output)
