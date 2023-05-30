@@ -17,5 +17,5 @@ def export_routing_results(date_time, sensor, waypoint_coords, average_route_exp
     json_output['total_route_exposure'] = total_route_exposure
     json_output['excluded_area_ratio'] = area_diff
     outfile = json.dumps(json_output, indent=4)
-    with open("./routing_results/route_"+str(date_time)+".json","w") as f:
+    with open("./route_results/route_"+str(date_time)+".json","w") as f:
         f.write(outfile)
