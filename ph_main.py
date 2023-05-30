@@ -17,7 +17,7 @@ from ph_filter import filter
 from ph_routing import generate_route
 from ph_normal import generate_normal
 from ph_random import random_waypoints
-from ph_initial import export_initial
+from ph_export import export_idw_results, export_routing_results
 
 class AQI_Sensor:
      def __init__(self,name,x,y,aqi):
@@ -45,7 +45,7 @@ while 1:
                 print(f"RMSE (power={power}):", rmse)
         rmse_list = sorted(rmse_list, key=lambda x: x[1])
         print(f"Best power: {rmse_list[0][0]}")
-        export_initial(date_time, df, rmse_list)
+        export_idw_results(date_time, df, rmse_list)
 
         # get border polygon
         with open("./metro_manila.geojson") as f:
@@ -72,9 +72,10 @@ while 1:
         while threshold > 0:
                 print(f"threshold: {str(threshold)}")
                 polygonize(threshold, date_time)
-                print(area_diff, 'area diff percentage')
                 
                 exclude_poly, area_diff = filter(threshold, date_time, border_poly)
+                print(area_diff, 'area diff percentage')
+
                 average_route_exposure, total_route_exposure = generate_route(waypoint_coords, threshold, date_time)
                 print(average_route_exposure, average_normal_exposure, "average route exposure, average normal exposure")
                 print(total_route_exposure, total_normal_exposure, "total route exposure, total normal exposure")
@@ -90,3 +91,5 @@ while 1:
 
                 old_average_route_exposure = average_route_exposure
                 old_total_route_exposure = total_route_exposure
+
+                export_routing_results(date_time, sensors[top_rand], waypoint_coords, average_route_exposure, total_route_exposure, area_diff)
