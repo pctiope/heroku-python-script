@@ -15,6 +15,7 @@ from ph_routing import generate_route
 from ph_normal import generate_normal
 from ph_random import random_waypoints
 import random
+from ph_initial import export_initial
 
 
 with open("./metro_manila.geojson") as f:
@@ -35,9 +36,15 @@ while 1:
         df_to_csv(df, date_time)
         df_to_shp(df, date_time)
         get_idw(date_time)
+        rmse_list = []
         for power in range(1,11):
                 original_value, interpolated_value = get_error(date_time, power)
-                print(f"RMSE (power={power}):", mean_squared_error(original_value, interpolated_value, squared=False))
+                rmse = mean_squared_error(original_value, interpolated_value, squared=False)
+                rmse_list.append([power, rmse])
+                print(f"RMSE (power={power}):", rmse)
+        rmse_list = sorted(rmse_list, key=lambda x: x[1])
+        print(f"Best power: {rmse_list[0][0]}")
+        export_initial(date_time, df, rmse_list)
         max_AQI = max(int(i) for i in US_AQI)
         poly = Polygon(data['features'][0]['geometry']['coordinates'][0][0])
         sensors = []
@@ -51,11 +58,12 @@ while 1:
         threshold = max_AQI
         print(f"threshold: {str(threshold)}")
         polygonize(threshold, date_time)
+        
         exclude_poly, area_diff = filter(threshold, date_time, poly)
         print(area_diff, 'area diff percentage')
-        route_exposure, total_route = generate_route(coords, threshold)
+        route_exposure, total_route = generate_route(coords, threshold, date_time)
         sleep(2)
-        normal_exposure, total_normal = generate_normal(coords, threshold)
+        normal_exposure, total_normal = generate_normal(coords, threshold, date_time)
         old_route_exp, old_normal_exp = route_exposure, normal_exposure
         old_total_route, old_total_normal = total_route, total_normal
         print(route_exposure, normal_exposure, "route exposure, normal exposure")
@@ -66,10 +74,10 @@ while 1:
                 print(f"threshold: {str(threshold)}")
                 polygonize(threshold, date_time)
                 exclude_poly, area_diff = filter(threshold, date_time, poly)
-                route_exposure, total_route = generate_route(coords, threshold)
+                route_exposure, total_route = generate_route(coords, threshold, date_time)
                 sleep(2)
                 if route_exposure is None and total_route is None:
-                        route_exposure, total_route = generate_route(coords, threshold)
+                        route_exposure, total_route = generate_route(coords, threshold, date_time)
                         print(route_exposure, normal_exposure, "route exposure, normal exposure")
                         print(total_route, total_normal, "total route exposure, total normal exposure")
                         print(area_diff, 'area diff percentage')

@@ -7,7 +7,7 @@ from shapely.ops import unary_union
 
 def filter(threshold, date_time, poly):
     geod = Geod(ellps="WGS84")
-    filename = "./temp/polygonized"+str(threshold)+".json"
+    filename = "./polygonized/polygonized_"+str(date_time)+".json"
     with open(filename) as f:
         data = json.load(f)
     sorted_data = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
@@ -37,7 +37,7 @@ def filter(threshold, date_time, poly):
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
     
-    with open("./temp/filtered"+str(threshold)+".json", "w") as outfile:
+    with open("./filtered/filtered_"+str(threshold)+"_"+str(date_time)+".json", "w") as outfile:
         outfile.write(json_output)
 
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="

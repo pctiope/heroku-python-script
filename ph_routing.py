@@ -7,13 +7,12 @@ import base64
 from time import sleep
 from github import Github
 
-def generate_route(coords, threshold):
+def generate_route(coords, threshold, date_time):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
     output_list = []
     total_list = []
-    #normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     sleep(5)
-    with open("./temp/filtered"+str(threshold)+".json","r") as f:
+    with open("./filtered/filtered_"+str(threshold)+"_"+str(date_time)+".json","r") as f:
         data = json.load(f)
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
     if len(exclude_poly[0][0]):
@@ -25,15 +24,11 @@ def generate_route(coords, threshold):
     else:
         route = client.directions(locations=coords,instructions=True,profile="pedestrian")
         output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
-    route_output = json.dumps(route.raw, indent=4)
-    # listy = [route, normal]
     listy = [route]
-    # normal_output = json.dumps(normal.raw, indent=4)
-    # with open("./results/normal_results"+str(threshold)+".json","w") as f:
-    #     f.write(normal_output)
-    # route_output = json.dumps(route.raw, indent=4)
-    # with open("./results/route_results"+str(threshold)+".json","w") as f:
-    #     f.write(route_output)
+    route_output = json.dumps(route.raw, indent=4)
+    with open("./route/route_"+str(threshold)+"_"+str(date_time)+".raw","w") as f:
+        f.write(route_output)
+    
     for selector in listy:
         polyline = selector.raw["trip"]["legs"][0]["shape"]
         decoded = decode_polyline6(polyline)
@@ -42,7 +37,7 @@ def generate_route(coords, threshold):
         aqi = []
         temp = []
         total = 0
-        with open("./temp/polygonized"+str(threshold)+".json") as f:
+        with open("./polygonized/polygonized_"+str(date_time)+".json") as f:
             data = json.load(f)
         data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
         points = [Point(i[0], i[1]) for i in route_points]
@@ -70,14 +65,14 @@ def generate_route(coords, threshold):
         total_list.append(total)
     
     output = json.dumps(output_dict, indent=4)
-    # with open("./results/results_"+str(threshold)+".json","w") as f:
-    #     f.write(output)
+    with open("./results/results_"+str(threshold)+"_"+str(date_time)+".json","w") as f:
+        f.write(output)
         
-    coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
-    g = Github(base64.b64decode(coded_string).decode("utf-8"))
-    repo = g.get_repo("pctiope/heroku-python-script")
-    contents = repo.get_contents("/geojson/route.geojson", ref="master")
-    repo.update_file(contents.path, "updated route.geojson", output, contents.sha, branch="master")
-    contents = repo.get_contents("/results/route_results.raw", ref="master")
-    repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="master")
+    # coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
+    # g = Github(base64.b64decode(coded_string).decode("utf-8"))
+    # repo = g.get_repo("pctiope/heroku-python-script")
+    # contents = repo.get_contents("/geojson/route.geojson", ref="master")
+    # repo.update_file(contents.path, "updated route.geojson", output, contents.sha, branch="master")
+    # contents = repo.get_contents("/results/route_results.raw", ref="master")
+    # repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="master")
     return output_list[0], total_list[0]
