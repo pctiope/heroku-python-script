@@ -1,6 +1,6 @@
 from routingpy import Valhalla
 from routingpy.utils import decode_polyline6
-from shapely.geometry import Point, Polygon, shape
+from shapely.geometry import Point, shape
 import json
 import math
 import base64
@@ -9,6 +9,7 @@ from github import Github
 
 def generate_normal(coords, threshold, date_time):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
+    sleep(2)
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     normal_output = json.dumps(normal.raw, indent=4)
 

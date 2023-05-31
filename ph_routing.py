@@ -1,6 +1,6 @@
 from routingpy import Valhalla
 from routingpy.utils import decode_polyline6
-from shapely.geometry import Point, Polygon, shape, mapping
+from shapely.geometry import Point, shape
 import json
 import math
 import base64
@@ -9,8 +9,8 @@ from github import Github
 
 def generate_route(coords, threshold, date_time):
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
-    sleep(5)
-    with open("./filtered/filtered_"+str(threshold)+"_"+str(date_time)+".json","r") as f:
+    sleep(2)
+    with open(f"./filtered/filtered_{str(date_time)}_{str(threshold)}.json", "r") as f:
         data = json.load(f)
         exclude_poly = data["features"][0]["geometry"]["coordinates"]
     if len(exclude_poly[0][0]):
@@ -22,11 +22,11 @@ def generate_route(coords, threshold, date_time):
     else:
         route = client.directions(locations=coords,instructions=True,profile="pedestrian")
         output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
-    
+
     route_output = json.dumps(route.raw, indent=4)
-    with open("./route/route_"+str(threshold)+"_"+str(date_time)+".raw","w") as f:
+    with open(f"./route/route_{str(date_time)}_{str(threshold)}.raw", "w") as f:
         f.write(route_output)
-    
+
     summary = route.raw["trip"]["summary"]
     polyline = route.raw["trip"]["legs"][0]["shape"]
     decoded = decode_polyline6(polyline)
@@ -35,7 +35,7 @@ def generate_route(coords, threshold, date_time):
     aqi = []
     temp = []
     total = 0
-    with open("./polygonized/polygonized_"+str(date_time)+".json") as f:
+    with open(f"./polygonized/polygonized_{str(date_time)}.json") as f:
         data = json.load(f)
     data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
     points = [Point(i[0], i[1]) for i in route_points]
@@ -59,11 +59,11 @@ def generate_route(coords, threshold, date_time):
         distance = math.sqrt((abs(aqi[i][1].x-aqi[i+1][1].x))**2+(abs(aqi[i][1].y-aqi[i+1][1].y))**2)
         total += distance*level
         total_distest += distance
-    
+
     output = json.dumps(output_dict, indent=4)
-    with open("./results/results_"+str(threshold)+"_"+str(date_time)+".json","w") as f:
+    with open(f"./results/results_{str(date_time)}_{str(threshold)}.json", "w") as f:
         f.write(output)
-        
+
     # coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     # g = Github(base64.b64decode(coded_string).decode("utf-8"))
     # repo = g.get_repo("pctiope/heroku-python-script")

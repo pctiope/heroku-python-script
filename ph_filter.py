@@ -1,13 +1,13 @@
 import json
 import base64
 from github import Github
-from shapely.geometry import Point, Polygon, shape, mapping
+from shapely.geometry import Polygon, shape, mapping
 from pyproj import Geod
 from shapely.ops import unary_union
 
 def filter(threshold, date_time, poly):
     geod = Geod(ellps="WGS84")
-    filename = "./polygonized/polygonized_"+str(date_time)+".json"
+    filename = f"./polygonized/polygonized_{str(date_time)}.json"
     with open(filename) as f:
         data = json.load(f)
     sorted_data = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
@@ -16,7 +16,7 @@ def filter(threshold, date_time, poly):
         if polygon["properties"]["AQI"] >= threshold and polygon["properties"]["AQI"] <= 500:
             coordinates = polygon["geometry"]
             temp.append(shape(coordinates))
-    
+
     exclude_poly = [[[]]]
     poly_area = 0
     if len(temp):
@@ -30,21 +30,21 @@ def filter(threshold, date_time, poly):
         else:
             print("Something went wrong")
         # print(abs(poly_area), 'poly area')
-    
+
     maps = Polygon(poly)
     maps_area, maps_perimeter = geod.geometry_area_perimeter(maps)
 
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
-    
-    with open("./filtered/filtered_"+str(threshold)+"_"+str(date_time)+".json", "w") as outfile:
+
+    with open(f"./filtered/filtered_{str(date_time)}_{str(threshold)}.json", "w") as outfile:
         outfile.write(json_output)
 
-    coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
-    g = Github(base64.b64decode(coded_string).decode("utf-8"))
-    repo = g.get_repo("pctiope/express-leaflet")
-    contents = repo.get_contents("/public/filtered.json", ref="main")
-    repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
+    # coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
+    # g = Github(base64.b64decode(coded_string).decode("utf-8"))
+    # repo = g.get_repo("pctiope/express-leaflet")
+    # contents = repo.get_contents("/public/filtered.json", ref="main")
+    # repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
 
     return exclude_poly, abs(poly_area/maps_area)*100
     

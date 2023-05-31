@@ -70,24 +70,23 @@ while 1:
      polygonize(date_time)
      average_normal_exposure, total_normal_exposure, normal_summary = generate_normal(waypoint_coords, threshold, date_time)
      export_routing_results(date_time, sensors[top_rand], waypoint_coords, average_normal_exposure, total_normal_exposure, normal_summary)
-     old_average_route_exposure, old_total_route_exposure = 0, 0
+     old_average_route_exposure, old_total_route_exposure = average_normal_exposure, total_normal_exposure
      old_route_summary = {}
      old_area_diff = 0
      while threshold > 0:
              print(f"threshold: {str(threshold)}")
-             polygonize(date_time, threshold)
 
              exclude_poly, area_diff = filter(threshold, date_time, border_poly)
 
              average_route_exposure, total_route_exposure, route_summary = generate_route(waypoint_coords, threshold, date_time)
              
              if (average_route_exposure is None or total_route_exposure is None or route_summary is None):
-                     if (average_route_exposure == average_normal_exposure and total_route_exposure == total_normal_exposure):
-                          threshold = max_AQI
                      average_route_exposure = old_average_route_exposure
                      total_route_exposure = old_total_route_exposure
                      route_summary = old_route_summary
                      area_diff = old_area_diff
+                     if (average_route_exposure == average_normal_exposure and total_route_exposure == total_normal_exposure):
+                          threshold = max_AQI
                      print(route_summary, "route summary")
                      print(area_diff, 'area diff percentage')
                      print(average_route_exposure, average_normal_exposure, "average route exposure, average normal exposure")

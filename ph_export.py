@@ -25,5 +25,5 @@ def export_routing_results(date_time, sensor, waypoint_coords, average_route_exp
         'summary': summary,
     }
     outfile = json.dumps(json_output, indent=4)
-    with open(f"./route_results/route_results_{str(threshold)}_{str(date_time)}.json", "w") as f:
+    with open(f"./route_results/route_results_{str(date_time)}_{str(threshold)}.json", "w") as f:
         f.write(outfile)
