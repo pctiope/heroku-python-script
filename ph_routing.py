@@ -63,7 +63,7 @@ def generate_route(coords, threshold, date_time):
     output_dict['features'].append({"type": "Feature", "properties":{}, "geometry": {"type": "LineString","coordinates": route_points}})
 
     route_output = json.dumps(route.raw, indent=4)
-    with open(f"./route/route_{str(date_time)}_{str(threshold)}.raw", "w") as f:
+    with open(f"./route/route_{str(date_time)}_{str(threshold)}.json", "w") as f:
         f.write(route_output)
 
     output = json.dumps(output_dict, indent=4)
@@ -78,7 +78,7 @@ def generate_normal(coords, threshold, date_time):
     normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     normal_output = json.dumps(normal.raw, indent=4)
 
-    with open(f"./normal/normal_{str(date_time)}.raw", "w") as f:
+    with open(f"./normal/normal_{str(date_time)}.json", "w") as f:
         f.write(normal_output)
 
     total, total_distance, summary, route_points = process_route_results(date_time, normal)

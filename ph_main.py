@@ -74,7 +74,7 @@ while 1:
     old_route_summary = {}
     old_area_diff = 0
     while threshold > 0:
-        print(f"threshold: {str(threshold)}")
+        print(f"threshold={str(threshold)}:")
 
         exclude_poly, area_diff = filter(threshold, date_time, border_poly)
 
