@@ -17,6 +17,7 @@ from ph_routing import generate_route
 from ph_normal import generate_normal
 from ph_random import random_waypoints
 from ph_export import export_idw_results, export_routing_results
+from ph_update import update
 
 class AQI_Sensor:
      def __init__(self,name,x,y,aqi):
@@ -68,6 +69,7 @@ while 1:
 
      #calculate total and average exposure of different thresholds
      polygonize(date_time)
+     update(100, date_time, border_poly)
      average_normal_exposure, total_normal_exposure, normal_summary = generate_normal(waypoint_coords, threshold, date_time)
      export_routing_results(date_time, sensors[top_rand], waypoint_coords, average_normal_exposure, total_normal_exposure, normal_summary)
      old_average_route_exposure, old_total_route_exposure = average_normal_exposure, total_normal_exposure
