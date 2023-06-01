@@ -32,10 +32,10 @@ def filter(threshold, date_time, poly):
     maps = Polygon(poly)
     maps_area, maps_perimeter = geod.geometry_area_perimeter(maps)
 
-    output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
-    json_output = json.dumps(output_dict, indent=4)
-    with open(f"./filtered/filtered_{str(date_time)}_{str(threshold)}.json", "w") as outfile:
-        outfile.write(json_output)
+    # output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
+    # json_output = json.dumps(output_dict, indent=4)
+    # with open(f"./results/{date_time}/filtered_{threshold}.json", "w") as outfile:
+    #     outfile.write(json_output)
 
     return exclude_poly, abs(poly_area/maps_area)*100
     

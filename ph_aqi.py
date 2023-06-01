@@ -114,4 +114,4 @@ def df_to_shp(df, date_time):
     geometry = [Point(xy) for xy in zip(df.X, df.Y)]
     df = df.drop(['X', 'Y'], axis=1)
     gdf = GeoDataFrame(df, crs="EPSG:4326", geometry=geometry)
-    gdf.to_file("./shapefiles/Philippines_Pollution_"+date_time+".shp")
+    gdf.to_file(f"./results/{date_time}/Philippines_Pollution.shp")
