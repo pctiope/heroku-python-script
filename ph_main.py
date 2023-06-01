@@ -71,7 +71,7 @@ while 1:
      polygonize(date_time)
      update(date_time, border_poly)
      average_normal_exposure, total_normal_exposure, normal_summary = generate_normal(waypoint_coords, threshold, date_time)
-     export_routing_results(date_time, sensors[top_rand], waypoint_coords, average_normal_exposure, total_normal_exposure, normal_summary)
+     export_routing_results(date_time, sensors[top_rand], waypoint_coords, max_AQI, average_normal_exposure, total_normal_exposure, normal_summary)
      old_average_route_exposure, old_total_route_exposure = average_normal_exposure, total_normal_exposure
      old_route_summary = {}
      old_area_diff = 0
@@ -88,12 +88,12 @@ while 1:
                      route_summary = old_route_summary
                      area_diff = old_area_diff
                      if (average_route_exposure == average_normal_exposure and total_route_exposure == total_normal_exposure):
-                          threshold = max_AQI
+                          threshold = None
                      print(route_summary, "route summary")
                      print(area_diff, 'area diff percentage')
                      print(average_route_exposure, average_normal_exposure, "average route exposure, average normal exposure")
                      print(total_route_exposure, total_normal_exposure, "total route exposure, total normal exposure")
-                     export_routing_results(date_time, sensors[top_rand], waypoint_coords, average_route_exposure, total_route_exposure, route_summary, area_diff, threshold)
+                     export_routing_results(date_time, sensors[top_rand], waypoint_coords, max_AQI, average_route_exposure, total_route_exposure, route_summary, area_diff, threshold)
                      break
 
              if (average_route_exposure != old_average_route_exposure or total_route_exposure != old_total_route_exposure):
@@ -101,7 +101,7 @@ while 1:
                      print(area_diff, 'area diff percentage')
                      print(average_route_exposure, average_normal_exposure, "average route exposure, average normal exposure")
                      print(total_route_exposure, total_normal_exposure, "total route exposure, total normal exposure")
-                     export_routing_results(date_time, sensors[top_rand], waypoint_coords, average_route_exposure, total_route_exposure, route_summary, area_diff, threshold)
+                     export_routing_results(date_time, sensors[top_rand], waypoint_coords, max_AQI, average_route_exposure, total_route_exposure, route_summary, area_diff, threshold)
                      threshold -= 1
              else:
                      threshold -= 5

@@ -8,7 +8,7 @@ def export_idw_results(date_time, df, rmse_list):
     with open(f"./idw_results/idw_{str(date_time)}.json", "w") as f:
         f.write(outfile)
 
-def export_routing_results(date_time, sensor, waypoint_coords, average_route_exposure, total_route_exposure, summary, area_diff=0, threshold=None):
+def export_routing_results(date_time, sensor, waypoint_coords, max_AQI, average_route_exposure, total_route_exposure, summary, area_diff=0, threshold=None):
     json_output = {
         'date_time': date_time,
         'sensor': {
@@ -18,6 +18,7 @@ def export_routing_results(date_time, sensor, waypoint_coords, average_route_exp
             'sensor_aqi': sensor.aqi,
         },
         'waypoints': waypoint_coords,
+        'max AQI': max_AQI,
         'threshold': threshold,
         'average_route_exposure': average_route_exposure,
         'total_route_exposure': total_route_exposure,
