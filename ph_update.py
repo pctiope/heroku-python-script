@@ -5,7 +5,7 @@ from shapely.geometry import Polygon, shape, mapping
 from pyproj import Geod
 from shapely.ops import unary_union
 
-def update(threshold, date_time, poly):
+def update(date_time, poly, threshold=100):
     geod = Geod(ellps="WGS84")
     filename = f"./polygonized/polygonized_{str(date_time)}.json"
     with open(filename) as f:
