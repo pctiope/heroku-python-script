@@ -3,41 +3,20 @@ from routingpy.utils import decode_polyline6
 from shapely.geometry import Point, shape
 import json
 import math
-import base64
 from time import sleep
-from github import Github
 
-def generate_route(coords, threshold, date_time):
-    client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
-    sleep(2)
-    with open(f"./filtered/filtered_{str(date_time)}_{str(threshold)}.json", "r") as f:
-        data = json.load(f)
-        exclude_poly = data["features"][0]["geometry"]["coordinates"]
-    if len(exclude_poly[0][0]):
-        try:
-            route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly)
-            output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
-        except Exception:
-            return None, None, None
-    else:
-        route = client.directions(locations=coords,instructions=True,profile="pedestrian")
-        output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
-
-    route_output = json.dumps(route.raw, indent=4)
-    with open(f"./route/route_{str(date_time)}_{str(threshold)}.raw", "w") as f:
-        f.write(route_output)
-
+def process_route_results(date_time, route):
     summary = route.raw["trip"]["summary"]
     polyline = route.raw["trip"]["legs"][0]["shape"]
     decoded = decode_polyline6(polyline)
     route_points = [list(element) for element in decoded]
-    output_dict['features'].append({"type": "Feature", "properties":{}, "geometry": {"type": "LineString","coordinates": route_points}})
-    aqi = []
-    temp = []
-    total = 0
+
     with open(f"./polygonized/polygonized_{str(date_time)}.json") as f:
         data = json.load(f)
-    data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
+        data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
+
+    aqi = []
+    temp = []
     points = [Point(i[0], i[1]) for i in route_points]
     for polygon in data['features']:
         if polygon["properties"]["AQI"] <= 500:
@@ -48,27 +27,60 @@ def generate_route(coords, threshold, date_time):
             if j[0].contains(i):
                 aqi.append([j,i])
                 break
+    
     x_distance = 0
     y_distance = 0
-    total_distest = 0
+    total = 0
+    total_distance = 0
     for i in range(len(aqi)-1):
-        #print(aqi[i][1].x,aqi[i][1].y)
         x_distance += int(110.574)*(aqi[i][1].x-aqi[i+1][1].x)
         y_distance += int(111.320)*math.cos((aqi[i][1].y+aqi[i+1][1].y)/2)*(aqi[i][1].y-aqi[i+1][1].y)
         level = aqi[i][0][1]
         distance = math.sqrt((abs(aqi[i][1].x-aqi[i+1][1].x))**2+(abs(aqi[i][1].y-aqi[i+1][1].y))**2)
         total += distance*level
-        total_distest += distance
+        total_distance += distance
+
+    return total, total_distance, summary, route_points
+
+def generate_route(coords, threshold, date_time):
+    sleep(2)
+    client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
+    with open(f"./filtered/filtered_{str(date_time)}_{str(threshold)}.json", "r") as f:
+        data = json.load(f)
+        exclude_poly = data["features"][0]["geometry"]["coordinates"]
+    
+    if len(exclude_poly[0][0]):
+        try:
+            route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly)
+            output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
+        except Exception:
+            return None, None, None
+    else:
+        route = client.directions(locations=coords,instructions=True,profile="pedestrian")
+        output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}}]}
+
+    total, total_distance, summary, route_points = process_route_results(date_time, route)
+    output_dict['features'].append({"type": "Feature", "properties":{}, "geometry": {"type": "LineString","coordinates": route_points}})
+
+    route_output = json.dumps(route.raw, indent=4)
+    with open(f"./route/route_{str(date_time)}_{str(threshold)}.raw", "w") as f:
+        f.write(route_output)
 
     output = json.dumps(output_dict, indent=4)
     with open(f"./results/results_{str(date_time)}_{str(threshold)}.json", "w") as f:
         f.write(output)
 
-    # coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
-    # g = Github(base64.b64decode(coded_string).decode("utf-8"))
-    # repo = g.get_repo("pctiope/heroku-python-script")
-    # contents = repo.get_contents("/geojson/route.geojson", ref="master")
-    # repo.update_file(contents.path, "updated route.geojson", output, contents.sha, branch="master")
-    # contents = repo.get_contents("/results/route_results.raw", ref="master")
-    # repo.update_file(contents.path, "updated route_results.raw", route_output, contents.sha, branch="master")
-    return total/total_distest, total, summary
+    return total/total_distance, total, summary
+
+def generate_normal(coords, threshold, date_time):
+    sleep(2)
+    client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
+    normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
+    normal_output = json.dumps(normal.raw, indent=4)
+
+    with open(f"./normal/normal_{str(date_time)}.raw", "w") as f:
+        f.write(normal_output)
+
+    total, total_distance, summary, route_points = process_route_results(date_time, normal)
+
+    return total/total_distance, total, summary
