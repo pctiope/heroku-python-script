@@ -32,11 +32,13 @@ while 1:
     # date_time = "" # empty date_time to lessen file generation (comment if needed)
     results_path = "./results/"
     path = os.path.join(results_path, date_time)
+    # print(path)
     try:
-        os.makedirs(path, exist_ok = True)
+        os.makedirs(path, exist_ok=True)
         print("Directory '%s' created successfully" % path)
     except OSError as error:
         print("Directory '%s' can not be created" % path)
+        break
 
     # get AQI sensor data
     WAQI_sensors, IQAir_locations, IQAir_sensors = init_sensors()
@@ -77,8 +79,8 @@ while 1:
     threshold = max_AQI
 
     polygonize(date_time)
-
     average_normal_exposure, total_normal_exposure, normal_summary, normal_route_points = generate_normal(waypoint_coords, threshold, date_time)
+    
     routing_results = {
         "selected middle sensor": sensors[top_rand].name,
         "selected sensor location": [sensors[top_rand].x, sensors[top_rand].y],
@@ -90,19 +92,31 @@ while 1:
 
     # calculate total and average exposure of different thresholds
     route_exposure_history = [] # tuples of (average_route_exposure, total_route_exposure)
-    old_average_route_exposure, old_total_route_exposure = average_normal_exposure, total_normal_exposure
-    old_route_summary = {}
-    old_area_diff = 0
     while threshold > 0:
-        print(f"threshold={str(threshold)}:")
+        print(f"threshold: {str(threshold)}")
         routing_results[str(threshold)] = {}
 
         exclude_poly, area_diff = filter(threshold, date_time, border_poly)
         routing_results[str(threshold)]["Exclude Polygon"] = exclude_poly
         routing_results[str(threshold)]["Exclude Area Ratio"] = area_diff
 
-        average_route_exposure, total_route_exposure, route_summary, visualization, err = generate_route(waypoint_coords, threshold, date_time)
+        average_route_exposure, total_route_exposure, route_summary, visualization, err = generate_route(waypoint_coords, threshold, date_time, exclude_poly)
         
+        visualization['features'].append({"type": "Feature", "properties":{}, "geometry": {"type": "LineString","coordinates": normal_route_points}})
+        if err is None:    
+            routing_results[str(threshold)]["Error"] = "None"
+            routing_results[str(threshold)]["average_route_exposure"] = average_route_exposure
+            routing_results[str(threshold)]["total_route_exposure"] = total_route_exposure
+            routing_results[str(threshold)]["route summary"] = route_summary
+
+        else: # if there was an error in routing, just use normal route results
+            routing_results[str(threshold)]["Error"] = str(err)
+            routing_results[str(threshold)]["average_route_exposure"] = average_normal_exposure
+            routing_results[str(threshold)]["total_route_exposure"] = total_normal_exposure
+            routing_results[str(threshold)]["route summary"] = normal_summary
+        
+        routing_results[str(threshold)]["visualization"] = visualization
+
         if len(route_exposure_history):
             if (route_exposure_history[-1][0] != average_route_exposure or route_exposure_history[-1][1] != total_route_exposure):
                 threshold -= 1
@@ -112,19 +126,6 @@ while 1:
             threshold -= 1
 
         route_exposure_history.append((average_route_exposure, total_route_exposure))
-        visualization['features'].append({"type": "Feature", "properties":{}, "geometry": {"type": "LineString","coordinates": normal_route_points}})
-        if err is None:    
-            routing_results[str(threshold)]["Error"] = "None"
-            routing_results[str(threshold)]["average_route_exposure"] = average_route_exposure
-            routing_results[str(threshold)]["total_route_exposure"] = total_route_exposure
-            routing_results[str(threshold)]["route summary"] = route_summary
-        else:   # if there was an error in routing, just use normal route results
-            routing_results[str(threshold)]["Error"] = err
-            routing_results[str(threshold)]["average_route_exposure"] = average_normal_exposure
-            routing_results[str(threshold)]["total_route_exposure"] = total_normal_exposure
-            routing_results[str(threshold)]["route summary"] = normal_summary
-        
-        routing_results[str(threshold)]["visualization"] = visualization
 
     export_routing_results(date_time, routing_results)
     sleep(5)

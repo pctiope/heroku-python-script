@@ -11,7 +11,7 @@ def process_route_results(date_time, route):
     decoded = decode_polyline6(polyline)
     route_points = [list(element) for element in decoded]
 
-    with open(f"./polygonized/polygonized_{str(date_time)}.json") as f:
+    with open(f"./results/{date_time}/polygonized.json", "r") as f:
         data = json.load(f)
         data['features'] = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
 
@@ -42,18 +42,16 @@ def process_route_results(date_time, route):
 
     return total, total_distance, summary, route_points
 
-def generate_route(coords, threshold, date_time):
+def generate_route(coords, threshold, date_time, exclude_poly):
     sleep(2)
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
-    with open(f"./filtered/filtered_{str(date_time)}_{str(threshold)}.json", "r") as f:
-        data = json.load(f)
-        exclude_poly = data["features"][0]["geometry"]["coordinates"]
     
     visualization = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
-    
+
     try:
         route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly)
     except Exception as err:
+        print(f"Error with finding AQI routing: {str(err)}") 
         return None, None, None, visualization, err
 
     total, total_distance, summary, route_points = process_route_results(date_time, route)
@@ -72,7 +70,7 @@ def generate_normal(coords, threshold, date_time):
     try:
         normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     except Exception as err:
-        print(f"Error with finding normal routing: {err}")              # IMPORTANT: case if normal routing throws an exception
+        print(f"Error with finding normal routing: {str(err)}")              # IMPORTANT: case if normal routing throws an exception
     
     normal_output = json.dumps(normal.raw, indent=4)
     with open(f"./results/{date_time}/normal.json", "w") as f:

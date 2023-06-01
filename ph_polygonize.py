@@ -5,7 +5,7 @@ from rasterio.features import shapes
 def polygonize(date_time):
     mask = None
     with rasterio.Env():
-        with rasterio.open("./results/"+date_time+"/Philippines_Pollution.shp") as src:
+        with rasterio.open("./results/"+date_time+"/Philippines_Pollution_idw.tif") as src:
         # with rasterio.open(f"./shapefiles/Philippines_Pollution_{date_time}_idw.tif") as src:
             image = src.read(1) # first band
             image = image.astype('int16')

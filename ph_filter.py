@@ -5,8 +5,7 @@ from shapely.ops import unary_union
 
 def filter(threshold, date_time, poly):
     geod = Geod(ellps="WGS84")
-    filename = f"./polygonized/polygonized_{str(date_time)}.json"
-    with open(filename) as f:
+    with open(f"./results/{date_time}/polygonized.json", "r") as f:
         data = json.load(f)
     sorted_data = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
     temp = []
