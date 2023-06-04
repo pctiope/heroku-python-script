@@ -26,18 +26,18 @@ class AQI_Sensor:
         self.y = y
         self.aqi = aqi
 
+dt_format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
+# date_time = "" # empty date_time to lessen file generation (comment if needed)
+results_path = "./results/"
 while 1:
-    dt_format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
     date_time = datetime.now().strftime(dt_format)
-    # date_time = "" # empty date_time to lessen file generation (comment if needed)
-    results_path = "./results/"
     path = os.path.join(results_path, date_time)
     # print(path)
     try:
         os.makedirs(path, exist_ok=True)
-        print("Directory '%s' created successfully" % path)
+        print(f"Directory '{path}' created successfully")
     except OSError as error:
-        print("Directory '%s' can not be created" % path)
+        print(f"Directory '{path}' can not be created")
         break
 
     # get AQI sensor data
@@ -80,7 +80,7 @@ while 1:
 
     polygonize(date_time)
     average_normal_exposure, total_normal_exposure, normal_summary, normal_route_points = generate_normal(waypoint_coords, threshold, date_time)
-    
+
     routing_results = {
         "selected middle sensor": sensors[top_rand].name,
         "selected sensor location": [sensors[top_rand].x, sensors[top_rand].y],
@@ -101,7 +101,7 @@ while 1:
         routing_results[str(threshold)]["Exclude Area Ratio"] = area_diff
 
         average_route_exposure, total_route_exposure, route_summary, visualization, err = generate_route(waypoint_coords, threshold, date_time, exclude_poly)
-        
+
         visualization['features'].append({"type": "Feature", "properties":{}, "geometry": {"type": "LineString","coordinates": normal_route_points}})
         if err is None:    
             routing_results[str(threshold)]["Error"] = "None"
@@ -114,7 +114,7 @@ while 1:
             routing_results[str(threshold)]["average_route_exposure"] = average_normal_exposure
             routing_results[str(threshold)]["total_route_exposure"] = total_normal_exposure
             routing_results[str(threshold)]["route summary"] = normal_summary
-        
+
         routing_results[str(threshold)]["visualization"] = visualization
 
         if len(route_exposure_history):

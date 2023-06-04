@@ -43,7 +43,7 @@ def process_route_results(date_time, route):
     return total, total_distance, summary, route_points
 
 def generate_route(coords, threshold, date_time, exclude_poly):
-    sleep(2)
+    sleep(5)
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
     
     visualization = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
@@ -64,7 +64,7 @@ def generate_route(coords, threshold, date_time, exclude_poly):
     return total/total_distance, total, summary, visualization, None
 
 def generate_normal(coords, threshold, date_time):
-    sleep(2)
+    sleep(5)
     client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
     
     try:
