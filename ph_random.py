@@ -4,7 +4,7 @@ import math
 import random
 
 def generate_p1(poly,Xo,Yo):
-    d1 = float(random.randrange(5, 50, 5)/10000)
+    d1 = float(random.randrange(5, 100, 5)/10000)
     rad = 2*math.pi*random.uniform(0,1)
     if poly.contains(Point(Xo+d1*math.cos(rad),Yo+d1*math.sin(rad))):
         return Point(Xo+d1*math.cos(rad),Yo+d1*math.sin(rad)), rad
@@ -12,7 +12,7 @@ def generate_p1(poly,Xo,Yo):
         generate_p1(poly,Xo,Yo)
 
 def generate_p2(poly,Xo,Yo,rad):
-    d2 = float(random.randrange(5, 50, 5)/10000)
+    d2 = float(random.randrange(5, 100, 5)/10000)
     if poly.contains(Point(Xo-d2*math.cos(rad),Yo-d2*math.sin(rad))):
         return Point(Xo-d2*math.cos(rad),Yo-d2*math.sin(rad))
     else:

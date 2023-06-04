@@ -55,7 +55,7 @@ while 1:
             print(f"RMSE (power={power}):", rmse)
     rmse_list = sorted(rmse_list, key=lambda x: x[1])
     print(f"Best power: {rmse_list[0][0]}")
-    get_idw(date_time, rmse_list[0][0])
+    get_idw(date_time, 2)
     export_idw_results(date_time, df, rmse_list)
 
     # get border polygon
@@ -68,18 +68,21 @@ while 1:
         for i in range(len(Sensor_Name))
     ]
     sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
-    top_rand = random.randint(0, len(sensors)//2)
-    # print(sensors[top_rand].x,sensors[top_rand].y)
-
-    # get pseudorandom waypoints for routing, centered around top random sensor
-    first_point, second_point = random_waypoints(border_poly, sensors[top_rand].x, sensors[top_rand].y)
-    waypoint_coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
 
     max_AQI = max(int(i) for i in US_AQI)
     threshold = max_AQI
 
     polygonize(date_time)
-    average_normal_exposure, total_normal_exposure, normal_summary, normal_route_points = generate_normal(waypoint_coords, threshold, date_time)
+
+    normal_route_points = None
+    while normal_route_points is None:
+        # get pseudorandom waypoints for routing, centered around top random sensor
+        top_rand = random.randint(0, len(sensors)//2)
+        # print(sensors[top_rand].x,sensors[top_rand].y)
+        first_point, second_point = random_waypoints(border_poly, sensors[top_rand].x, sensors[top_rand].y)
+        waypoint_coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
+        
+        average_normal_exposure, total_normal_exposure, normal_summary, normal_route_points = generate_normal(waypoint_coords, threshold, date_time)
 
     routing_results = {
         "selected middle sensor": sensors[top_rand].name,
@@ -87,45 +90,42 @@ while 1:
         "selected sensor AQI": sensors[top_rand].aqi,
         "waypoint coordinates": waypoint_coords,
         "average_normal_exposure": average_normal_exposure,
-        "total_normal_exposure": total_normal_exposure
+        "total_normal_exposure": total_normal_exposure,
+        "max_aqi": max_AQI,
+        "data": {}
     }
 
     # calculate total and average exposure of different thresholds
     route_exposure_history = [] # tuples of (average_route_exposure, total_route_exposure)
     while threshold > 0:
         print(f"threshold: {str(threshold)}")
-        routing_results[str(threshold)] = {}
+        routing_results['data'][threshold] = {}
 
         exclude_poly, area_diff = filter(threshold, date_time, border_poly)
-        routing_results[str(threshold)]["Exclude Polygon"] = exclude_poly
-        routing_results[str(threshold)]["Exclude Area Ratio"] = area_diff
+        #routing_results['data'][threshold]["Exclude Polygon"] = exclude_poly
+        routing_results['data'][threshold]["Exclude Area Ratio"] = area_diff
 
         average_route_exposure, total_route_exposure, route_summary, visualization, err = generate_route(waypoint_coords, threshold, date_time, exclude_poly)
 
         visualization['features'].append({"type": "Feature", "properties":{}, "geometry": {"type": "LineString","coordinates": normal_route_points}})
         if err is None:    
-            routing_results[str(threshold)]["Error"] = "None"
-            routing_results[str(threshold)]["average_route_exposure"] = average_route_exposure
-            routing_results[str(threshold)]["total_route_exposure"] = total_route_exposure
-            routing_results[str(threshold)]["route summary"] = route_summary
+            routing_results['data'][threshold]["Error"] = "None"
+            routing_results['data'][threshold]["average_route_exposure"] = average_route_exposure
+            routing_results['data'][threshold]["total_route_exposure"] = total_route_exposure
+            routing_results['data'][threshold]["route summary"] = route_summary
 
         else: # if there was an error in routing, just use normal route results
-            routing_results[str(threshold)]["Error"] = str(err)
-            routing_results[str(threshold)]["average_route_exposure"] = average_normal_exposure
-            routing_results[str(threshold)]["total_route_exposure"] = total_normal_exposure
-            routing_results[str(threshold)]["route summary"] = normal_summary
+            routing_results['data'][threshold]["Error"] = str(err)
+            routing_results['data'][threshold]["average_route_exposure"] = average_normal_exposure
+            routing_results['data'][threshold]["total_route_exposure"] = total_normal_exposure
+            routing_results['data'][threshold]["route summary"] = normal_summary
 
-        routing_results[str(threshold)]["visualization"] = visualization
+        routing_results['data'][threshold]["visualization"] = visualization
 
-        if len(route_exposure_history):
-            if (route_exposure_history[-1][0] != average_route_exposure or route_exposure_history[-1][1] != total_route_exposure):
-                threshold -= 1
-            else:
-                threshold -= 5
-        else:
-            threshold -= 1
-
+        threshold -= 1
         route_exposure_history.append((average_route_exposure, total_route_exposure))
+        if (err is not None) and (err.message['error_code'] == 442):
+            break
 
     export_routing_results(date_time, routing_results)
-    sleep(5)
+    #sleep(5)

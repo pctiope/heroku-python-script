@@ -43,8 +43,8 @@ def process_route_results(date_time, route):
     return total, total_distance, summary, route_points
 
 def generate_route(coords, threshold, date_time, exclude_poly):
-    sleep(5)
-    client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
+    #sleep(5)
+    client = Valhalla(base_url='http://localhost:8002')
     
     visualization = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
 
@@ -64,14 +64,15 @@ def generate_route(coords, threshold, date_time, exclude_poly):
     return total/total_distance, total, summary, visualization, None
 
 def generate_normal(coords, threshold, date_time):
-    sleep(5)
-    client = Valhalla(base_url='https://valhalla1.openstreetmap.de')
+    #sleep(5)
+    client = Valhalla(base_url='http://localhost:8002')
     
     try:
         normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
     except Exception as err:
         print(f"Error with finding normal routing: {str(err)}")              # IMPORTANT: case if normal routing throws an exception
-    
+        return None, None, None, None
+
     normal_output = json.dumps(normal.raw, indent=4)
     with open(f"./results/{date_time}/normal.json", "w") as f:
         f.write(normal_output)
