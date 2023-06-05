@@ -9,6 +9,7 @@ from shapely.geometry import shape
 from shapely.geometry.polygon import Polygon
 import json
 import random
+import pandas as pd
 from sklearn.metrics import mean_squared_error
 
 from ph_aqi import init_sensors, get_sensor_data, df_to_csv, df_to_shp
@@ -96,7 +97,10 @@ while 1:
     }
 
     # calculate total and average exposure of different thresholds
-    route_exposure_history = [] # tuples of (average_route_exposure, total_route_exposure)
+    threshold_history = []
+    average_route_exp_history = []
+    total_route_exp_history = []
+    distance_route_history = []
     while threshold > 0:
         print(f"threshold: {str(threshold)}")
         routing_results['data'][threshold] = {}
@@ -123,9 +127,27 @@ while 1:
         routing_results['data'][threshold]["visualization"] = visualization
 
         threshold -= 1
-        route_exposure_history.append((average_route_exposure, total_route_exposure))
+        
+        threshold_history.append(threshold)
+        total_route_exp_history.append(routing_results['data'][threshold]["total_route_exposure"])
+        average_route_exp_history.append(routing_results['data'][threshold]["average_route_exposure"])
+        summary = routing_results['data'][threshold]["route summary"]
+        distance_route_history.append(summary["length"])
+
         if (err is not None) and (err.message['error_code'] == 442):
             break
+
+    total_normal_exp_history = [total_normal_exposure for _ in range(len(threshold_history))]
+    average_normal_exp_history = [average_normal_exposure for _ in range(len(threshold_history))]
+    distance_normal_history = [normal_summary["length"] for _ in range(len(threshold_history))]
+    df = pd.DataFrame({'threshold': threshold_history,
+                       'normal_distance': distance_normal_history,
+                       'aqi_distance': distance_route_history,
+                       'average_normal_exp': average_normal_exp_history,
+                       'average_route_exp': average_route_exp_history,
+                       'total_normal_exp': total_normal_exp_history,
+                       'total_route_exp': total_route_exp_history})
+    df_to_csv(df,date_time)
 
     export_routing_results(date_time, routing_results)
     #sleep(5)
