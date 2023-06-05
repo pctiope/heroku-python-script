@@ -126,14 +126,14 @@ while 1:
             routing_results['data'][threshold]["route summary"] = normal_summary
 
         routing_results['data'][threshold]["visualization"] = visualization
-
-        threshold -= 1
         
         threshold_history.append(threshold)
         total_route_exp_history.append(routing_results['data'][threshold]["total_route_exposure"])
         average_route_exp_history.append(routing_results['data'][threshold]["average_route_exposure"])
         summary = routing_results['data'][threshold]["route summary"]
         distance_route_history.append(summary["length"])
+        
+        threshold -= 1
 
         if (err is not None) and (err.message['error_code'] == 442):
             break

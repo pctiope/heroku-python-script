@@ -107,7 +107,7 @@ def get_sensor_data(WAQI_sensors, IQAir_locations, IQAir_sensors):
 
 def df_to_csv(df, date_time):
     # to csv file
-    df.to_csv("./temp/aqi_data_"+date_time+".csv", index=False, encoding='utf-8')
+    df.to_csv(f"./results/{date_time}/data_{date_time}.csv", index=False, encoding='utf-8')
 
 def df_to_shp(df, date_time):
     # save to shapefile
