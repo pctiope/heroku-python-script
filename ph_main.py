@@ -77,7 +77,8 @@ while 1:
     normal_route_points = None
     while normal_route_points is None:
         # get pseudorandom waypoints for routing, centered around top random sensor
-        top_rand = random.randint(0, len(sensors)//2)
+        #top_rand = random.randint(0, len(sensors)//2)
+        top_rand = 0
         # print(sensors[top_rand].x,sensors[top_rand].y)
         first_point, second_point = random_waypoints(border_poly, sensors[top_rand].x, sensors[top_rand].y)
         waypoint_coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
