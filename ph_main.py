@@ -71,7 +71,7 @@ while 1:
     sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
 
     max_AQI = max(int(i) for i in US_AQI)
-    threshold = max_AQI
+    threshold = 200
 
     polygonize(date_time)
 
@@ -102,7 +102,7 @@ while 1:
     average_route_exp_history = []
     total_route_exp_history = []
     distance_route_history = []
-    while threshold > 0:
+    while threshold >= 0:
         print(f"threshold: {str(threshold)}")
         routing_results['data'][threshold] = {}
 
@@ -136,6 +136,14 @@ while 1:
         threshold -= 1
 
         if (err is not None) and (err.message['error_code'] == 442):
+            original_threshold = threshold + 1
+            while threshold >= 0:
+                threshold_history.append(threshold)
+                total_route_exp_history.append(routing_results['data'][original_threshold]["total_route_exposure"])
+                average_route_exp_history.append(routing_results['data'][original_threshold]["average_route_exposure"])
+                summary = routing_results['data'][original_threshold]["route summary"]
+                distance_route_history.append(summary["length"])
+                threshold -= 1
             break
 
     total_normal_exp_history = [total_normal_exposure for _ in range(len(threshold_history))]
