@@ -4,12 +4,14 @@ warnings.simplefilter(action='ignore', category=UserWarning)
 
 import os
 from time import sleep
+import numpy as np
 from datetime import datetime
 from shapely.geometry import shape
 from shapely.geometry.polygon import Polygon
 import json
 import random
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error
 
 from ph_aqi import init_sensors, get_sensor_data, df_to_csv, df_to_shp
@@ -19,6 +21,7 @@ from ph_filter import filter
 from ph_routing import generate_route, generate_normal
 from ph_random import random_waypoints
 from ph_export import export_idw_results, export_routing_results
+from ph_average import update_average
 
 class AQI_Sensor:
     def __init__(self,name,x,y,aqi):
@@ -30,7 +33,11 @@ class AQI_Sensor:
 dt_format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
 # date_time = "" # empty date_time to lessen file generation (comment if needed)
 results_path = "./results/"
-while 1:
+total_y = []
+counter = 10
+
+while counter > 0:
+    
     date_time = datetime.now().strftime(dt_format)
     path = os.path.join(results_path, date_time)
     # print(path)
@@ -78,12 +85,12 @@ while 1:
     normal_route_points = None
     while normal_route_points is None:
         # get pseudorandom waypoints for routing, centered around top random sensor
-        #top_rand = random.randint(0, len(sensors)//2)
-        top_rand = 0
+        top_rand = random.randint(0, 0)
+        #top_rand = 0
         # print(sensors[top_rand].x,sensors[top_rand].y)
         first_point, second_point = random_waypoints(border_poly, sensors[top_rand].x, sensors[top_rand].y)
         waypoint_coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
-        
+
         average_normal_exposure, total_normal_exposure, normal_summary, normal_route_points = generate_normal(waypoint_coords, threshold, date_time)
 
     routing_results = {
@@ -102,8 +109,8 @@ while 1:
     average_route_exp_history = []
     total_route_exp_history = []
     distance_route_history = []
-    while threshold >= 0:
-        print(f"threshold: {str(threshold)}")
+    while threshold > 0:
+        print(f"threshold: {threshold}")
         routing_results['data'][threshold] = {}
 
         exclude_poly, area_diff = filter(threshold, date_time, border_poly)
@@ -126,18 +133,18 @@ while 1:
             routing_results['data'][threshold]["route summary"] = normal_summary
 
         routing_results['data'][threshold]["visualization"] = visualization
-        
+
         threshold_history.append(threshold)
         total_route_exp_history.append(routing_results['data'][threshold]["total_route_exposure"])
         average_route_exp_history.append(routing_results['data'][threshold]["average_route_exposure"])
         summary = routing_results['data'][threshold]["route summary"]
         distance_route_history.append(summary["length"])
-        
+
         threshold -= 1
 
         if (err is not None) and (err.message['error_code'] == 442):
             original_threshold = threshold + 1
-            while threshold >= 0:
+            while threshold > 0:
                 threshold_history.append(threshold)
                 total_route_exp_history.append(routing_results['data'][original_threshold]["total_route_exposure"])
                 average_route_exp_history.append(routing_results['data'][original_threshold]["average_route_exposure"])
@@ -146,9 +153,22 @@ while 1:
                 threshold -= 1
             break
 
+    #print(average_route_exp_history, 'average route exposure')
     total_normal_exp_history = [total_normal_exposure for _ in range(len(threshold_history))]
     average_normal_exp_history = [average_normal_exposure for _ in range(len(threshold_history))]
     distance_normal_history = [normal_summary["length"] for _ in range(len(threshold_history))]
+    relative_threshold = [threshold_history[i]/max_AQI for i in range(len(threshold_history))]
+    relative_average_exposure = [average_route_exp_history[i]/average_normal_exposure for i in range(len(threshold_history))]
+
+    #print(relative_threshold, 'relative threshold')
+    #print(relative_average_exposure, 'relative average exposure')
+    #new_x = np.linspace(0, max_AQI, num=200)
+    #new_x = [i/max_AQI for i in new_x]
+    #new_y = np.interp(new_x, relative_threshold, relative_average_exposure)
+    #total_y.append(new_y)
+    total_y.append(relative_average_exposure)
+    ave_y = update_average(total_y)
+
     df = pd.DataFrame({'threshold': threshold_history,
                        'normal_distance': distance_normal_history,
                        'aqi_distance': distance_route_history,
@@ -157,6 +177,12 @@ while 1:
                        'total_normal_exp': total_normal_exp_history,
                        'total_route_exp': total_route_exp_history})
     df_to_csv(df,date_time)
+    counter -= 1
 
     export_routing_results(date_time, routing_results)
     #sleep(5)
+print(ave_y, min(ave_y))
+plt.scatter(relative_threshold, ave_y, s=0.5)
+plt.ylim([0.8, 1.2])
+#plt.legend()
+plt.show()
