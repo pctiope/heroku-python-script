@@ -13,6 +13,7 @@ import random
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error
+from scipy import interpolate
 
 from ph_aqi import init_sensors, get_sensor_data, df_to_csv, df_to_shp
 from ph_idw import get_idw, get_error
@@ -34,7 +35,7 @@ dt_format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
 # date_time = "" # empty date_time to lessen file generation (comment if needed)
 results_path = "./results/"
 total_y = []
-counter = 10
+counter = 2
 
 while counter > 0:
     
@@ -78,7 +79,7 @@ while counter > 0:
     sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
 
     max_AQI = max(int(i) for i in US_AQI)
-    threshold = 200
+    threshold = max_AQI
 
     polygonize(date_time)
 
@@ -162,12 +163,16 @@ while counter > 0:
 
     #print(relative_threshold, 'relative threshold')
     #print(relative_average_exposure, 'relative average exposure')
-    #new_x = np.linspace(0, max_AQI, num=200)
-    #new_x = [i/max_AQI for i in new_x]
-    #new_y = np.interp(new_x, relative_threshold, relative_average_exposure)
-    #total_y.append(new_y)
-    total_y.append(relative_average_exposure)
+    new_x = np.linspace(1, max_AQI, num=200)
+    new_x = [i/max_AQI for i in new_x]
+    f = interpolate.interp1d(relative_threshold, relative_average_exposure)
+    new_y = f(new_x)
+    plt.plot(new_x, new_y, linewidth=1)
+    plt.show()
+    total_y.append(new_y)
     ave_y = update_average(total_y)
+    plt.plot(new_x, ave_y, linewidth=1, label='average')
+    plt.show()
 
     df = pd.DataFrame({'threshold': threshold_history,
                        'normal_distance': distance_normal_history,
@@ -181,8 +186,3 @@ while counter > 0:
 
     export_routing_results(date_time, routing_results)
     #sleep(5)
-print(ave_y, min(ave_y))
-plt.scatter(relative_threshold, ave_y, s=0.5)
-plt.ylim([0.8, 1.2])
-#plt.legend()
-plt.show()
