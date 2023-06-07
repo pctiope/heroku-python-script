@@ -35,10 +35,9 @@ dt_format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
 # date_time = "" # empty date_time to lessen file generation (comment if needed)
 results_path = "./results/"
 total_y = []
-counter = 2
+counter = 50
 
 while counter > 0:
-    
     date_time = datetime.now().strftime(dt_format)
     path = os.path.join(results_path, date_time)
     # print(path)
@@ -109,7 +108,7 @@ while counter > 0:
     threshold_history = []
     average_route_exp_history = []
     total_route_exp_history = []
-    distance_route_history = []
+    time_route_history = []
     while threshold > 0:
         print(f"threshold: {threshold}")
         routing_results['data'][threshold] = {}
@@ -139,7 +138,7 @@ while counter > 0:
         total_route_exp_history.append(routing_results['data'][threshold]["total_route_exposure"])
         average_route_exp_history.append(routing_results['data'][threshold]["average_route_exposure"])
         summary = routing_results['data'][threshold]["route summary"]
-        distance_route_history.append(summary["length"])
+        time_route_history.append(summary["time"])
 
         threshold -= 1
 
@@ -150,14 +149,14 @@ while counter > 0:
                 total_route_exp_history.append(routing_results['data'][original_threshold]["total_route_exposure"])
                 average_route_exp_history.append(routing_results['data'][original_threshold]["average_route_exposure"])
                 summary = routing_results['data'][original_threshold]["route summary"]
-                distance_route_history.append(summary["length"])
+                time_route_history.append(summary["time"])
                 threshold -= 1
             break
 
     #print(average_route_exp_history, 'average route exposure')
     total_normal_exp_history = [total_normal_exposure for _ in range(len(threshold_history))]
     average_normal_exp_history = [average_normal_exposure for _ in range(len(threshold_history))]
-    distance_normal_history = [normal_summary["length"] for _ in range(len(threshold_history))]
+    time_normal_history = [normal_summary["time"] for _ in range(len(threshold_history))]
     relative_threshold = [threshold_history[i]/max_AQI for i in range(len(threshold_history))]
     relative_average_exposure = [average_route_exp_history[i]/average_normal_exposure for i in range(len(threshold_history))]
 
@@ -167,16 +166,23 @@ while counter > 0:
     new_x = [i/max_AQI for i in new_x]
     f = interpolate.interp1d(relative_threshold, relative_average_exposure)
     new_y = f(new_x)
-    plt.plot(new_x, new_y, linewidth=1)
-    plt.show()
+    # plt.plot(new_x, new_y, linewidth=1)
+    # plt.show()
     total_y.append(new_y)
     ave_y = update_average(total_y)
-    plt.plot(new_x, ave_y, linewidth=1, label='average')
-    plt.show()
-
+    # plt.plot(new_x, ave_y, linewidth=1, label='average')
+    # plt.show()
+    # new_x = np.linspace(0, 1, num=200)
+    # plt.plot(new_x, ave_y, linewidth=1, label='average')
+    # plt.show()
+    # a1_coefs = np.polyfit(new_x, ave_y, 5)
+    # new_y2 = np.polyval(a1_coefs, new_x)
+    # plt.plot(new_x, new_y2, linewidth=1, label='average')
+    # plt.show()
+    
     df = pd.DataFrame({'threshold': threshold_history,
-                       'normal_distance': distance_normal_history,
-                       'aqi_distance': distance_route_history,
+                       'normal_time': time_normal_history,
+                       'aqi_time': time_route_history,
                        'average_normal_exp': average_normal_exp_history,
                        'average_route_exp': average_route_exp_history,
                        'total_normal_exp': total_normal_exp_history,
@@ -186,3 +192,10 @@ while counter > 0:
 
     export_routing_results(date_time, routing_results)
     #sleep(5)
+new_x = np.linspace(0, 1, num=200)
+plt.plot(new_x, ave_y, linewidth=1, label='average')
+plt.show()
+a1_coefs = np.polyfit(new_x, ave_y, 5)
+new_y2 = np.polyval(a1_coefs, new_x)
+plt.plot(new_x, new_y2, linewidth=1, label='average')
+plt.show()
