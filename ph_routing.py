@@ -49,7 +49,8 @@ def generate_route(coords, threshold, date_time, exclude_poly):
     visualization = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
 
     try:
-        route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly)
+        # route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly)
+        route = client.directions(locations=coords,instructions=True,profile="bicycle",avoid_polygons=exclude_poly)
     except Exception as err:
         print(f"Error with finding AQI routing: {str(err)}") 
         return None, None, None, visualization, err
@@ -68,7 +69,8 @@ def generate_normal(coords, threshold, date_time):
     client = Valhalla(base_url='http://localhost:8002')
     
     try:
-        normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
+        # normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
+        normal = client.directions(locations=coords,instructions=True,profile="bicycle")
     except Exception as err:
         print(f"Error with finding normal routing: {str(err)}")              # IMPORTANT: case if normal routing throws an exception
         return None, None, None, None

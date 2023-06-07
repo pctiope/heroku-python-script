@@ -34,8 +34,10 @@ class AQI_Sensor:
 dt_format = "%d-%m-%Y_%H-%M-%S"        # dd-mm-yyyy_HH-MM-SS format
 # date_time = "" # empty date_time to lessen file generation (comment if needed)
 results_path = "./results/"
-total_y = []
-counter = 50
+threshold_exposure_sum = []
+time_sum = []
+time_exposure_sum = []
+counter = 10
 
 while counter > 0:
     date_time = datetime.now().strftime(dt_format)
@@ -152,29 +154,37 @@ while counter > 0:
                 time_route_history.append(summary["time"])
                 threshold -= 1
             break
-
-    #print(average_route_exp_history, 'average route exposure')
+    
     total_normal_exp_history = [total_normal_exposure for _ in range(len(threshold_history))]
     average_normal_exp_history = [average_normal_exposure for _ in range(len(threshold_history))]
     time_normal_history = [normal_summary["time"] for _ in range(len(threshold_history))]
     relative_threshold = [threshold_history[i]/max_AQI for i in range(len(threshold_history))]
     relative_average_exposure = [average_route_exp_history[i]/average_normal_exposure for i in range(len(threshold_history))]
-
-    #print(relative_threshold, 'relative threshold')
-    #print(relative_average_exposure, 'relative average exposure')
-    new_x = np.linspace(1, max_AQI, num=200)
-    new_x = [i/max_AQI for i in new_x]
+    relative_time = [time_route_history[i]/normal_summary["time"] for i in range(len(threshold_history))]
+    
+    threshold_x = np.linspace(1, max_AQI, num=200)
+    threshold_x = [i/max_AQI for i in threshold_x]
     f = interpolate.interp1d(relative_threshold, relative_average_exposure)
-    new_y = f(new_x)
-    # plt.plot(new_x, new_y, linewidth=1)
+    threshold_exposure_y = f(threshold_x)
+    # plt.plot(threshold_x, threshold_exposure_y, linewidth=1, label='threshold vs exposure')
     # plt.show()
-    total_y.append(new_y)
-    ave_y = update_average(total_y)
-    # plt.plot(new_x, ave_y, linewidth=1, label='average')
+    g = interpolate.interp1d(relative_threshold, relative_time)
+    time_y = g(threshold_x)
+    # plt.plot(threshold_x, time_y, linewidth=1, label='threshold vs time')
     # plt.show()
-    # new_x = np.linspace(0, 1, num=200)
-    # plt.plot(new_x, ave_y, linewidth=1, label='average')
+    time_x = np.linspace(min(time_route_history), max(time_route_history), num=200)
+    time_x = [i/time_route_history[0] for i in time_x]
+    h = interpolate.interp1d(relative_time, relative_average_exposure)
+    time_exposure_y = h(time_x)
+    # plt.plot(time_x, time_exposure_y, linewidth=1, label='time vs exposure')
     # plt.show()
+    
+    threshold_exposure_sum.append(threshold_exposure_y)
+    time_exposure_sum.append(time_exposure_y)
+    time_sum.append(time_y)
+    ave_threshold_exposure = update_average(threshold_exposure_sum)
+    ave_time_exposure = update_average(time_exposure_sum)
+    ave_time_sum = update_average(time_sum)
     # a1_coefs = np.polyfit(new_x, ave_y, 5)
     # new_y2 = np.polyval(a1_coefs, new_x)
     # plt.plot(new_x, new_y2, linewidth=1, label='average')
@@ -192,10 +202,12 @@ while counter > 0:
 
     export_routing_results(date_time, routing_results)
     #sleep(5)
-new_x = np.linspace(0, 1, num=200)
-plt.plot(new_x, ave_y, linewidth=1, label='average')
+
+time_x = np.linspace(0, 1, num=200)
+plt.plot(time_x, ave_time_exposure, linewidth=1, label='time vs exposure')
 plt.show()
-a1_coefs = np.polyfit(new_x, ave_y, 5)
-new_y2 = np.polyval(a1_coefs, new_x)
-plt.plot(new_x, new_y2, linewidth=1, label='average')
+threshold_x = np.linspace(0, 1, num=200)
+plt.plot(threshold_x, ave_threshold_exposure, linewidth=1, label='threshold vs exposure')
+plt.show()
+plt.plot(threshold_x, ave_time_sum, linewidth=1, label='threshold vs time')
 plt.show()

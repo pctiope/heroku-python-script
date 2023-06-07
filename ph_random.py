@@ -3,17 +3,34 @@ from shapely.geometry import Point
 import math
 import random
 
+# def generate_p1(poly,Xo,Yo):
+#     d1 = float(random.randrange(40, 80, 10)/10000)
+#     rad = 2*math.pi*random.uniform(0,1)
+#     if poly.contains(Point(Xo+d1*math.cos(rad),Yo+d1*math.sin(rad))):
+#         return Point(Xo+d1*math.cos(rad),Yo+d1*math.sin(rad)), rad
+#     else:
+#         generate_p1(poly,Xo,Yo)
+
+# def generate_p2(poly,Xo,Yo,rad):
+#     d2 = float(random.randrange(40, 80, 10)/10000)
+#     if poly.contains(Point(Xo-d2*math.cos(rad),Yo-d2*math.sin(rad))):
+#         return Point(Xo-d2*math.cos(rad),Yo-d2*math.sin(rad))
+#     else:
+#         generate_p2(poly,Xo,Yo,rad)
+
 def generate_p1(poly,Xo,Yo):
-    d1 = float(random.randrange(50, 250, 10)/10000)
+    d1 = float(random.randrange(250, 300, 10)/10000)
     rad = 2*math.pi*random.uniform(0,1)
     if poly.contains(Point(Xo+d1*math.cos(rad),Yo+d1*math.sin(rad))):
+        print(Point(Xo+d1*math.cos(rad),Yo+d1*math.sin(rad)), rad)
         return Point(Xo+d1*math.cos(rad),Yo+d1*math.sin(rad)), rad
     else:
         generate_p1(poly,Xo,Yo)
 
 def generate_p2(poly,Xo,Yo,rad):
-    d2 = float(random.randrange(50, 250, 10)/10000)
+    d2 = float(random.randrange(250, 300, 10)/10000)
     if poly.contains(Point(Xo-d2*math.cos(rad),Yo-d2*math.sin(rad))):
+        print(Point(Xo-d2*math.cos(rad),Yo-d2*math.sin(rad)))
         return Point(Xo-d2*math.cos(rad),Yo-d2*math.sin(rad))
     else:
         generate_p2(poly,Xo,Yo,rad)
