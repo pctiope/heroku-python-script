@@ -42,15 +42,17 @@ def process_route_results(date_time, route):
 
     return total, total_distance, summary, route_points
 
-def generate_route(coords, threshold, date_time, exclude_poly):
+def generate_route(coords, threshold, date_time, exclude_poly, mode, run):
     #sleep(5)
     client = Valhalla(base_url='http://localhost:8002')
     
     visualization = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[0]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Point","coordinates": coords[1]}},{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
 
     try:
-        # route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly)
-        route = client.directions(locations=coords,instructions=True,profile="bicycle",avoid_polygons=exclude_poly)
+        if mode == 'bicycle':
+            route = client.directions(locations=coords,instructions=True,profile="bicycle",avoid_polygons=exclude_poly,options={"use_ferry":0})
+        else:
+            route = client.directions(locations=coords,instructions=True,profile="pedestrian",avoid_polygons=exclude_poly,options={"use_ferry":0})
     except Exception as err:
         print(f"Error with finding AQI routing: {str(err)}") 
         return None, None, None, visualization, err
@@ -59,24 +61,25 @@ def generate_route(coords, threshold, date_time, exclude_poly):
     visualization['features'].append({"type": "Feature", "properties":{}, "geometry": {"type": "LineString","coordinates": route_points}})
 
     route_output = json.dumps(route.raw, indent=4)
-    with open(f"./results/{date_time}/route_{str(threshold)}.json", "w") as f:
+    with open(f"./results/{date_time}/{mode}/{run}/route_{str(threshold)}.json", "w") as f:
         f.write(route_output)
 
     return total/total_distance, total, summary, visualization, None
 
-def generate_normal(coords, threshold, date_time):
-    #sleep(5)
+def generate_normal(coords, threshold, date_time, mode, run):
     client = Valhalla(base_url='http://localhost:8002')
     
     try:
-        # normal = client.directions(locations=coords,instructions=True,profile="pedestrian")
-        normal = client.directions(locations=coords,instructions=True,profile="bicycle")
+        if mode == 'bicycle':
+            normal = client.directions(locations=coords,instructions=True,profile="bicycle",options={"use_ferry":0})
+        else:
+            normal = client.directions(locations=coords,instructions=True,profile="pedestrian",options={"use_ferry":0})
     except Exception as err:
         print(f"Error with finding normal routing: {str(err)}")              # IMPORTANT: case if normal routing throws an exception
         return None, None, None, None
 
     normal_output = json.dumps(normal.raw, indent=4)
-    with open(f"./results/{date_time}/normal.json", "w") as f:
+    with open(f"./results/{date_time}/{mode}/{run}/normal.json", "w") as f:
         f.write(normal_output)
 
     total, total_distance, summary, route_points = process_route_results(date_time, normal)

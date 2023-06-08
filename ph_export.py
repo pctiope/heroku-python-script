@@ -8,7 +8,7 @@ def export_idw_results(date_time, df, rmse_list):
     with open(f"./results/{date_time}/aqi_idw_results.json", "w") as f:
         f.write(outfile)
 
-def export_routing_results(date_time, routing_results):
+def export_routing_results(date_time, routing_results, mode, run):
     outfile = json.dumps(routing_results, indent=4)
-    with open(f"./results/{date_time}/route_results.json", "w") as f:
+    with open(f"./results/{date_time}/{mode}/{run}/route_results.json", "w") as f:
         f.write(outfile)
