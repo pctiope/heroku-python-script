@@ -37,7 +37,7 @@ results_path = "./results/"
 threshold_exposure_sum = []
 time_sum = []
 time_exposure_sum = []
-counter = 10
+counter = 50
 
 while counter > 0:
     date_time = datetime.now().strftime(dt_format)
@@ -87,8 +87,8 @@ while counter > 0:
     normal_route_points = None
     while normal_route_points is None:
         # get pseudorandom waypoints for routing, centered around top random sensor
-        top_rand = random.randint(0, 0)
-        #top_rand = 0
+        # top_rand = random.randint(0, len(sensors)-1)
+        top_rand = 0
         # print(sensors[top_rand].x,sensors[top_rand].y)
         first_point, second_point = random_waypoints(border_poly, sensors[top_rand].x, sensors[top_rand].y)
         waypoint_coords = [[first_point.x, first_point.y], [second_point.x, second_point.y]]
