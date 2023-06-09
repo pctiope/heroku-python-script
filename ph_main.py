@@ -225,7 +225,7 @@ def run_routing(mode, date_time, counter=2):  # sourcery skip: low-code-quality
 date_time = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 mode = 'final'
 results_path = "./results/"
-cycles = 1
+cycles = 100
 
 total_ave_time_exposure, total_ave_threshold_exposure, total_ave_time_sum = [], [], []
 ped_ave_time_exposure, ped_ave_threshold_exposure, ped_ave_time_sum = run_routing('pedestrian', date_time, cycles)
