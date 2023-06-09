@@ -203,5 +203,3 @@ def plot_all():
     plt.legend(loc="upper right")
     # plt.figure()
     plt.show()
-    
-plot_all()
