@@ -225,7 +225,7 @@ def run_routing(mode, date_time, counter=2):  # sourcery skip: low-code-quality
 date_time = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 mode = 'final'
 results_path = "./results/"
-cycles = 50
+cycles = 1
 
 total_ave_time_exposure, total_ave_threshold_exposure, total_ave_time_sum = [], [], []
 ped_ave_time_exposure, ped_ave_threshold_exposure, ped_ave_time_sum = run_routing('pedestrian', date_time, cycles)
@@ -242,17 +242,20 @@ plt.plot(time_x, final_time_exposure, linewidth=1, label='time vs exposure')
 plt.axhline(y=np.mean(final_time_exposure), color='r', linestyle='--', label='ave relative exposure')
 plt.xlabel('relative time')
 plt.ylabel('relative average exposure')
+plt.legend(loc="upper right")
 plt.show()
 threshold_x = np.linspace(0, 1, num=200)
 plt.plot(threshold_x, final_threshold_exposure, linewidth=1, label='threshold vs exposure')
 plt.axhline(y=np.mean(final_threshold_exposure), color='r', linestyle='--', label='ave relative exposure')
 plt.xlabel('relative threshold')
 plt.ylabel('relative average exposure')
+plt.legend(loc="upper right")
 plt.show()
 plt.plot(threshold_x, final_time_sum, linewidth=1, label='threshold vs time')
 plt.axhline(y=np.mean(final_time_sum), color='r', linestyle='--', label='ave time exposure')
 plt.xlabel('relative threshold')
 plt.ylabel('relative time')
+plt.legend(loc="upper right")
 plt.show()
 
 path = os.path.join(results_path, date_time, 'final', str(0))
