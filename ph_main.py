@@ -23,6 +23,7 @@ from ph_routing import generate_route, generate_normal
 from ph_random import random_waypoints
 from ph_export import export_idw_results, export_routing_results
 from ph_average import update_average
+from ph_graph import plot_all
 
 class AQI_Sensor:
     def __init__(self,name,x,y,aqi):
@@ -221,53 +222,54 @@ def run_routing(mode, date_time, counter=2):  # sourcery skip: low-code-quality
     df_to_csv(df,date_time,mode)
     return ave_time_exposure, ave_threshold_exposure, ave_time_sum
 
-
-date_time = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 mode = 'final'
 results_path = "./results/"
 cycles = 100
 
-total_ave_time_exposure, total_ave_threshold_exposure, total_ave_time_sum = [], [], []
-ped_ave_time_exposure, ped_ave_threshold_exposure, ped_ave_time_sum = run_routing('pedestrian', date_time, cycles)
-bike_ave_time_exposure, bike_ave_threshold_exposure, bike_ave_time_sum = run_routing('bicycle', date_time, cycles)
-total_ave_time_sum.extend((ped_ave_time_sum, bike_ave_time_sum))
-total_ave_time_exposure.extend((ped_ave_time_exposure, bike_ave_time_exposure))
-total_ave_threshold_exposure.extend((ped_ave_threshold_exposure, bike_ave_threshold_exposure))
-final_threshold_exposure = update_average(total_ave_threshold_exposure)
-final_time_exposure = update_average(total_ave_time_exposure)
-final_time_sum = update_average(total_ave_time_sum)
+for _ in range(5, 0, -1):
+    date_time = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
+    total_ave_time_exposure, total_ave_threshold_exposure, total_ave_time_sum = [], [], []
+    ped_ave_time_exposure, ped_ave_threshold_exposure, ped_ave_time_sum = run_routing('pedestrian', date_time, cycles)
+    bike_ave_time_exposure, bike_ave_threshold_exposure, bike_ave_time_sum = run_routing('bicycle', date_time, cycles)
+    total_ave_time_sum.extend((ped_ave_time_sum, bike_ave_time_sum))
+    total_ave_time_exposure.extend((ped_ave_time_exposure, bike_ave_time_exposure))
+    total_ave_threshold_exposure.extend((ped_ave_threshold_exposure, bike_ave_threshold_exposure))
+    final_threshold_exposure = update_average(total_ave_threshold_exposure)
+    final_time_exposure = update_average(total_ave_time_exposure)
+    final_time_sum = update_average(total_ave_time_sum)
 
-time_x = np.linspace(0, 1, num=200)
-plt.plot(time_x, final_time_exposure, linewidth=1, label='time vs exposure')
-plt.axhline(y=np.mean(final_time_exposure), color='r', linestyle='--', label='ave relative exposure')
-plt.xlabel('relative time')
-plt.ylabel('relative average exposure')
-plt.legend(loc="upper right")
-plt.show()
-threshold_x = np.linspace(0, 1, num=200)
-plt.plot(threshold_x, final_threshold_exposure, linewidth=1, label='threshold vs exposure')
-plt.axhline(y=np.mean(final_threshold_exposure), color='r', linestyle='--', label='ave relative exposure')
-plt.xlabel('relative threshold')
-plt.ylabel('relative average exposure')
-plt.legend(loc="upper right")
-plt.show()
-plt.plot(threshold_x, final_time_sum, linewidth=1, label='threshold vs time')
-plt.axhline(y=np.mean(final_time_sum), color='r', linestyle='--', label='ave time exposure')
-plt.xlabel('relative threshold')
-plt.ylabel('relative time')
-plt.legend(loc="upper right")
-plt.show()
+    # x = np.linspace(0, 1, num=200)
+    # plt.plot(x, final_time_exposure, linewidth=1, label='time vs exposure')
+    # plt.axhline(y=np.mean(final_time_exposure), color='r', linestyle='--', label='ave relative exposure')
+    # plt.xlabel('relative time')
+    # plt.ylabel('relative average exposure')
+    # plt.legend(loc="upper right")
+    # plt.figure()
+    # plt.plot(x, final_threshold_exposure, linewidth=1, label='threshold vs exposure')
+    # plt.axhline(y=np.mean(final_threshold_exposure), color='r', linestyle='--', label='ave relative exposure')
+    # plt.xlabel('relative threshold')
+    # plt.ylabel('relative average exposure')
+    # plt.legend(loc="upper right")
+    # plt.figure()
+    # plt.plot(x, final_time_sum, linewidth=1, label='threshold vs time')
+    # plt.axhline(y=np.mean(final_time_sum), color='r', linestyle='--', label='ave time exposure')
+    # plt.xlabel('relative threshold')
+    # plt.ylabel('relative time')
+    # plt.legend(loc="upper right")
+    # plt.show()
 
-path = os.path.join(results_path, date_time, 'final', str(0))
-os.makedirs(path, exist_ok=True)
-df = pd.DataFrame({'ped_ave_time_exposure': ped_ave_time_exposure,
-    'ped_ave_threshold_exposure': ped_ave_threshold_exposure,
-    'ped_ave_time_sum': ped_ave_time_sum,
-    'bike_ave_time_exposure': bike_ave_time_exposure,
-    'bike_ave_threshold_exposure': bike_ave_threshold_exposure,
-    'bike_ave_time_sum': bike_ave_time_sum,
-    'final_threshold_exposure': final_threshold_exposure,
-    'final_time_exposure': final_time_exposure,
-    'final_time_sum': final_time_sum,
-    })
-df_to_csv(df,date_time,mode)
+    path = os.path.join(results_path, date_time, 'final', str(0))
+    os.makedirs(path, exist_ok=True)
+    df = pd.DataFrame({'ped_ave_time_exposure': ped_ave_time_exposure,
+        'ped_ave_threshold_exposure': ped_ave_threshold_exposure,
+        'ped_ave_time_sum': ped_ave_time_sum,
+        'bike_ave_time_exposure': bike_ave_time_exposure,
+        'bike_ave_threshold_exposure': bike_ave_threshold_exposure,
+        'bike_ave_time_sum': bike_ave_time_sum,
+        'final_threshold_exposure': final_threshold_exposure,
+        'final_time_exposure': final_time_exposure,
+        'final_time_sum': final_time_sum,
+        })
+    df_to_csv(df,date_time,mode)
+
+plot_all()
