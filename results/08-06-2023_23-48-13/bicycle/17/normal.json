@@ -1,0 +1,289 @@
+{
+    "trip": {
+        "locations": [
+            {
+                "type": "break",
+                "lat": 14.56831,
+                "lon": 121.056077,
+                "side_of_street": "right",
+                "original_index": 0
+            },
+            {
+                "type": "break",
+                "lat": 14.538492,
+                "lon": 121.013475,
+                "side_of_street": "right",
+                "original_index": 1
+            }
+        ],
+        "legs": [
+            {
+                "maneuvers": [
+                    {
+                        "type": 2,
+                        "instruction": "Bike northwest on West Capitol Drive.",
+                        "verbal_succinct_transition_instruction": "Bike northwest. Then, in 60 meters, Turn left onto Fairlane.",
+                        "verbal_pre_transition_instruction": "Bike northwest on West Capitol Drive. Then, in 60 meters, Turn left onto Fairlane.",
+                        "verbal_post_transition_instruction": "Continue for 60 meters.",
+                        "street_names": [
+                            "West Capitol Drive"
+                        ],
+                        "time": 11.389,
+                        "length": 0.055,
+                        "cost": 22.354,
+                        "begin_shape_index": 0,
+                        "end_shape_index": 3,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Fairlane.",
+                        "verbal_transition_alert_instruction": "Turn left onto Fairlane.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Fairlane.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Fairlane"
+                        ],
+                        "time": 22.499,
+                        "length": 0.099,
+                        "cost": 48.674,
+                        "begin_shape_index": 3,
+                        "end_shape_index": 9,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 14,
+                        "instruction": "Make a sharp left onto Santa Monica\u2013Lawton Bridge.",
+                        "verbal_transition_alert_instruction": "Make a sharp left onto Santa Monica\u2013Lawton Bridge.",
+                        "verbal_succinct_transition_instruction": "Make a sharp left.",
+                        "verbal_pre_transition_instruction": "Make a sharp left onto Santa Monica\u2013Lawton Bridge.",
+                        "verbal_post_transition_instruction": "Continue for 500 meters.",
+                        "street_names": [
+                            "Santa Monica\u2013Lawton Bridge"
+                        ],
+                        "time": 92.9,
+                        "length": 0.455,
+                        "cost": 163.345,
+                        "begin_shape_index": 9,
+                        "end_shape_index": 18,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 20,
+                        "instruction": "Take the 190 exit on the right.",
+                        "verbal_transition_alert_instruction": "Take the 190 exit on the right.",
+                        "verbal_pre_transition_instruction": "Take the 190 exit on the right.",
+                        "time": 61.5,
+                        "length": 0.303,
+                        "cost": 189.758,
+                        "begin_shape_index": 18,
+                        "end_shape_index": 25,
+                        "sign": {
+                            "exit_branch_elements": [
+                                {
+                                    "text": "190",
+                                    "consecutive_count": 1
+                                }
+                            ]
+                        },
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Kalayaan Avenue/190.",
+                        "verbal_transition_alert_instruction": "Turn right onto Kalayaan Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Kalayaan Avenue, 190.",
+                        "verbal_post_transition_instruction": "Continue for 1.5 kilometers.",
+                        "street_names": [
+                            "Kalayaan Avenue",
+                            "190"
+                        ],
+                        "time": 338.599,
+                        "length": 1.641,
+                        "cost": 785.974,
+                        "begin_shape_index": 25,
+                        "end_shape_index": 82,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 21,
+                        "instruction": "Take the 1 exit.",
+                        "verbal_transition_alert_instruction": "Take the 1 exit.",
+                        "verbal_pre_transition_instruction": "Take the 1 exit.",
+                        "verbal_post_transition_instruction": "Continue for 3 kilometers.",
+                        "street_names": [
+                            "1",
+                            "AH26",
+                            "EDSA",
+                            "Epifanio de los Santos Avenue"
+                        ],
+                        "time": 586.649,
+                        "length": 2.901,
+                        "cost": 1995.671,
+                        "begin_shape_index": 82,
+                        "end_shape_index": 138,
+                        "sign": {
+                            "exit_branch_elements": [
+                                {
+                                    "text": "1",
+                                    "consecutive_count": 1
+                                }
+                            ]
+                        },
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 20,
+                        "instruction": "Take the exit on the right toward Alabang/Manila.",
+                        "verbal_transition_alert_instruction": "Take the exit on the right toward Alabang.",
+                        "verbal_pre_transition_instruction": "Take the exit on the right toward Alabang, Manila.",
+                        "street_names": [
+                            "AH26"
+                        ],
+                        "time": 59.799,
+                        "length": 0.298,
+                        "cost": 227.314,
+                        "begin_shape_index": 138,
+                        "end_shape_index": 152,
+                        "sign": {
+                            "exit_toward_elements": [
+                                {
+                                    "text": "Alabang"
+                                },
+                                {
+                                    "text": "Manila"
+                                }
+                            ]
+                        },
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 24,
+                        "instruction": "Keep left to take E2 toward SLEX/ Alabang.",
+                        "verbal_transition_alert_instruction": "Keep left to take E2.",
+                        "verbal_pre_transition_instruction": "Keep left to take E2 toward SLEX,  Alabang.",
+                        "verbal_post_transition_instruction": "Continue for 700 meters.",
+                        "street_names": [
+                            "E2",
+                            "AH26",
+                            "President Sergio Osme\u00f1a Sr. Highway"
+                        ],
+                        "time": 131.65,
+                        "length": 0.652,
+                        "cost": 444.377,
+                        "begin_shape_index": 152,
+                        "end_shape_index": 176,
+                        "sign": {
+                            "exit_branch_elements": [
+                                {
+                                    "text": "E2",
+                                    "consecutive_count": 1
+                                }
+                            ],
+                            "exit_toward_elements": [
+                                {
+                                    "text": "SLEX"
+                                },
+                                {
+                                    "text": " Alabang"
+                                }
+                            ]
+                        },
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto San Gregorio Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto San Gregorio Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto San Gregorio Street.",
+                        "verbal_post_transition_instruction": "Continue for 700 meters.",
+                        "street_names": [
+                            "San Gregorio Street"
+                        ],
+                        "time": 208.3,
+                        "length": 0.669,
+                        "cost": 1704.927,
+                        "begin_shape_index": 176,
+                        "end_shape_index": 196,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Victoria Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Victoria Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Victoria Street.",
+                        "verbal_post_transition_instruction": "Continue for 500 meters.",
+                        "street_names": [
+                            "Victoria Street"
+                        ],
+                        "time": 103.88,
+                        "length": 0.475,
+                        "cost": 212.297,
+                        "begin_shape_index": 196,
+                        "end_shape_index": 208,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 5,
+                        "instruction": "Your destination is on the right.",
+                        "verbal_transition_alert_instruction": "Your destination will be on the right.",
+                        "verbal_pre_transition_instruction": "Your destination is on the right.",
+                        "time": 0.0,
+                        "length": 0.0,
+                        "cost": 0.0,
+                        "begin_shape_index": 208,
+                        "end_shape_index": 208,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    }
+                ],
+                "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 14.534421,
+                    "min_lon": 121.013224,
+                    "max_lat": 14.568828,
+                    "max_lon": 121.055997,
+                    "time": 1617.17,
+                    "length": 7.552,
+                    "cost": 5794.696
+                },
+                "shape": "msdxZynt{eFaIjEoCxAgLzChDzO\\nEQxEcBvEgDbGyCdF`IkDrEm@~}@mKxJ]fHb@jIv@`RlEnQlEb_Bt`@v^~KpjArIxj@~CrBl@z@x@z@rAlApDQr@mAxGkC`N[~BmBnNm@lFm@tE_@`DqA`Nc@~HYnFC~HR~JpBvOlEbOhAdDbAnCdHdSrY~s@rHbRrEjLxBvFtE~IvDvFb@n@vAlBvEnG|JzLrN`Q`ApATXhMhPxIpKf^dc@fk@~t@lIpKdC~DxFpIzKhQbGrK`Of\\|B|FhEpNvGnTrEfTpBfKdAjHrChXhAbM`Cn_@ZfIF|A~@zVVlGF~s@Hn^YhF^nHSlLuDhb@m@`FuCvR{C`Sc@zGGpEE|Ex@lFtAdFlBfEfChEnErG~HnJdUxY~HjK|HxKf`@hh@h^td@vc@hi@xDjFpAdBrp@fx@f{BrrChVnb@`LvQvEfG|JjLnTvWjKxJvFjEzB~B|BvCxOpT~EzGvSfYz_@|e@rNtQfDjE|L|NvRjVr[|`@rDtElFbJ`Wj\\joAr|AlNzPvKjJ~l@ls@dv@f`A|m@~v@bTnYjOvTxGxJbL|QfIvQlGbKzInOvVde@xBvFdA`DZ~Aj@pCl@hDRfC?~CG|Dw@zI}AxO`@pGl@|Bt@~AhAnBfApA~@n@|Ar@tBv@~ANhAHnBJxBDhFLv`@oPxCgBhHqE~FeE~OqLdRmMtJsGbG}CzToKbc@yRjcBcv@lCt@jCz@hCbAdCfAv@`@@Bn@|AjI|RlCbHpLlZzB`GtOr`@vMzZrBrFzBdItB~MbAhKpExaAdFlmA|@fZw`@nBiI\\mVZaHByXSwd@e@kf@]{f@Yqc@WkB_@k@wAo@iD"
+            }
+        ],
+        "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 14.534421,
+            "min_lon": 121.013224,
+            "max_lat": 14.568828,
+            "max_lon": 121.055997,
+            "time": 1617.17,
+            "length": 7.552,
+            "cost": 5794.696
+        },
+        "status_message": "Found route between points",
+        "status": 0,
+        "units": "kilometers",
+        "language": "en-US"
+    }
+}
