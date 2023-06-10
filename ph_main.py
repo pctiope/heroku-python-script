@@ -43,4 +43,4 @@ threshold = max_AQI*random.randint(55, 95)/100
 print(max_AQI, threshold)
 polygonize(date_time)
 filter(threshold, date_time, border_poly)
-sleep(60)
+sleep(30)
