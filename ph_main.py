@@ -7,10 +7,9 @@ from datetime import datetime
 from shapely.geometry.polygon import Polygon
 import json
 import random
-from sklearn.metrics import mean_squared_error
 
 from ph_aqi import init_sensors, get_sensor_data
-from ph_idw import get_idw, get_error
+from ph_idw import get_idw
 from ph_polygonize import polygonize
 from ph_filter import filter
 
@@ -38,8 +37,10 @@ sensors = [
     for i in range(len(Sensor_Name))
 ]
 sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
+print(sensors)
 max_AQI = max(int(i) for i in US_AQI)
 threshold = max_AQI*random.randint(55, 95)/100
+print(max_AQI, threshold)
 polygonize(date_time)
 filter(threshold, date_time, border_poly)
 sleep(60)
