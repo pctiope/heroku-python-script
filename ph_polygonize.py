@@ -11,9 +11,9 @@ def polygonize(threshold):
         # with rasterio.open(f"./shapefiles/Philippines_Pollution_{date_time}_idw.tif") as src:
             image = src.read(1) # first band
             image = image.astype('int16')
-            geoms = [{'type':'Feature', 'threshold': threshold, 'properties': {'AQI': v}, 'geometry': s} for s,v in shapes(image, mask=mask, transform=src.transform) if v <= 1000]
+            geoms = [{'type':'Feature', 'properties': {'AQI': v}, 'geometry': s} for s,v in shapes(image, mask=mask, transform=src.transform) if v <= 1000]
 
-    output_dict = {"type": "FeatureCollection", "name": "polygonized", "features": geoms}
+    output_dict = {"type": "FeatureCollection", "name": "polygonized", 'threshold': threshold, "features": geoms}
     json_output = json.dumps(output_dict, indent=4)
     with open(f"./results/polygonized.json", "w") as outfile:
         outfile.write(json_output)
