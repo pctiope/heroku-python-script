@@ -42,7 +42,7 @@ sensors = [
     for i in range(len(Sensor_Name))
 ]
 sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
-print(sensors)
+# print(sensors)
 
 # polygonize and filter
 max_AQI = max(int(i) for i in US_AQI)
