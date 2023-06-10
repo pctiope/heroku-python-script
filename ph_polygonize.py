@@ -4,14 +4,14 @@ import base64
 from rasterio.features import shapes
 from github import Github
 
-def polygonize():
+def polygonize(threshold):
     mask = None
     with rasterio.Env():
         with rasterio.open(f"./results/Philippines_Pollution_idw.tif") as src:
         # with rasterio.open(f"./shapefiles/Philippines_Pollution_{date_time}_idw.tif") as src:
             image = src.read(1) # first band
             image = image.astype('int16')
-            geoms = [{'type':'Feature','properties': {'AQI': v}, 'geometry': s} for s,v in shapes(image, mask=mask, transform=src.transform) if v <= 1000]
+            geoms = [{'type':'Feature', 'threshold': threshold, 'properties': {'AQI': v}, 'geometry': s} for s,v in shapes(image, mask=mask, transform=src.transform) if v <= 1000]
 
     output_dict = {"type": "FeatureCollection", "name": "polygonized", "features": geoms}
     json_output = json.dumps(output_dict, indent=4)
