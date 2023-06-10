@@ -7,7 +7,7 @@ from shapely.ops import unary_union
 
 def filter(threshold, date_time, poly):
     geod = Geod(ellps="WGS84")
-    with open(f"./results/{date_time}/polygonized.json", "r") as f:
+    with open(f"./results/polygonized.json", "r") as f:
         data = json.load(f)
     sorted_data = sorted(data['features'], key=lambda x: x["properties"]["AQI"], reverse=True)
     temp = []
@@ -35,13 +35,13 @@ def filter(threshold, date_time, poly):
 
     output_dict = {"type": "FeatureCollection", "name": "filtered_output", "threshold": threshold, "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties":{}, "geometry": {"type": "Polygon","coordinates": exclude_poly}}]}
     json_output = json.dumps(output_dict, indent=4)
-    with open(f"./results/{date_time}/filtered.json", "w") as outfile:
+    with open(f"./results/filtered.json", "w") as outfile:
         outfile.write(json_output)
     
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/express-leaflet")
-    contents = repo.get_contents(f"./results/{date_time}/filtered.json", ref="main")
+    contents = repo.get_contents(f"./results/filtered.json", ref="main")
     repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
 
     return exclude_poly, abs(poly_area/maps_area)*100

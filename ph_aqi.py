@@ -105,13 +105,13 @@ def get_sensor_data(WAQI_sensors, IQAir_locations, IQAir_sensors):
     df = pd.DataFrame({'Sensor Name':Sensor_Name,'X':X_location,'Y':Y_location,'US AQI':US_AQI})
     return Sensor_Name, X_location, Y_location, US_AQI, df
 
-def df_to_csv(df, date_time, mode, run = 0):
-    # to csv file
-    df.to_csv(f"./results/{date_time}/{mode}/{run}/data.csv", index=False, encoding='utf-8')
+# def df_to_csv(df, date_time, mode, run = 0):
+#     # to csv file
+#     df.to_csv(f"./results/{date_time}/{mode}/{run}/data.csv", index=False, encoding='utf-8')
 
 def df_to_shp(df, date_time):
     # save to shapefile
     geometry = [Point(xy) for xy in zip(df.X, df.Y)]
     df = df.drop(['X', 'Y'], axis=1)
     gdf = GeoDataFrame(df, crs="EPSG:4326", geometry=geometry)
-    gdf.to_file(f"./results/{date_time}/Philippines_Pollution.shp")
+    gdf.to_file(f"./results/Philippines_Pollution.shp")
