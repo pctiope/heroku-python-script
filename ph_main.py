@@ -27,14 +27,6 @@ WAQI_sensors, IQAir_locations, IQAir_sensors = init_sensors()
 Sensor_Name, X_location, Y_location, US_AQI, df = get_sensor_data(WAQI_sensors, IQAir_locations, IQAir_sensors)
 
 # IDW methods
-rmse_list = []
-for power in range(1,11):
-        original_value, interpolated_value = get_error(date_time, power)
-        rmse = mean_squared_error(original_value, interpolated_value, squared=False)
-        rmse_list.append([power, rmse])
-        print(f"RMSE (power={power}):", rmse)
-rmse_list = sorted(rmse_list, key=lambda x: x[1])
-print(f"Best power: {rmse_list[0][0]}")
 get_idw(date_time, 2)
 
 # get border polygon
