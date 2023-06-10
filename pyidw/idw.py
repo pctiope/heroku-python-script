@@ -11,7 +11,7 @@ from rasterio.transform import from_bounds
 import fiona
 from rasterio.enums import Resampling
 # from sklearn.metrics import r2_score
-from sklearn.model_selection import LeaveOneOut
+# from sklearn.model_selection import LeaveOneOut
 from matplotlib import colors
 
 
