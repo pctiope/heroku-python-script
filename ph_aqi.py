@@ -109,7 +109,7 @@ def get_sensor_data(WAQI_sensors, IQAir_locations, IQAir_sensors):
 #     # to csv file
 #     df.to_csv(f"./results/{date_time}/{mode}/{run}/data.csv", index=False, encoding='utf-8')
 
-def df_to_shp(df, date_time):
+def df_to_shp(df):
     # save to shapefile
     geometry = [Point(xy) for xy in zip(df.X, df.Y)]
     df = df.drop(['X', 'Y'], axis=1)
