@@ -9,7 +9,7 @@ import json
 import random
 import os
 
-from ph_aqi import init_sensors, get_sensor_data
+from ph_aqi import init_sensors, get_sensor_data, df_to_shp
 from ph_idw import get_idw
 from ph_polygonize import polygonize
 from ph_filter import filter
@@ -28,6 +28,7 @@ print(f"Directory '{path}' created successfully")
 # get AQI sensor data
 WAQI_sensors, IQAir_locations, IQAir_sensors = init_sensors()
 Sensor_Name, X_location, Y_location, US_AQI, df = get_sensor_data(WAQI_sensors, IQAir_locations, IQAir_sensors)
+df_to_shp(df)
 
 # IDW methods
 get_idw(2)
