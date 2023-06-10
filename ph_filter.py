@@ -41,7 +41,7 @@ def filter(threshold, poly):
     coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/express-leaflet")
-    contents = repo.get_contents(f"./results/filtered.json", ref="main")
+    contents = repo.get_contents(f"./public/filtered.json", ref="main")
     repo.update_file(contents.path, "updated filtered.json", json_output, contents.sha, branch="main")
 
     return exclude_poly, abs(poly_area/maps_area)*100
