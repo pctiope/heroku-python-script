@@ -4,7 +4,7 @@ import base64
 from rasterio.features import shapes
 from github import Github
 
-def polygonize(date_time):
+def polygonize():
     mask = None
     with rasterio.Env():
         with rasterio.open(f"./results/Philippines_Pollution_idw.tif") as src:

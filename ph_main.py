@@ -7,6 +7,7 @@ from datetime import datetime
 from shapely.geometry.polygon import Polygon
 import json
 import random
+import os
 
 from ph_aqi import init_sensors, get_sensor_data
 from ph_idw import get_idw
@@ -20,13 +21,16 @@ class AQI_Sensor:
         self.y = y
         self.aqi = aqi
 
-date_time = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
+path = "./results/"
+os.makedirs(path, exist_ok=True)
+print(f"Directory '{path}' created successfully")
+
 # get AQI sensor data
 WAQI_sensors, IQAir_locations, IQAir_sensors = init_sensors()
 Sensor_Name, X_location, Y_location, US_AQI, df = get_sensor_data(WAQI_sensors, IQAir_locations, IQAir_sensors)
 
 # IDW methods
-get_idw(date_time, 2)
+get_idw(2)
 
 # get border polygon
 with open("./metro_manila.geojson") as f:
@@ -38,9 +42,11 @@ sensors = [
 ]
 sensors = sorted(sensors, key=lambda x: x.aqi, reverse=True)
 print(sensors)
+
+# polygonize and filter
 max_AQI = max(int(i) for i in US_AQI)
 threshold = max_AQI*random.randint(55, 95)/100
 print(max_AQI, threshold)
-polygonize(date_time)
-filter(threshold, date_time, border_poly)
+polygonize()
+filter(threshold, border_poly)
 sleep(30)

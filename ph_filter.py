@@ -5,7 +5,7 @@ from pyproj import Geod
 from shapely.geometry import Polygon, shape, mapping
 from shapely.ops import unary_union
 
-def filter(threshold, date_time, poly):
+def filter(threshold, poly):
     geod = Geod(ellps="WGS84")
     with open(f"./results/polygonized.json", "r") as f:
         data = json.load(f)

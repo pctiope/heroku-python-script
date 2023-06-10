@@ -1,6 +1,6 @@
 from pyidw import idw
 
-def get_idw(date_time, power):
+def get_idw(power):
     idw.idw_interpolation(
         input_point_shapefile=f"./results/Philippines_Pollution.shp",
         # input_point_shapefile="./shapefiles/Philippines_Pollution_"+date_time+".shp",
