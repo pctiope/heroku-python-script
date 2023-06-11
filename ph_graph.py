@@ -10,7 +10,7 @@ bicycle_csv = []
 pedestrian_csv = []
 final_csv = []
 
-def plot_all():
+def plot_all():  # sourcery skip: low-code-quality
     for f in listdir(dataset_path):
         for g in listdir(join(dataset_path,f)):
             if g == 'bicycle':
@@ -113,7 +113,16 @@ def plot_all():
         final_time_exposure = []
         final_time_sum = []
             
-    # print(total_bicycle_ave_threshold_exposure)
+    print(len(total_bicycle_ave_threshold_exposure))
+    print(len(total_bicycle_ave_time_exposure))
+    print(len(total_bicycle_ave_time_sum))
+    print(len(total_pedestrian_ave_threshold_exposure))
+    print(len(total_pedestrian_ave_time_exposure))
+    print(len(total_pedestrian_ave_time_sum))
+    print(len(total_final_threshold_exposure))
+    print(len(total_final_time_exposure))
+    print(len(total_final_time_sum))
+    
     mean_bicycle_ave_threshold_exposure = update_average(total_bicycle_ave_threshold_exposure)
     mean_bicycle_ave_time_exposure = update_average(total_bicycle_ave_time_exposure)
     mean_bicycle_ave_time_sum = update_average(total_bicycle_ave_time_sum)
@@ -203,3 +212,5 @@ def plot_all():
     plt.legend(loc="upper right")
     # plt.figure()
     plt.show()
+    
+# plot_all()

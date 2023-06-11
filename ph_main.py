@@ -35,10 +35,11 @@ class AQI_Sensor:
 def run_routing(mode, date_time, counter=2):  # sourcery skip: low-code-quality
     tests = counter
     # date_time = "" # empty date_time to lessen file generation (comment if needed)
-    threshold_exposure_sum = []
-    time_sum = []
-    time_exposure_sum = []
     results_path = "./results/"
+    ave_threshold_exposure = []
+    ave_time_exposure = []
+    ave_time_sum = []
+    
     while counter > 0:
         run = tests - counter + 1
         path = os.path.join(results_path, date_time, mode, str(run))
@@ -108,6 +109,9 @@ def run_routing(mode, date_time, counter=2):  # sourcery skip: low-code-quality
         average_route_exp_history = []
         total_route_exp_history = []
         time_route_history = []
+        threshold_exposure_sum = []
+        time_sum = []
+        time_exposure_sum = []
 
         while threshold > 0:
             print(f"threshold: {threshold}")
@@ -226,7 +230,7 @@ mode = 'final'
 results_path = "./results/"
 cycles = 100
 
-for _ in range(5, 0, -1):
+for _ in range(2, 0, -1):
     date_time = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
     total_ave_time_exposure, total_ave_threshold_exposure, total_ave_time_sum = [], [], []
     ped_ave_time_exposure, ped_ave_threshold_exposure, ped_ave_time_sum = run_routing('pedestrian', date_time, cycles)
