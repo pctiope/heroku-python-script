@@ -1,0 +1,139 @@
+{
+    "trip": {
+        "locations": [
+            {
+                "type": "break",
+                "lat": 14.556126,
+                "lon": 121.038967,
+                "side_of_street": "left",
+                "original_index": 0
+            },
+            {
+                "type": "break",
+                "lat": 14.551285,
+                "lon": 121.031381,
+                "side_of_street": "left",
+                "original_index": 1
+            }
+        ],
+        "legs": [
+            {
+                "maneuvers": [
+                    {
+                        "type": 3,
+                        "instruction": "Walk east on Guingua Street.",
+                        "verbal_succinct_transition_instruction": "Walk east.",
+                        "verbal_pre_transition_instruction": "Walk east on Guingua Street.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Guingua Street"
+                        ],
+                        "time": 67.271,
+                        "length": 0.095,
+                        "cost": 67.271,
+                        "begin_shape_index": 0,
+                        "end_shape_index": 3,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right.",
+                        "verbal_transition_alert_instruction": "Turn right.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right.",
+                        "verbal_post_transition_instruction": "Continue for 60 meters.",
+                        "time": 41.647,
+                        "length": 0.059,
+                        "cost": 646.647,
+                        "begin_shape_index": 3,
+                        "end_shape_index": 5,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 16,
+                        "instruction": "Bear left onto Cambridge Circle.",
+                        "verbal_transition_alert_instruction": "Bear left onto Cambridge Circle.",
+                        "verbal_succinct_transition_instruction": "Bear left.",
+                        "verbal_pre_transition_instruction": "Bear left onto Cambridge Circle.",
+                        "verbal_post_transition_instruction": "Continue for 1.5 kilometers.",
+                        "street_names": [
+                            "Cambridge Circle"
+                        ],
+                        "time": 994.47,
+                        "length": 1.406,
+                        "cost": 999.47,
+                        "begin_shape_index": 5,
+                        "end_shape_index": 29,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right to stay on Cambridge Circle.",
+                        "verbal_transition_alert_instruction": "Turn right to stay on Cambridge Circle.",
+                        "verbal_succinct_transition_instruction": "Turn right. Then Your destination will be on the left.",
+                        "verbal_pre_transition_instruction": "Turn right to stay on Cambridge Circle. Then Your destination will be on the left.",
+                        "verbal_post_transition_instruction": "Continue for less than 10 meters.",
+                        "street_names": [
+                            "Cambridge Circle"
+                        ],
+                        "time": 2.065,
+                        "length": 0.002,
+                        "cost": 2.065,
+                        "begin_shape_index": 29,
+                        "end_shape_index": 30,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 6,
+                        "instruction": "Your destination is on the left.",
+                        "verbal_transition_alert_instruction": "Your destination will be on the left.",
+                        "verbal_pre_transition_instruction": "Your destination is on the left.",
+                        "time": 0.0,
+                        "length": 0.0,
+                        "cost": 0.0,
+                        "begin_shape_index": 30,
+                        "end_shape_index": 30,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    }
+                ],
+                "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 14.549109,
+                    "min_lon": 121.031511,
+                    "max_lat": 14.55608,
+                    "max_lon": 121.039831,
+                    "time": 1105.455,
+                    "length": 1.563,
+                    "cost": 1715.455
+                },
+                "shape": "azlwZ}eszeFd@mEfCcVlB_XfU|AvIz@hCy@bt@|H~_@jFf_@hH`j@hPhg@rOtvAfa@lRnKfSvQzO~S~E`HtQvZfLdZpBzLHdZV|Ig@jGcCfJ_r@xwB}V|z@mJnSwDfFcErEeSfRa@i@"
+            }
+        ],
+        "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 14.549109,
+            "min_lon": 121.031511,
+            "max_lat": 14.55608,
+            "max_lon": 121.039831,
+            "time": 1105.455,
+            "length": 1.563,
+            "cost": 1715.455
+        },
+        "status_message": "Found route between points",
+        "status": 0,
+        "units": "kilometers",
+        "language": "en-US"
+    }
+}

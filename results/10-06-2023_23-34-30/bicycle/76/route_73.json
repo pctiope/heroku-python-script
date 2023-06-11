@@ -1,0 +1,649 @@
+{
+    "trip": {
+        "locations": [
+            {
+                "type": "break",
+                "lat": 14.5268,
+                "lon": 121.028847,
+                "original_index": 0
+            },
+            {
+                "type": "break",
+                "lat": 14.58212,
+                "lon": 121.042585,
+                "side_of_street": "left",
+                "original_index": 1
+            }
+        ],
+        "legs": [
+            {
+                "maneuvers": [
+                    {
+                        "type": 1,
+                        "instruction": "Bike southeast on Coconut.",
+                        "verbal_succinct_transition_instruction": "Bike southeast. Then Turn right onto Molave.",
+                        "verbal_pre_transition_instruction": "Bike southeast on Coconut. Then Turn right onto Molave.",
+                        "verbal_post_transition_instruction": "Continue for 40 meters.",
+                        "street_names": [
+                            "Coconut"
+                        ],
+                        "time": 8.199,
+                        "length": 0.041,
+                        "cost": 16.427,
+                        "begin_shape_index": 0,
+                        "end_shape_index": 1,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Molave.",
+                        "verbal_transition_alert_instruction": "Turn right onto Molave.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Molave.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Molave"
+                        ],
+                        "time": 23.0,
+                        "length": 0.1,
+                        "cost": 58.688,
+                        "begin_shape_index": 1,
+                        "end_shape_index": 2,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Calantas.",
+                        "verbal_transition_alert_instruction": "Turn right onto Calantas.",
+                        "verbal_succinct_transition_instruction": "Turn right. Then Turn right onto Lawton Avenue.",
+                        "verbal_pre_transition_instruction": "Turn right onto Calantas. Then Turn right onto Lawton Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 40 meters.",
+                        "street_names": [
+                            "Calantas"
+                        ],
+                        "time": 11.9,
+                        "length": 0.04,
+                        "cost": 36.707,
+                        "begin_shape_index": 2,
+                        "end_shape_index": 5,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Lawton Avenue.",
+                        "verbal_transition_alert_instruction": "Turn right onto Lawton Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Lawton Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "street_names": [
+                            "Lawton Avenue"
+                        ],
+                        "time": 76.099,
+                        "length": 0.346,
+                        "cost": 245.07,
+                        "begin_shape_index": 5,
+                        "end_shape_index": 15,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 13,
+                        "instruction": "Make a left U-turn to stay on Lawton Avenue.",
+                        "verbal_transition_alert_instruction": "Make a left U-turn to stay on Lawton Avenue.",
+                        "verbal_succinct_transition_instruction": "Make a left U-turn.",
+                        "verbal_pre_transition_instruction": "Make a left U-turn to stay on Lawton Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 700 meters.",
+                        "street_names": [
+                            "Lawton Avenue"
+                        ],
+                        "time": 143.15,
+                        "length": 0.688,
+                        "cost": 432.623,
+                        "begin_shape_index": 15,
+                        "end_shape_index": 39,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right toward E2.",
+                        "verbal_transition_alert_instruction": "Turn right toward E2.",
+                        "verbal_succinct_transition_instruction": "Turn right toward E2.",
+                        "verbal_pre_transition_instruction": "Turn right toward E2.",
+                        "verbal_post_transition_instruction": "Continue for 2 kilometers.",
+                        "street_names": [
+                            "E2",
+                            "AH26",
+                            "South Luzon Expressway",
+                            "President Sergio Osme\u00f1a Sr. Highway"
+                        ],
+                        "time": 378.45,
+                        "length": 1.886,
+                        "cost": 1199.204,
+                        "begin_shape_index": 39,
+                        "end_shape_index": 55,
+                        "sign": {},
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 17,
+                        "instruction": "Stay straight to take the Magallanes Interchange ramp.",
+                        "verbal_transition_alert_instruction": "Stay straight to take the Magallanes Interchange ramp.",
+                        "verbal_pre_transition_instruction": "Stay straight to take the Magallanes Interchange ramp. Then Keep right to take AH26.",
+                        "street_names": [
+                            "AH26",
+                            "President Sergio Osme\u00f1a Sr. Highway"
+                        ],
+                        "time": 4.0,
+                        "length": 0.02,
+                        "cost": 10.849,
+                        "begin_shape_index": 55,
+                        "end_shape_index": 58,
+                        "sign": {
+                            "exit_name_elements": [
+                                {
+                                    "text": "Magallanes Interchange"
+                                }
+                            ]
+                        },
+                        "verbal_multi_cue": true,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 23,
+                        "instruction": "Keep right to take AH26/President Sergio Osme\u00f1a Sr. Highway.",
+                        "verbal_transition_alert_instruction": "Keep right to take AH26.",
+                        "verbal_pre_transition_instruction": "Keep right to take AH26, President Sergio Osme\u00f1a Sr. Highway.",
+                        "street_names": [
+                            "AH26",
+                            "President Sergio Osme\u00f1a Sr. Highway"
+                        ],
+                        "time": 24.8,
+                        "length": 0.122,
+                        "cost": 67.669,
+                        "begin_shape_index": 58,
+                        "end_shape_index": 61,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 24,
+                        "instruction": "Keep left to take 1 toward Pasay.",
+                        "verbal_transition_alert_instruction": "Keep left to take 1.",
+                        "verbal_pre_transition_instruction": "Keep left to take 1 toward Pasay.",
+                        "street_names": [
+                            "AH26"
+                        ],
+                        "time": 32.599,
+                        "length": 0.159,
+                        "cost": 115.66,
+                        "begin_shape_index": 61,
+                        "end_shape_index": 74,
+                        "sign": {
+                            "exit_branch_elements": [
+                                {
+                                    "text": "1"
+                                }
+                            ],
+                            "exit_toward_elements": [
+                                {
+                                    "text": "Pasay"
+                                }
+                            ]
+                        },
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Rodriguez Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Rodriguez Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Rodriguez Street.",
+                        "verbal_post_transition_instruction": "Continue for 700 meters.",
+                        "street_names": [
+                            "Rodriguez Street"
+                        ],
+                        "time": 163.499,
+                        "length": 0.682,
+                        "cost": 326.523,
+                        "begin_shape_index": 74,
+                        "end_shape_index": 91,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto General S. Estrella Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto General S. Estrella Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto General S. Estrella Street.",
+                        "verbal_post_transition_instruction": "Continue for 400 meters.",
+                        "street_names": [
+                            "General S. Estrella Street"
+                        ],
+                        "time": 100.249,
+                        "length": 0.448,
+                        "cost": 199.521,
+                        "begin_shape_index": 91,
+                        "end_shape_index": 97,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto P. Binay Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto P. Binay Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto P. Binay Street.",
+                        "verbal_post_transition_instruction": "Continue for 1 kilometer.",
+                        "street_names": [
+                            "P. Binay Street"
+                        ],
+                        "time": 234.75,
+                        "length": 0.99,
+                        "cost": 463.189,
+                        "begin_shape_index": 97,
+                        "end_shape_index": 140,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Honduras Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Honduras Street.",
+                        "verbal_succinct_transition_instruction": "Turn right. Then Turn left onto P. Binay Street.",
+                        "verbal_pre_transition_instruction": "Turn right onto Honduras Street. Then Turn left onto P. Binay Street.",
+                        "verbal_post_transition_instruction": "Continue for 50 meters.",
+                        "street_names": [
+                            "Honduras Street"
+                        ],
+                        "time": 13.199,
+                        "length": 0.051,
+                        "cost": 52.055,
+                        "begin_shape_index": 140,
+                        "end_shape_index": 141,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto P. Binay Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto P. Binay Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto P. Binay Street.",
+                        "verbal_post_transition_instruction": "Continue for 400 meters.",
+                        "street_names": [
+                            "P. Binay Street"
+                        ],
+                        "time": 80.849,
+                        "length": 0.369,
+                        "cost": 157.082,
+                        "begin_shape_index": 141,
+                        "end_shape_index": 150,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Finlandia Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Finlandia Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Finlandia Street.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Finlandia Street"
+                        ],
+                        "time": 26.3,
+                        "length": 0.11,
+                        "cost": 85.695,
+                        "begin_shape_index": 150,
+                        "end_shape_index": 152,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 9,
+                        "instruction": "Bear right onto Dela Rosa Street.",
+                        "verbal_transition_alert_instruction": "Bear right onto Dela Rosa Street.",
+                        "verbal_succinct_transition_instruction": "Bear right.",
+                        "verbal_pre_transition_instruction": "Bear right onto Dela Rosa Street.",
+                        "verbal_post_transition_instruction": "Continue for 900 meters.",
+                        "street_names": [
+                            "Dela Rosa Street"
+                        ],
+                        "time": 210.449,
+                        "length": 0.897,
+                        "cost": 459.151,
+                        "begin_shape_index": 152,
+                        "end_shape_index": 195,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Salcedo Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Salcedo Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Salcedo Street.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "street_names": [
+                            "Salcedo Street"
+                        ],
+                        "time": 68.099,
+                        "length": 0.285,
+                        "cost": 145.693,
+                        "begin_shape_index": 195,
+                        "end_shape_index": 208,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 9,
+                        "instruction": "Bear right onto H. V. Dela Costa Street.",
+                        "verbal_transition_alert_instruction": "Bear right onto H. V. Dela Costa Street.",
+                        "verbal_succinct_transition_instruction": "Bear right.",
+                        "verbal_pre_transition_instruction": "Bear right onto H. V. Dela Costa Street.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "street_names": [
+                            "H. V. Dela Costa Street"
+                        ],
+                        "time": 70.049,
+                        "length": 0.311,
+                        "cost": 145.449,
+                        "begin_shape_index": 208,
+                        "end_shape_index": 215,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Tordesillas Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Tordesillas Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Tordesillas Street.",
+                        "verbal_post_transition_instruction": "Continue for 80 meters.",
+                        "street_names": [
+                            "Tordesillas Street"
+                        ],
+                        "time": 19.049,
+                        "length": 0.075,
+                        "cost": 45.746,
+                        "begin_shape_index": 215,
+                        "end_shape_index": 219,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Senator Gil J. Puyat Avenue/190.",
+                        "verbal_transition_alert_instruction": "Turn right onto Senator Gil J. Puyat Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Senator Gil J. Puyat Avenue, 190.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "street_names": [
+                            "Senator Gil J. Puyat Avenue",
+                            "190"
+                        ],
+                        "time": 57.55,
+                        "length": 0.256,
+                        "cost": 219.676,
+                        "begin_shape_index": 219,
+                        "end_shape_index": 226,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Nicanor T. Garcia Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Nicanor T. Garcia Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Nicanor T. Garcia Street.",
+                        "verbal_post_transition_instruction": "Continue for 90 meters.",
+                        "street_names": [
+                            "Nicanor T. Garcia Street"
+                        ],
+                        "time": 24.85,
+                        "length": 0.089,
+                        "cost": 56.281,
+                        "begin_shape_index": 226,
+                        "end_shape_index": 231,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Jupiter Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Jupiter Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Jupiter Street.",
+                        "verbal_post_transition_instruction": "Continue for 600 meters.",
+                        "street_names": [
+                            "Jupiter Street"
+                        ],
+                        "time": 145.449,
+                        "length": 0.643,
+                        "cost": 301.507,
+                        "begin_shape_index": 231,
+                        "end_shape_index": 263,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Makati Avenue.",
+                        "verbal_transition_alert_instruction": "Turn left onto Makati Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Makati Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 1 kilometer.",
+                        "street_names": [
+                            "Makati Avenue"
+                        ],
+                        "time": 233.4,
+                        "length": 1.088,
+                        "cost": 534.315,
+                        "begin_shape_index": 263,
+                        "end_shape_index": 314,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 16,
+                        "instruction": "Bear left onto Makati-Mandaluyong Bridge.",
+                        "verbal_transition_alert_instruction": "Bear left onto Makati-Mandaluyong Bridge.",
+                        "verbal_succinct_transition_instruction": "Bear left. Then Turn left onto Coronado Street.",
+                        "verbal_pre_transition_instruction": "Bear left onto Makati-Mandaluyong Bridge. Then Turn left onto Coronado Street.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
+                        "street_names": [
+                            "Makati-Mandaluyong Bridge"
+                        ],
+                        "time": 6.399,
+                        "length": 0.031,
+                        "cost": 18.728,
+                        "begin_shape_index": 314,
+                        "end_shape_index": 316,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Coronado Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Coronado Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Coronado Street.",
+                        "verbal_post_transition_instruction": "Continue for 400 meters.",
+                        "street_names": [
+                            "Coronado Street"
+                        ],
+                        "time": 75.149,
+                        "length": 0.351,
+                        "cost": 134.997,
+                        "begin_shape_index": 316,
+                        "end_shape_index": 332,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto E. Pantaleon Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto E. Pantaleon Street.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto E. Pantaleon Street.",
+                        "verbal_post_transition_instruction": "Continue for 400 meters.",
+                        "street_names": [
+                            "E. Pantaleon Street"
+                        ],
+                        "time": 76.5,
+                        "length": 0.356,
+                        "cost": 170.333,
+                        "begin_shape_index": 332,
+                        "end_shape_index": 347,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Barangka Drive.",
+                        "verbal_transition_alert_instruction": "Turn left onto Barangka Drive.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Barangka Drive.",
+                        "verbal_post_transition_instruction": "Continue for 1.5 kilometers.",
+                        "street_names": [
+                            "Barangka Drive"
+                        ],
+                        "time": 326.35,
+                        "length": 1.523,
+                        "cost": 563.559,
+                        "begin_shape_index": 347,
+                        "end_shape_index": 378,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Calbayog Extension.",
+                        "verbal_transition_alert_instruction": "Turn left onto Calbayog Extension.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Calbayog Extension.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "street_names": [
+                            "Calbayog Extension"
+                        ],
+                        "time": 58.5,
+                        "length": 0.275,
+                        "cost": 115.628,
+                        "begin_shape_index": 378,
+                        "end_shape_index": 389,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 14,
+                        "instruction": "Make a sharp left onto Nueve de Pebrero Street.",
+                        "verbal_transition_alert_instruction": "Make a sharp left onto Nueve de Pebrero Street.",
+                        "verbal_succinct_transition_instruction": "Make a sharp left. Then Turn right.",
+                        "verbal_pre_transition_instruction": "Make a sharp left onto Nueve de Pebrero Street. Then Turn right.",
+                        "verbal_post_transition_instruction": "Continue for 20 meters.",
+                        "street_names": [
+                            "Nueve de Pebrero Street"
+                        ],
+                        "time": 5.3,
+                        "length": 0.022,
+                        "cost": 21.405,
+                        "begin_shape_index": 389,
+                        "end_shape_index": 393,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right.",
+                        "verbal_transition_alert_instruction": "Turn right.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right.",
+                        "verbal_post_transition_instruction": "Continue for 70 meters.",
+                        "time": 17.1,
+                        "length": 0.071,
+                        "cost": 39.936,
+                        "begin_shape_index": 393,
+                        "end_shape_index": 398,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 26,
+                        "instruction": "Enter Crisostomo Oval and take the 2nd exit.",
+                        "verbal_transition_alert_instruction": "Enter Crisostomo Oval and take the 2nd exit.",
+                        "verbal_succinct_transition_instruction": "Enter the roundabout and take the 2nd exit.",
+                        "verbal_pre_transition_instruction": "Enter Crisostomo Oval and take the 2nd exit.",
+                        "street_names": [
+                            "Crisostomo Oval"
+                        ],
+                        "time": 37.664,
+                        "length": 0.173,
+                        "cost": 76.71,
+                        "begin_shape_index": 398,
+                        "end_shape_index": 410,
+                        "roundabout_exit_count": 2,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    },
+                    {
+                        "type": 6,
+                        "instruction": "Your destination is on the left.",
+                        "verbal_transition_alert_instruction": "Your destination will be on the left.",
+                        "verbal_pre_transition_instruction": "Your destination is on the left.",
+                        "time": 0.0,
+                        "length": 0.0,
+                        "cost": 0.0,
+                        "begin_shape_index": 410,
+                        "end_shape_index": 410,
+                        "travel_mode": "bicycle",
+                        "travel_type": "hybrid"
+                    }
+                ],
+                "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 14.524484,
+                    "min_lon": 121.006756,
+                    "max_lat": 14.582452,
+                    "max_lon": 121.045685,
+                    "time": 2752.914,
+                    "length": 12.503,
+                    "cost": 6516.092
+                },
+                "shape": "qrsuZwk_zeFnSkInY`r@qB|@}ItDkDnAyPuSwEeHeCsE}BkFuC}HcL_^eN}c@sP{i@AC_DeKkGxCvC~JPl@vPhh@bLf^bHbUjJlWhFvKhHjKhOtQ|PjSrEfFnBjCxFrHlEfGx@dAtFjHnE`G~R~YdCfDhGvGpF`FzChC~RbOkz@rc@}JbIoMjKgT~JgmAvh@aa@~OcWtKu`@fQerArk@oUhK{JvEezA~p@qcDhxAypDn_Bkw@d^kn@tXaBhC}@nA}@rAoJbG}NzL{\\nN{AvAa@lAEpAPnA|ExNxClJlEzNzB~Hn@`CXfAl@rB`@tAlBjHiBj@aA^uRjFsV`HoYzH}YbImYnH_Z`IeYvHo[rIu[vIyZjIkK~CaDr@aPlD_\\pIg]vI|H~^bCjQrB~RhFlq@jIpaAtHlbAsH`DuF`BkDn@kFd@_Jr@}GJqEIiDUuCc@sB_@wCy@uC}@}N{FqQkGsEeAeGiA}@KeCUwDa@kGo@mL_BiEr@kF~@wNdCkANay@dM}_@pHk_@~FeBT_XdEa@Hm@FqBToEv@uRrCeThDiS`DqOjCaIvAwAVkL`Cgc@vIed@|IwE}[ySvI{M~Fqb@zRyX|LiTrJ{CnAsYhMmOdHePnHuVmo@gCkG~GaGl@kBPcBIoJKcECeCWcAq@uCaAgEqGmYcFeToAcFaH{YmD_O{F{Uq@{CmA{FiGoY}Gm[{Ge[uDcS}DqWc@mByF_i@qAaM[_Dc@qEeAmKEi@AGo@iEh@aDqBkTuAcOqDm^y@gICoBLwBDi@Ea@I[UYi@YgEaAe@OoNkFyIkFoJ_HeRcP{EaEuE_E{TkRmOuMeCiCsBqBcA_ByAgRuCua@eC{p@iCwm@kAgUKqBk@wA_FV{Kj@kKd@eHj@WwEqB{e@QyCcCkj@mAqScBg]IgCgFVyEP{Ot@uLz@}B`BKwEWcPMgGKwEKcEKwJEqEQeRGoETwYb@sPDaBBeAd@oMjBia@|A}UlAeMtEm_@rB_NzBiMpAoHrBcKh@qC`C}K|AcGj@{BlA{EjBqHNa@DOhAsDnAgEqCu@}BIyDSqW}JmGaC}IoD}PsH{TsJuHgDoRmIcSsI]OaDiAeAg@{B{@aRkHyUgJeAa@_Bm@cAa@sPuGmBu@cRkH{RyHqYaLmJwCuDaAuTeGuECqIEiMe@eGOgF[eEs@oFkBsEaByEwDgx@cy@qGoFcHeEoCo@iDQgCHwB\\iCz@yDzBkDnCaC|CkBnDq@zD_@|EnChHbDjDxCcDjGiH^]p@q@lF_GxBcChDoDz@cAbGiHNQlFeGlImJhXsVpX}WzLqMvKeOcAaAch@{e@iI_IuHgHgEuDeKyIkJ}ISQaA}@mGwFyB}CYiAK_@EaEbIek@sFoBsM}J}AkAaSiO{AkAam@od@_o@cf@kg@{_@kHuF}a@o[mL}Imo@of@}{@sp@qXiQaBiAgC}AyCoBeZ_Scw@}g@yk@{_@}IiGiA{AmB_DsXcn@mIaRq@wAiFqMaJkVqDgKsH}U_Lc^yIhDsPxGq_@jMgEvAqBp@{PdFmBn@{EjBkDvBq@^q]pWMpBNjAj@rBxA@hCtLJ^FVdDlKtC|HqF|C_HrDgCfBeL~HqIdJ{BbD_ArAcDjFkC`EmApID`D?J"
+            }
+        ],
+        "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 14.524484,
+            "min_lon": 121.006756,
+            "max_lat": 14.582452,
+            "max_lon": 121.045685,
+            "time": 2752.914,
+            "length": 12.503,
+            "cost": 6516.092
+        },
+        "status_message": "Found route between points",
+        "status": 0,
+        "units": "kilometers",
+        "language": "en-US"
+    }
+}

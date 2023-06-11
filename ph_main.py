@@ -230,7 +230,7 @@ mode = 'final'
 results_path = "./results/"
 cycles = 100
 
-for _ in range(2, 0, -1):
+for _ in range(1, 0, -1):
     date_time = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
     total_ave_time_exposure, total_ave_threshold_exposure, total_ave_time_sum = [], [], []
     ped_ave_time_exposure, ped_ave_threshold_exposure, ped_ave_time_sum = run_routing('pedestrian', date_time, cycles)

@@ -1,0 +1,218 @@
+{
+    "trip": {
+        "locations": [
+            {
+                "type": "break",
+                "lat": 14.557372,
+                "lon": 121.040541,
+                "original_index": 0
+            },
+            {
+                "type": "break",
+                "lat": 14.55001,
+                "lon": 121.029826,
+                "side_of_street": "left",
+                "original_index": 1
+            }
+        ],
+        "legs": [
+            {
+                "maneuvers": [
+                    {
+                        "type": 1,
+                        "instruction": "Walk west on Kalayaan Avenue/190.",
+                        "verbal_succinct_transition_instruction": "Walk west. Then, in 30 meters, Take the 1 exit.",
+                        "verbal_pre_transition_instruction": "Walk west on Kalayaan Avenue, 190. Then, in 30 meters, Take the 1 exit.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
+                        "street_names": [
+                            "Kalayaan Avenue",
+                            "190"
+                        ],
+                        "time": 22.444,
+                        "length": 0.031,
+                        "cost": 22.444,
+                        "begin_shape_index": 0,
+                        "end_shape_index": 2,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 21,
+                        "instruction": "Take the 1 exit.",
+                        "verbal_transition_alert_instruction": "Take the 1 exit.",
+                        "verbal_pre_transition_instruction": "Take the 1 exit.",
+                        "street_names": [
+                            "AH26",
+                            "Epifanio delos Santos Avenue"
+                        ],
+                        "time": 504.0,
+                        "length": 0.714,
+                        "cost": 504.0,
+                        "begin_shape_index": 2,
+                        "end_shape_index": 23,
+                        "sign": {
+                            "exit_branch_elements": [
+                                {
+                                    "text": "1"
+                                }
+                            ]
+                        },
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Senator Gil J. Puyat Avenue/190.",
+                        "verbal_transition_alert_instruction": "Turn right onto Senator Gil J. Puyat Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Senator Gil J. Puyat Avenue, 190.",
+                        "verbal_post_transition_instruction": "Continue for 60 meters.",
+                        "street_names": [
+                            "Senator Gil J. Puyat Avenue",
+                            "190"
+                        ],
+                        "time": 47.352,
+                        "length": 0.06,
+                        "cost": 52.352,
+                        "begin_shape_index": 23,
+                        "end_shape_index": 27,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Recoletos Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Recoletos Street.",
+                        "verbal_succinct_transition_instruction": "Turn left. Then Turn left onto the walkway.",
+                        "verbal_pre_transition_instruction": "Turn left onto Recoletos Street. Then Turn left onto the walkway.",
+                        "verbal_post_transition_instruction": "Continue for less than 10 meters.",
+                        "street_names": [
+                            "Recoletos Street"
+                        ],
+                        "time": 2.117,
+                        "length": 0.003,
+                        "cost": 7.117,
+                        "begin_shape_index": 27,
+                        "end_shape_index": 28,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto the walkway.",
+                        "verbal_transition_alert_instruction": "Turn left onto the walkway.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto the walkway.",
+                        "verbal_post_transition_instruction": "Continue for 30 meters.",
+                        "time": 22.588,
+                        "length": 0.032,
+                        "cost": 27.588,
+                        "begin_shape_index": 28,
+                        "end_shape_index": 30,
+                        "rough": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 23,
+                        "instruction": "Keep right to take the walkway.",
+                        "verbal_transition_alert_instruction": "Keep right to take the walkway.",
+                        "verbal_pre_transition_instruction": "Keep right to take the walkway.",
+                        "verbal_post_transition_instruction": "Continue for 800 meters.",
+                        "time": 557.647,
+                        "length": 0.79,
+                        "cost": 557.647,
+                        "begin_shape_index": 30,
+                        "end_shape_index": 47,
+                        "rough": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Recoletos Street.",
+                        "verbal_transition_alert_instruction": "Turn left onto Recoletos Street.",
+                        "verbal_succinct_transition_instruction": "Turn left. Then Turn left onto Ayala Avenue.",
+                        "verbal_pre_transition_instruction": "Turn left onto Recoletos Street. Then Turn left onto Ayala Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 10 meters.",
+                        "street_names": [
+                            "Recoletos Street"
+                        ],
+                        "time": 7.058,
+                        "length": 0.01,
+                        "cost": 12.058,
+                        "begin_shape_index": 47,
+                        "end_shape_index": 48,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Ayala Avenue.",
+                        "verbal_transition_alert_instruction": "Turn left onto Ayala Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Ayala Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 100 meters.",
+                        "street_names": [
+                            "Ayala Avenue"
+                        ],
+                        "time": 96.215,
+                        "length": 0.127,
+                        "cost": 106.215,
+                        "begin_shape_index": 48,
+                        "end_shape_index": 53,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 6,
+                        "instruction": "Your destination is on the left.",
+                        "verbal_transition_alert_instruction": "Your destination will be on the left.",
+                        "verbal_pre_transition_instruction": "Your destination is on the left.",
+                        "time": 0.0,
+                        "length": 0.0,
+                        "cost": 0.0,
+                        "begin_shape_index": 53,
+                        "end_shape_index": 53,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    }
+                ],
+                "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 14.549942,
+                    "min_lon": 121.028984,
+                    "max_lat": 14.557658,
+                    "max_lon": 121.040541,
+                    "time": 1259.425,
+                    "length": 1.768,
+                    "cost": 1289.425
+                },
+                "shape": "ajowZyhvzeFB`JYhF^nHSlLuDhb@m@`FuCvR{C`Sc@zGGpEE|Ex@lFtAdFlBfEfChEnErG~HnJdUxY~HjK|HxKf`@hh@h^td@vc@hi@qCHmAr@_CjBiO|Kb@l@bKuHdAo@jEqAd@GZ@`@Db@HfK|MhCfDd[v`@vI|KblCvgDnGvLnZzc@~Ul[pDbITlGqA|CqEzEvBlC`DeDhCyBhMoKvNyKlNwK"
+            }
+        ],
+        "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 14.549942,
+            "min_lon": 121.028984,
+            "max_lat": 14.557658,
+            "max_lon": 121.040541,
+            "time": 1259.425,
+            "length": 1.768,
+            "cost": 1289.425
+        },
+        "status_message": "Found route between points",
+        "status": 0,
+        "units": "kilometers",
+        "language": "en-US"
+    }
+}

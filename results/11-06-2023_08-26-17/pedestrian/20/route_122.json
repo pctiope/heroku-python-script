@@ -1,0 +1,194 @@
+{
+    "trip": {
+        "locations": [
+            {
+                "type": "break",
+                "lat": 14.557149,
+                "lon": 121.029357,
+                "side_of_street": "left",
+                "original_index": 0
+            },
+            {
+                "type": "break",
+                "lat": 14.55216,
+                "lon": 121.03916,
+                "side_of_street": "left",
+                "original_index": 1
+            }
+        ],
+        "legs": [
+            {
+                "maneuvers": [
+                    {
+                        "type": 3,
+                        "instruction": "Walk west on the walkway.",
+                        "verbal_succinct_transition_instruction": "Walk west.",
+                        "verbal_pre_transition_instruction": "Walk west on the walkway.",
+                        "verbal_post_transition_instruction": "Continue for 60 meters.",
+                        "time": 40.613,
+                        "length": 0.057,
+                        "cost": 40.613,
+                        "begin_shape_index": 0,
+                        "end_shape_index": 2,
+                        "rough": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Real Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Real Street.",
+                        "verbal_succinct_transition_instruction": "Turn right.",
+                        "verbal_pre_transition_instruction": "Turn right onto Real Street.",
+                        "verbal_post_transition_instruction": "Continue for 600 meters.",
+                        "street_names": [
+                            "Real Street"
+                        ],
+                        "time": 456.999,
+                        "length": 0.646,
+                        "cost": 1062.0,
+                        "begin_shape_index": 2,
+                        "end_shape_index": 28,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 10,
+                        "instruction": "Turn right onto Fonda Street.",
+                        "verbal_transition_alert_instruction": "Turn right onto Fonda Street.",
+                        "verbal_succinct_transition_instruction": "Turn right. Then Turn left onto Apartment Ridge Road.",
+                        "verbal_pre_transition_instruction": "Turn right onto Fonda Street. Then Turn left onto Apartment Ridge Road.",
+                        "verbal_post_transition_instruction": "Continue for 10 meters.",
+                        "street_names": [
+                            "Fonda Street"
+                        ],
+                        "time": 37.058,
+                        "length": 0.01,
+                        "cost": 642.058,
+                        "begin_shape_index": 28,
+                        "end_shape_index": 31,
+                        "verbal_multi_cue": true,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Apartment Ridge Road.",
+                        "verbal_transition_alert_instruction": "Turn left onto Apartment Ridge Road.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Apartment Ridge Road.",
+                        "verbal_post_transition_instruction": "Continue for 500 meters.",
+                        "street_names": [
+                            "Apartment Ridge Road"
+                        ],
+                        "time": 365.235,
+                        "length": 0.516,
+                        "cost": 370.235,
+                        "begin_shape_index": 31,
+                        "end_shape_index": 40,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Ayala Avenue.",
+                        "verbal_transition_alert_instruction": "Turn left onto Ayala Avenue.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Ayala Avenue.",
+                        "verbal_post_transition_instruction": "Continue for 900 meters.",
+                        "street_names": [
+                            "Ayala Avenue"
+                        ],
+                        "time": 644.823,
+                        "length": 0.904,
+                        "cost": 654.823,
+                        "begin_shape_index": 40,
+                        "end_shape_index": 64,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 16,
+                        "instruction": "Bear left onto McKinley Road.",
+                        "verbal_transition_alert_instruction": "Bear left onto McKinley Road.",
+                        "verbal_succinct_transition_instruction": "Bear left.",
+                        "verbal_pre_transition_instruction": "Bear left onto McKinley Road.",
+                        "verbal_post_transition_instruction": "Continue for 300 meters.",
+                        "street_names": [
+                            "McKinley Road"
+                        ],
+                        "time": 188.47,
+                        "length": 0.267,
+                        "cost": 188.47,
+                        "begin_shape_index": 64,
+                        "end_shape_index": 70,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 15,
+                        "instruction": "Turn left onto Harvard Road.",
+                        "verbal_transition_alert_instruction": "Turn left onto Harvard Road.",
+                        "verbal_succinct_transition_instruction": "Turn left.",
+                        "verbal_pre_transition_instruction": "Turn left onto Harvard Road.",
+                        "verbal_post_transition_instruction": "Continue for 500 meters.",
+                        "street_names": [
+                            "Harvard Road"
+                        ],
+                        "time": 380.134,
+                        "length": 0.538,
+                        "cost": 985.134,
+                        "begin_shape_index": 70,
+                        "end_shape_index": 81,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    },
+                    {
+                        "type": 6,
+                        "instruction": "Your destination is on the left.",
+                        "verbal_transition_alert_instruction": "Your destination will be on the left.",
+                        "verbal_pre_transition_instruction": "Your destination is on the left.",
+                        "time": 0.0,
+                        "length": 0.0,
+                        "cost": 0.0,
+                        "begin_shape_index": 81,
+                        "end_shape_index": 81,
+                        "travel_mode": "pedestrian",
+                        "travel_type": "foot"
+                    }
+                ],
+                "summary": {
+                    "has_time_restrictions": false,
+                    "has_toll": false,
+                    "has_highway": false,
+                    "has_ferry": false,
+                    "min_lat": 14.54721,
+                    "min_lon": 121.025871,
+                    "max_lat": 14.557995,
+                    "max_lon": 121.039428,
+                    "time": 2113.335,
+                    "length": 2.94,
+                    "cost": 3943.335
+                },
+                "shape": "ygowZwl`zeFTlFfAxXiQfAmIx@qE`CcDfDcBfDe@pCAtEV|DnG~\\bC|LfFzWjBhF~BpCdGjCdIfDji@fUrm@dXpJdEdG|ArGXlNs@xHcBzD}AvDsCnFqIjDcFvBjATLRHrAaCdWy\\`Yy]bg@wh@hZeZ`l@ak@|AJd\\|^`CjCh[uY`DeDhCyBhMoKvNyKvT}P~AmAzAgB`BaBjAgB~@cBdBcDtBiEbCwEl}@wmCtR{m@T{@BMbU_s@fBsFpH{WzPql@`@}Bp@_Ej@oGHyGuDil@k@uISeDaHuiA}P\\ef@|@uPa@k]_Fy[qJqX_IiHqCo[mLo]}Km\\aLi\\gJ"
+            }
+        ],
+        "summary": {
+            "has_time_restrictions": false,
+            "has_toll": false,
+            "has_highway": false,
+            "has_ferry": false,
+            "min_lat": 14.54721,
+            "min_lon": 121.025871,
+            "max_lat": 14.557995,
+            "max_lon": 121.039428,
+            "time": 2113.335,
+            "length": 2.94,
+            "cost": 3943.335
+        },
+        "status_message": "Found route between points",
+        "status": 0,
+        "units": "kilometers",
+        "language": "en-US"
+    }
+}
