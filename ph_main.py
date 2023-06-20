@@ -47,7 +47,7 @@ while 1:
 
     # polygonize and filter
     max_AQI = max(int(i) for i in US_AQI)
-    threshold = int(round(max_AQI*random.randint(60, 90)/100))
+    threshold = int(round(max_AQI*random.randint(75, 85)/100))
     print(max_AQI, threshold)
     polygonize(threshold)
     filter(threshold, border_poly)
