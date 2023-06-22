@@ -51,4 +51,4 @@ while 1:
     print(max_AQI, threshold)
     polygonize(threshold)
     filter(threshold, border_poly)
-    sleep(60)
+    sleep(300)
