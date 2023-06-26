@@ -14,7 +14,7 @@ def polygonize(threshold):
             geoms = [{'type':'Feature', 'properties': {'AQI': v}, 'geometry': s} for s,v in shapes(image, mask=mask, transform=src.transform) if v <= 1000]
 
     output_dict = {"type": "FeatureCollection", "name": "polygonized", "threshold": threshold, "features": geoms}
-    json_output = json.dumps(output_dict, indent=4)
+    json_output = json.dumps(output_dict)
     with open(f"./results/polygonized.json", "w") as outfile:
         outfile.write(json_output)
         
