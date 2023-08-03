@@ -18,7 +18,7 @@ def polygonize(threshold):
     with open(f"./results/polygonized.json", "w") as outfile:
         outfile.write(json_output)
         
-    coded_string = "Z2hwXzY3emJ2MGpUdkZRVjdJR201ZXpNSWQ1dU5tOWFHRzNiakp3Tg=="
+    coded_string = "Z2hwX3g2WFBYQXB6c0k5UXdyRXRKbXlIVDJDNWFsQTlmZzFoRmtHeQ=="
     g = Github(base64.b64decode(coded_string).decode("utf-8"))
     repo = g.get_repo("pctiope/express-leaflet")
     contents = repo.get_contents(f"./public/polygonized.json", ref="main")
